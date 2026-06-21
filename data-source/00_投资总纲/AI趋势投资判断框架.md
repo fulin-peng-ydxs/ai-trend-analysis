@@ -1,8 +1,9 @@
 ---
+schema_version: 1
 title: AI趋势投资判断框架
 category: 投资总纲
 status: validated
-updated_at: 2026-06-20
+updated_at: 2026-06-21
 confidence: high
 tags:
   - AI
@@ -268,3 +269,4 @@ AI未来会不会更强？
 | 日期 | 类型 | 变化 | 来源 |
 | --- | --- | --- | --- |
 | 2026-06-20 | 规范化 | 补充 frontmatter 和更新记录，纳入知识源仓库规范 | 项目规范建设 |
+| 2026-06-21 | 规范化 | 同步 schema_version、方向注册表和自动化闭环规范 | 项目规范建设 |

@@ -1,0 +1,76 @@
+{
+  "updated_at": "2026-06-21",
+  "description": "AI 趋势投资知识库来源注册表。自动化任务优先使用本文件中的来源，未登记来源只能作为补充并需标注来源层级。",
+  "sources": [
+    {
+      "id": "nvidia_investor_relations",
+      "name": "NVIDIA Investor Relations",
+      "tier": "tier_1",
+      "url": "https://investor.nvidia.com/",
+      "focus": ["GPU", "AI推理基础设施", "数据中心", "网络"]
+    },
+    {
+      "id": "microsoft_investor_relations",
+      "name": "Microsoft Investor Relations",
+      "tier": "tier_1",
+      "url": "https://www.microsoft.com/en-us/investor",
+      "focus": ["云厂商资本开支", "AI收入", "Agent", "企业AI"]
+    },
+    {
+      "id": "amazon_investor_relations",
+      "name": "Amazon Investor Relations",
+      "tier": "tier_1",
+      "url": "https://ir.aboutamazon.com/",
+      "focus": ["AWS", "云厂商资本开支", "数据中心", "自研芯片"]
+    },
+    {
+      "id": "meta_investor_relations",
+      "name": "Meta Investor Relations",
+      "tier": "tier_1",
+      "url": "https://investor.atmeta.com/",
+      "focus": ["AI资本开支", "数据中心", "电力与散热"]
+    },
+    {
+      "id": "alphabet_investor_relations",
+      "name": "Alphabet Investor Relations",
+      "tier": "tier_1",
+      "url": "https://abc.xyz/investor/",
+      "focus": ["Google Cloud", "TPU", "AI资本开支", "数据中心"]
+    },
+    {
+      "id": "trendforce",
+      "name": "TrendForce",
+      "tier": "tier_2",
+      "url": "https://www.trendforce.com/",
+      "focus": ["光模块", "CPO", "存储", "半导体", "数据中心"]
+    },
+    {
+      "id": "semianalysis",
+      "name": "SemiAnalysis",
+      "tier": "tier_2",
+      "url": "https://www.semianalysis.com/",
+      "focus": ["AI基础设施", "GPU", "网络", "数据中心"]
+    },
+    {
+      "id": "omdia",
+      "name": "Omdia",
+      "tier": "tier_2",
+      "url": "https://omdia.tech.informa.com/",
+      "focus": ["数据中心", "半导体", "光通信", "云基础设施"]
+    },
+    {
+      "id": "idc",
+      "name": "IDC",
+      "tier": "tier_2",
+      "url": "https://www.idc.com/",
+      "focus": ["企业AI", "云计算", "服务器", "数据中心"]
+    },
+    {
+      "id": "gartner",
+      "name": "Gartner",
+      "tier": "tier_2",
+      "url": "https://www.gartner.com/",
+      "focus": ["企业AI", "IT支出", "云计算", "技术趋势"]
+    }
+  ]
+}

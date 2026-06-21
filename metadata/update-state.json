@@ -1,0 +1,48 @@
+{
+  "updated_at": "2026-06-21",
+  "period_policy": {
+    "active_research_period": "2026Q3",
+    "period_mode": "configured_active_period",
+    "candidate_pool_rule": "优先写入 active_research_period 对应的信息候选池；未配置时再按当前日期选择季度文件。",
+    "watchlist_rule": "优先更新 active_research_period 对应的观察清单；季度复盘时可同步下一季度观察重点。",
+    "quarterly_review_rule": "1/4/7/10 月 1 日运行季度复盘时，复盘上一自然季度，并更新 active_research_period 或下一季度观察清单。"
+  },
+  "jobs": {
+    "daily": {
+      "last_success_at": null,
+      "last_status": "not_run",
+      "last_error": "",
+      "last_candidate_count": 0,
+      "last_summary": ""
+    },
+    "weekly": {
+      "last_success_at": null,
+      "last_status": "not_run",
+      "last_error": "",
+      "last_candidate_count": 0,
+      "last_updated_documents": [],
+      "last_summary": ""
+    },
+    "monthly": {
+      "last_success_at": null,
+      "last_status": "not_run",
+      "last_error": "",
+      "last_updated_documents": [],
+      "last_summary": ""
+    },
+    "quarterly": {
+      "last_success_at": null,
+      "last_status": "not_run",
+      "last_error": "",
+      "last_updated_documents": [],
+      "last_summary": ""
+    },
+    "event": {
+      "last_success_at": null,
+      "last_status": "not_run",
+      "last_error": "",
+      "last_updated_documents": [],
+      "last_summary": ""
+    }
+  }
+}

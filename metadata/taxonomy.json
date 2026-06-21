@@ -2,7 +2,7 @@
   "project": {
     "name": "AI趋势投资知识源仓库",
     "description": "面向 AI 趋势投资研究的 Markdown 知识数据源仓库",
-    "updated_at": "2026-06-20"
+    "updated_at": "2026-06-21"
   },
   "categories": [
     {
@@ -34,6 +34,12 @@
       "name": "复盘记录",
       "directory": "data-source/04_复盘记录",
       "description": "季度、年度或专题复盘"
+    },
+    {
+      "id": "candidate_pool",
+      "name": "信息候选池",
+      "directory": "data-source/05_信息候选池",
+      "description": "承接待判断、待确认或暂不进入正式知识库的信息"
     },
     {
       "id": "template",
@@ -74,6 +80,48 @@
     "medium_high",
     "high"
   ],
+  "direction_statuses": [
+    {
+      "id": "candidate",
+      "name": "新方向候选",
+      "automation_policy": "只进入候选池，等待更多证据"
+    },
+    {
+      "id": "watching",
+      "name": "观察中",
+      "automation_policy": "周频检查，重要信息进入候选池"
+    },
+    {
+      "id": "tracking",
+      "name": "持续跟踪",
+      "automation_policy": "日频候选、周频复核，证据足够时更新正式文档"
+    },
+    {
+      "id": "priority",
+      "name": "重点跟踪",
+      "automation_policy": "日频重点关注，重大事件可触发 event 更新"
+    },
+    {
+      "id": "weakened",
+      "name": "逻辑削弱",
+      "automation_policy": "降低更新频率，重点跟踪证伪或重新增强的证据"
+    },
+    {
+      "id": "paused",
+      "name": "暂停跟踪",
+      "automation_policy": "默认不主动更新，重大事件进入候选池"
+    },
+    {
+      "id": "archived",
+      "name": "归档",
+      "automation_policy": "保留历史，不主动更新"
+    },
+    {
+      "id": "rejected",
+      "name": "已证伪",
+      "automation_policy": "不主动更新，除非出现强反转证据"
+    }
+  ],
   "core_chain": [
     "趋势",
     "瓶颈",
@@ -97,6 +145,37 @@
     "资本开支",
     "历史案例",
     "观察清单",
+    "信息候选池",
     "复盘"
+  ],
+  "candidate_decisions": [
+    "ignore",
+    "watch",
+    "new_direction_candidate",
+    "update",
+    "create",
+    "review"
+  ],
+  "source_tiers": [
+    {
+      "id": "tier_1",
+      "name": "一级来源",
+      "description": "公司财报、投资者关系、监管文件、官方博客、技术白皮书、监管和交易所披露"
+    },
+    {
+      "id": "tier_2",
+      "name": "二级来源",
+      "description": "TrendForce、SemiAnalysis、IDC、Gartner、Omdia 等研究机构或行业数据库"
+    },
+    {
+      "id": "tier_3",
+      "name": "三级来源",
+      "description": "主流财经媒体、产业媒体、会议纪要和专家访谈"
+    },
+    {
+      "id": "low_priority",
+      "name": "低优先级来源",
+      "description": "社媒观点、二手解读、无明确来源截图；只进入候选池，不直接更新正式结论"
+    }
   ]
 }

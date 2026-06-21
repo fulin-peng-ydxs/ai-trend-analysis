@@ -1,0 +1,191 @@
+{
+  "updated_at": "2026-06-21",
+  "status": "active",
+  "principle": "先自动进入候选池，再由自动化按规则判断是否更新正式知识库；冲突或重大不确定事项标记 review",
+  "period_policy": {
+    "state_source": "metadata/update-state.json.period_policy",
+    "default_active_research_period": "2026Q3",
+    "candidate_pool_rule": "优先使用 active_research_period 对应的信息候选池；未配置时按当前日期选择季度文件。",
+    "watchlist_rule": "优先使用 active_research_period 对应的观察清单；季度复盘可创建或调整下一季度观察清单。",
+    "quarterly_review_rule": "1/4/7/10 月 1 日复盘上一自然季度，同时更新 active_research_period 或下一季度观察重点。"
+  },
+  "configured_automations": [
+    {
+      "automation_id": "ai",
+      "job_id": "daily_candidate_collection",
+      "schedule": "每天 22:00"
+    },
+    {
+      "automation_id": "ai-2",
+      "job_id": "weekly_candidate_review",
+      "schedule": "每周一 22:00"
+    },
+    {
+      "automation_id": "ai-3",
+      "job_id": "monthly_watchlist_update",
+      "schedule": "每月 1 日 22:00"
+    },
+    {
+      "automation_id": "ai-4",
+      "job_id": "quarterly_review",
+      "schedule": "1/4/7/10 月 1 日 22:00"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "daily_candidate_collection",
+      "name": "日频候选信息收集",
+      "frequency": "daily",
+      "mode": "automatic_candidate_only",
+      "writes_to": [
+        "data-source/05_信息候选池/",
+        "metadata/sources.json",
+        "metadata/update-state.json"
+      ],
+      "reads_from": [
+        "README.md",
+        "metadata/automation-plan.json",
+        "metadata/taxonomy.json",
+        "metadata/sources.json",
+        "metadata/direction-registry.json",
+        "metadata/source-registry.json",
+        "metadata/update-state.json",
+        "data-source/05_信息候选池/"
+      ],
+      "allowed_actions": [
+        "追加候选信息",
+        "按 active_research_period 或当前季度选择/新建候选池文件",
+        "新建周期文件时同步 metadata/sources.json",
+        "更新 metadata/update-state.json",
+        "标注来源层级",
+        "标注潜在影响方向",
+        "标记 new_direction_candidate",
+        "生成待处理摘要"
+      ],
+      "blocked_actions": [
+        "直接修改正式方向研究",
+        "直接改变 status 或 confidence",
+        "直接生成投资结论"
+      ]
+    },
+    {
+      "id": "weekly_candidate_review",
+      "name": "周频候选池复核",
+      "frequency": "weekly",
+      "mode": "automatic_with_review_fallback",
+      "writes_to": [
+        "data-source/01_方向研究/",
+        "data-source/03_观察清单/",
+        "metadata/direction-registry.json",
+        "metadata/sources.json",
+        "metadata/update-state.json",
+        "CHANGELOG.md"
+      ],
+      "reads_from": [
+        "README.md",
+        "metadata/automation-plan.json",
+        "metadata/taxonomy.json",
+        "metadata/sources.json",
+        "metadata/direction-registry.json",
+        "metadata/source-registry.json",
+        "metadata/update-state.json",
+        "data-source/05_信息候选池/"
+      ],
+      "allowed_actions": [
+        "根据候选池提出正式更新建议",
+        "更新已有正式文档",
+        "新增或升级方向候选",
+        "调整方向状态",
+        "按 active_research_period 或当前季度选择/新建观察清单",
+        "同步元数据",
+        "运行校验脚本"
+      ],
+      "requires_confirmation": false
+    },
+    {
+      "id": "monthly_watchlist_update",
+      "name": "月频观察清单更新",
+      "frequency": "monthly",
+      "mode": "automatic_with_review_fallback",
+      "writes_to": [
+        "data-source/03_观察清单/",
+        "metadata/direction-registry.json",
+        "metadata/sources.json",
+        "metadata/update-state.json",
+        "CHANGELOG.md"
+      ],
+      "reads_from": [
+        "README.md",
+        "metadata/automation-plan.json",
+        "metadata/taxonomy.json",
+        "metadata/sources.json",
+        "metadata/direction-registry.json",
+        "metadata/source-registry.json",
+        "metadata/update-state.json",
+        "data-source/05_信息候选池/",
+        "data-source/03_观察清单/",
+        "data-source/01_方向研究/"
+      ],
+      "allowed_actions": [
+        "按 active_research_period 或当前季度选择/新建观察清单",
+        "调整观察方向优先级",
+        "新增或删除验证信号",
+        "沉淀当月核心问题",
+        "同步元数据",
+        "运行校验脚本"
+      ],
+      "requires_confirmation": false
+    },
+    {
+      "id": "quarterly_review",
+      "name": "季度判断复盘",
+      "frequency": "quarterly",
+      "mode": "automatic_with_review_fallback",
+      "writes_to": [
+        "data-source/04_复盘记录/",
+        "data-source/03_观察清单/",
+        "metadata/direction-registry.json",
+        "metadata/sources.json",
+        "metadata/update-state.json",
+        "CHANGELOG.md"
+      ],
+      "reads_from": [
+        "README.md",
+        "metadata/automation-plan.json",
+        "metadata/taxonomy.json",
+        "metadata/sources.json",
+        "metadata/direction-registry.json",
+        "metadata/source-registry.json",
+        "metadata/update-state.json",
+        "data-source/05_信息候选池/",
+        "data-source/01_方向研究/",
+        "data-source/03_观察清单/",
+        "data-source/04_复盘记录/"
+      ],
+      "allowed_actions": [
+        "按当前年度或季度选择或新建复盘记录",
+        "复盘已验证判断",
+        "记录被削弱或证伪的判断",
+        "调整下一季度观察重点",
+        "同步方向状态和元数据",
+        "运行校验脚本"
+      ],
+      "requires_confirmation": false
+    }
+  ],
+  "source_policy": {
+    "tier_1": "可用于正式更新",
+    "tier_2": "可用于正式更新，但建议交叉验证",
+    "tier_3": "通常先进入候选池",
+    "low_priority": "只进入候选池，不直接更新正式文档"
+  },
+  "network_policy": {
+    "daily": "如果外部网络不可用，记录 network_limited 到 metadata/update-state.json，不更新正式文档，不创建空候选信息，运行本地校验并报告网络受限。",
+    "weekly": "如果外部网络不可用，仍处理本地候选池和已有文档；不得因为无法联网补充来源而阻断本地复核。",
+    "monthly": "如果外部网络不可用，基于本地候选池、方向研究和观察清单更新；需要外部确认的事项标记 review。",
+    "quarterly": "如果外部网络不可用，基于本地记录完成复盘；缺失外部验证的结论标记 review。",
+    "forbidden": "网络受限时不得编造来源、不得生成无法追溯的新事实、不得把网络失败当作产业判断变化。"
+  },
+  "validation_command": "node scripts/validate-knowledge-base.js",
+  "skill": "/Users/pengshuaifeng/.codex/skills/ai-trend-knowledge-maintainer"
+}

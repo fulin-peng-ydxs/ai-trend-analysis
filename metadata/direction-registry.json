@@ -1,0 +1,73 @@
+{
+  "updated_at": "2026-06-21",
+  "description": "AI 趋势投资知识库方向总表。自动化任务应优先读取本文件识别当前方向、新方向候选和方向状态。",
+  "new_direction_policy": {
+    "candidate_condition": "不属于现有方向，但满足入库标准或反复出现的 AI 产业趋势信息，先进入信息候选池并标记 new_direction_candidate。",
+    "promote_to_watching": "同一新方向出现多个可信来源，或单个 tier_1/tier_2 来源显示明确趋势、瓶颈或资本开支线索。",
+    "promote_to_tracking": "方向已经形成趋势、瓶颈、资本开支、受益环节和验证信号的基本链条，并需要正式方向研究文档。",
+    "pause_or_archive": "连续多个周期没有新增证据，或方向与投资总纲目标偏离，可降级为 paused 或 archived。"
+  },
+  "directions": [
+    {
+      "id": "ai_inference_infrastructure",
+      "name": "AI推理基础设施",
+      "status": "priority",
+      "document": "data-source/01_方向研究/AI推理基础设施.md",
+      "tags": ["AI", "推理", "数据中心", "资本开支"],
+      "started_at": "2026-06-20",
+      "updated_at": "2026-06-21",
+      "thesis": "AI 从训练转向大规模使用后，推理需求可能成为持续基础设施资本开支的核心驱动。",
+      "key_bottlenecks": ["推理成本", "推理芯片", "服务器", "调度系统", "电力与散热"],
+      "automation_scope": "日频重点关注，周频复核候选信息并更新正式文档。"
+    },
+    {
+      "id": "ai_agent",
+      "name": "AI Agent",
+      "status": "tracking",
+      "document": "data-source/01_方向研究/AI Agent.md",
+      "tags": ["AI", "Agent", "推理", "企业软件"],
+      "started_at": "2026-06-20",
+      "updated_at": "2026-06-21",
+      "thesis": "Agent 可能放大推理调用和企业工作流集成需求，但应用层收入和留存仍需验证。",
+      "key_bottlenecks": ["推理成本", "工具调用", "权限安全", "企业付费", "评估体系"],
+      "automation_scope": "日频进入候选池，周频判断是否增强或削弱正式判断。"
+    },
+    {
+      "id": "robotics",
+      "name": "机器人",
+      "status": "watching",
+      "document": "data-source/01_方向研究/机器人.md",
+      "tags": ["AI", "机器人", "制造", "自动化"],
+      "started_at": "2026-06-20",
+      "updated_at": "2026-06-21",
+      "thesis": "机器人是 AI 进入物理世界的长期方向，但 2026 年更需要观察批量订单、成本下降和场景 ROI。",
+      "key_bottlenecks": ["成本", "可靠性", "执行器", "供应链", "场景 ROI"],
+      "automation_scope": "周频检查，重大批量订单或核心零部件瓶颈进入正式更新。"
+    },
+    {
+      "id": "cpo_optical_interconnect",
+      "name": "CPO与下一代光互连",
+      "status": "priority",
+      "document": "data-source/01_方向研究/CPO与下一代光互连.md",
+      "tags": ["AI", "CPO", "光模块", "数据中心", "网络"],
+      "started_at": "2026-06-20",
+      "updated_at": "2026-06-21",
+      "thesis": "AI 集群扩大后，数据中心内部互连可能成为 GPU 之后的二级瓶颈。",
+      "key_bottlenecks": ["带宽密度", "功耗", "良率", "封装散热", "客户认证"],
+      "automation_scope": "日频重点关注 800G、1.6T、硅光、CPO 和大客户网络架构变化。"
+    },
+    {
+      "id": "power_and_cooling",
+      "name": "电力与散热",
+      "status": "priority",
+      "document": "data-source/01_方向研究/电力与散热.md",
+      "tags": ["AI", "电力", "散热", "数据中心", "资本开支"],
+      "started_at": "2026-06-20",
+      "updated_at": "2026-06-21",
+      "thesis": "AI 数据中心扩张后，电力、并网、变压器、液冷和高密度机房可能成为硬约束。",
+      "key_bottlenecks": ["电网接入", "变压器", "UPS", "液冷", "高功率机柜"],
+      "automation_scope": "日频重点关注云厂商资本开支、并网延迟、液冷渗透率和电力设备订单。"
+    }
+  ],
+  "candidate_directions": []
+}
