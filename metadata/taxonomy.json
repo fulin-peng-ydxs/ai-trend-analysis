@@ -71,7 +71,7 @@
     },
     {
       "id": "archived",
-      "name": "暂停跟踪"
+      "name": "归档"
     }
   ],
   "confidence_levels": [

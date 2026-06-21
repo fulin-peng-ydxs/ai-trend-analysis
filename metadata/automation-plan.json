@@ -59,11 +59,13 @@
         "更新 metadata/update-state.json",
         "标注来源层级",
         "标注潜在影响方向",
+        "已有方向候选的处理结果标记为 watch",
         "标记 new_direction_candidate",
         "生成待处理摘要"
       ],
       "blocked_actions": [
         "直接修改正式方向研究",
+        "把尚未写入正式文档的候选记录标记为 update 或 create",
         "直接改变 status 或 confidence",
         "直接生成投资结论"
       ]

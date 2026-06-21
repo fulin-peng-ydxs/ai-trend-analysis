@@ -213,9 +213,10 @@ function validateCandidatePool(file, taxonomy) {
 function scheduleRequirements(schedule) {
   if (schedule === "每天 22:00") return ["FREQ=DAILY", "BYHOUR=22"];
   if (schedule === "每周一 22:00") return ["FREQ=WEEKLY", "BYDAY=MO", "BYHOUR=22"];
-  if (schedule === "每月 1 日 22:00") return ["FREQ=MONTHLY", "BYMONTHDAY=1", "BYHOUR=22"];
+  // Monthly/quarterly Codex automation cards display the local intended time when RRULE hours use UTC.
+  if (schedule === "每月 1 日 22:00") return ["FREQ=MONTHLY", "BYMONTHDAY=1", "BYHOUR=14"];
   if (schedule === "1/4/7/10 月 1 日 23:00") {
-    return ["FREQ=MONTHLY", "BYMONTH=1,4,7,10", "BYMONTHDAY=1", "BYHOUR=23"];
+    return ["FREQ=MONTHLY", "BYMONTH=1,4,7,10", "BYMONTHDAY=1", "BYHOUR=15"];
   }
   throw new Error(`unsupported automation schedule in metadata/automation-plan.json: ${schedule}`);
 }

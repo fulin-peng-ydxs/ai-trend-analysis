@@ -77,7 +77,7 @@ sources:
 - `validated`：核心判断已被关键证据验证；
 - `weakened`：原判断被削弱，需要降级观察；
 - `rejected`：原判断被证伪；
-- `archived`：暂停跟踪，仅保留历史记录。
+- `archived`：归档，仅保留历史记录。
 
 方向状态用于描述一个产业方向的自动化调度策略，维护在 `metadata/direction-registry.json`：
 
@@ -125,10 +125,10 @@ sources:
 候选信息处理结果分为：
 
 - `ignore`：不进入知识库，仅保留候选记录；
-- `watch`：进入候选池，等待更多证据；
+- `watch`：已进入候选池，等待更多证据或周频复核；日频发现的已有方向信息默认使用该状态；
 - `new_direction_candidate`：新方向候选，进入候选池并等待升级判断；
-- `update`：更新已有正式文档；
-- `create`：新建正式文档；
+- `update`：已完成已有正式文档更新；不能用于只建议后续更新但尚未写入正式文档的候选记录；
+- `create`：已完成新建正式文档；不能用于只建议后续新建但尚未创建文档的候选记录；
 - `review`：自动化无法可靠处理，需人工复核后再处理。
 
 ## 当前闭环
@@ -176,7 +176,8 @@ sources:
 - 自动化先读取 `metadata/update-state.json` 的 `period_policy.active_research_period`，当前活跃研究周期为 `2026Q2`；
 - 自动化优先读取 `metadata/direction-registry.json`，不要在 prompt 中写死方向范围；
 - 自动化优先读取 `metadata/source-registry.json`，未登记来源只能作为补充；
-- 日频任务只追加信息候选池，不直接修改正式文档；
+- frontmatter、`metadata/sources.json`、方向状态、候选处理结果和来源层级使用 `metadata/taxonomy.json` 中的英文机器枚举；正文表格中仅用于展示强度、确定性、优先级或预期差的字段使用中文值，如“高/中高/中/低”；
+- 日频任务只追加信息候选池，不直接修改正式文档；日频不得把候选记录标记为 `update` 或 `create`，除非同一次执行已经实际写入或新建正式文档；
 - 周频任务整理候选池、回写候选处理结果，并自动判断是否更新正式文档；
 - 月频任务更新观察清单；
 - 季度任务更新复盘记录；

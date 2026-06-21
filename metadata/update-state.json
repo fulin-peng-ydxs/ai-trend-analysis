@@ -9,11 +9,11 @@
   },
   "jobs": {
     "daily": {
-      "last_success_at": null,
-      "last_status": "not_run",
+      "last_success_at": "2026-06-21T22:02:10+08:00",
+      "last_status": "success",
       "last_error": "",
-      "last_candidate_count": 0,
-      "last_summary": ""
+      "last_candidate_count": 6,
+      "last_summary": "追加 6 条候选信息到 2026Q2 候选池，覆盖 AI推理基础设施、CPO与下一代光互连、电力与散热、AI Agent，并识别 AI-RAN/边缘AI基础设施新方向候选。"
     },
     "weekly": {
       "last_success_at": null,
