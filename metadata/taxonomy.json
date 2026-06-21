@@ -1,0 +1,102 @@
+{
+  "project": {
+    "name": "AI趋势投资知识源仓库",
+    "description": "面向 AI 趋势投资研究的 Markdown 知识数据源仓库",
+    "updated_at": "2026-06-20"
+  },
+  "categories": [
+    {
+      "id": "investment_framework",
+      "name": "投资总纲",
+      "directory": "data-source/00_投资总纲",
+      "description": "方法论、判断框架和总原则"
+    },
+    {
+      "id": "direction_research",
+      "name": "方向研究",
+      "directory": "data-source/01_方向研究",
+      "description": "按趋势、瓶颈、资本开支和验证信号沉淀方向研究"
+    },
+    {
+      "id": "historical_case",
+      "name": "历史案例",
+      "directory": "data-source/02_历史案例",
+      "description": "用于训练判断框架的历史案例复盘"
+    },
+    {
+      "id": "watchlist",
+      "name": "观察清单",
+      "directory": "data-source/03_观察清单",
+      "description": "阶段性观察问题、跟踪信号和优先级"
+    },
+    {
+      "id": "review",
+      "name": "复盘记录",
+      "directory": "data-source/04_复盘记录",
+      "description": "季度、年度或专题复盘"
+    },
+    {
+      "id": "template",
+      "name": "模板",
+      "directory": "data-source/99_模板",
+      "description": "新增文档时使用的标准模板"
+    }
+  ],
+  "statuses": [
+    {
+      "id": "watching",
+      "name": "观察中"
+    },
+    {
+      "id": "tracking",
+      "name": "持续跟踪"
+    },
+    {
+      "id": "validated",
+      "name": "已验证"
+    },
+    {
+      "id": "weakened",
+      "name": "逻辑削弱"
+    },
+    {
+      "id": "rejected",
+      "name": "已证伪"
+    },
+    {
+      "id": "archived",
+      "name": "暂停跟踪"
+    }
+  ],
+  "confidence_levels": [
+    "low",
+    "medium",
+    "medium_high",
+    "high"
+  ],
+  "core_chain": [
+    "趋势",
+    "瓶颈",
+    "资本开支",
+    "钱流向谁",
+    "稀缺性",
+    "市场定价",
+    "验证信号",
+    "复盘"
+  ],
+  "recommended_tags": [
+    "AI",
+    "推理",
+    "Agent",
+    "机器人",
+    "CPO",
+    "光模块",
+    "电力",
+    "散热",
+    "数据中心",
+    "资本开支",
+    "历史案例",
+    "观察清单",
+    "复盘"
+  ]
+}

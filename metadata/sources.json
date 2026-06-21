@@ -1,0 +1,104 @@
+{
+  "updated_at": "2026-06-20",
+  "documents": [
+    {
+      "id": "ai_trend_investment_framework",
+      "title": "AI趋势投资判断框架",
+      "category": "投资总纲",
+      "status": "validated",
+      "confidence": "high",
+      "path": "data-source/00_投资总纲/AI趋势投资判断框架.md",
+      "tags": ["AI", "投资框架", "趋势", "瓶颈", "资本开支"]
+    },
+    {
+      "id": "ai_inference_infrastructure",
+      "title": "AI推理基础设施",
+      "category": "方向研究",
+      "status": "tracking",
+      "confidence": "high",
+      "path": "data-source/01_方向研究/AI推理基础设施.md",
+      "tags": ["AI", "推理", "数据中心", "资本开支"]
+    },
+    {
+      "id": "ai_agent",
+      "title": "AI Agent",
+      "category": "方向研究",
+      "status": "tracking",
+      "confidence": "medium",
+      "path": "data-source/01_方向研究/AI Agent.md",
+      "tags": ["AI", "Agent", "推理", "企业软件"]
+    },
+    {
+      "id": "robotics",
+      "title": "机器人",
+      "category": "方向研究",
+      "status": "watching",
+      "confidence": "medium",
+      "path": "data-source/01_方向研究/机器人.md",
+      "tags": ["AI", "机器人", "制造", "自动化"]
+    },
+    {
+      "id": "cpo_optical_interconnect",
+      "title": "CPO与下一代光互连",
+      "category": "方向研究",
+      "status": "tracking",
+      "confidence": "medium_high",
+      "path": "data-source/01_方向研究/CPO与下一代光互连.md",
+      "tags": ["AI", "CPO", "光模块", "数据中心", "网络"]
+    },
+    {
+      "id": "power_and_cooling",
+      "title": "电力与散热",
+      "category": "方向研究",
+      "status": "tracking",
+      "confidence": "high",
+      "path": "data-source/01_方向研究/电力与散热.md",
+      "tags": ["AI", "电力", "散热", "数据中心", "资本开支"]
+    },
+    {
+      "id": "nvidia_case",
+      "title": "英伟达案例",
+      "category": "历史案例",
+      "status": "validated",
+      "confidence": "high",
+      "path": "data-source/02_历史案例/英伟达.md",
+      "tags": ["AI", "英伟达", "GPU", "历史案例"]
+    },
+    {
+      "id": "optical_module_case",
+      "title": "光模块案例",
+      "category": "历史案例",
+      "status": "validated",
+      "confidence": "high",
+      "path": "data-source/02_历史案例/光模块.md",
+      "tags": ["AI", "光模块", "CPO", "历史案例"]
+    },
+    {
+      "id": "power_equipment_case",
+      "title": "电力设备案例",
+      "category": "历史案例",
+      "status": "validated",
+      "confidence": "medium_high",
+      "path": "data-source/02_历史案例/电力设备.md",
+      "tags": ["AI", "电力", "数据中心", "历史案例"]
+    },
+    {
+      "id": "watchlist_2026q3",
+      "title": "2026Q3观察清单",
+      "category": "观察清单",
+      "status": "tracking",
+      "confidence": "medium",
+      "path": "data-source/03_观察清单/2026Q3_观察清单.md",
+      "tags": ["AI", "观察清单", "2026Q3"]
+    },
+    {
+      "id": "review_2026",
+      "title": "2026判断复盘",
+      "category": "复盘记录",
+      "status": "tracking",
+      "confidence": "medium",
+      "path": "data-source/04_复盘记录/2026_判断复盘.md",
+      "tags": ["AI", "复盘", "2026"]
+    }
+  ]
+}
