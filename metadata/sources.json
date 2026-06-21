@@ -83,13 +83,13 @@
       "tags": ["AI", "电力", "数据中心", "历史案例"]
     },
     {
-      "id": "watchlist_2026q3",
-      "title": "2026Q3观察清单",
+      "id": "watchlist_2026q2",
+      "title": "2026Q2观察清单",
       "category": "观察清单",
       "status": "tracking",
       "confidence": "medium",
-      "path": "data-source/03_观察清单/2026Q3_观察清单.md",
-      "tags": ["AI", "观察清单", "2026Q3"]
+      "path": "data-source/03_观察清单/2026Q2_观察清单.md",
+      "tags": ["AI", "观察清单", "2026Q2"]
     },
     {
       "id": "review_2026",
@@ -101,13 +101,13 @@
       "tags": ["AI", "复盘", "2026"]
     },
     {
-      "id": "candidate_pool_2026q3",
-      "title": "2026Q3信息候选池",
+      "id": "candidate_pool_2026q2",
+      "title": "2026Q2信息候选池",
       "category": "信息候选池",
       "status": "watching",
       "confidence": "medium",
-      "path": "data-source/05_信息候选池/2026Q3_信息候选池.md",
-      "tags": ["AI", "信息候选池", "2026Q3"]
+      "path": "data-source/05_信息候选池/2026Q2_信息候选池.md",
+      "tags": ["AI", "信息候选池", "2026Q2"]
     }
   ]
 }

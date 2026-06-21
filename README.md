@@ -68,6 +68,8 @@ sources:
 
 ## 状态规范
 
+枚举值的机器可读源头是 `metadata/taxonomy.json`；本节只做人工阅读说明。更新枚举时必须先改 `metadata/taxonomy.json`，再同步模板和说明文档，并运行本地校验。
+
 文档状态用于描述单篇 Markdown 的研究成熟度：
 
 - `watching`：观察中，尚未形成稳定判断；
@@ -131,7 +133,7 @@ sources:
 
 ## 当前闭环
 
-当前项目已经具备完整的知识库更新闭环：
+当前项目已经配置知识库更新闭环；由于项目创建于 2026-06-21，自动化任务尚未完成首次运行，实际运行结果以 `metadata/update-state.json` 为准：
 
 ```text
 固定来源注册表
@@ -150,7 +152,7 @@ sources:
 - `ai`：日频候选收集，每天 22:00；
 - `ai-2`：周频候选复核，每周一 22:00；
 - `ai-3`：月频观察清单更新，每月 1 日 22:00；
-- `ai-4`：季度判断复盘，1/4/7/10 月 1 日 22:00。
+- `ai-4`：季度判断复盘，1/4/7/10 月 1 日 23:00。
 
 ## 外部系统接入建议
 
@@ -167,13 +169,15 @@ sources:
 
 自动化方案记录在 `metadata/automation-plan.json`。
 
+自动化任务的真实运行配置保存在本机 Codex 自动化目录；`metadata/automation-plan.json` 用于仓库内留痕和校验。两者不一致时，本地校验脚本会报错。
+
 当前建议采用自动判断、异常回退模式：
 
-- 自动化先读取 `metadata/update-state.json` 的 `period_policy.active_research_period`，当前活跃研究周期为 `2026Q3`；
+- 自动化先读取 `metadata/update-state.json` 的 `period_policy.active_research_period`，当前活跃研究周期为 `2026Q2`；
 - 自动化优先读取 `metadata/direction-registry.json`，不要在 prompt 中写死方向范围；
 - 自动化优先读取 `metadata/source-registry.json`，未登记来源只能作为补充；
 - 日频任务只追加信息候选池，不直接修改正式文档；
-- 周频任务整理候选池并自动判断是否更新正式文档；
+- 周频任务整理候选池、回写候选处理结果，并自动判断是否更新正式文档；
 - 月频任务更新观察清单；
 - 季度任务更新复盘记录；
 - 证据冲突、来源不足或重大方法论变化时标记为 `review`。
@@ -197,4 +201,7 @@ node scripts/validate-knowledge-base.js
 - 来源注册表中的来源层级是否有效；
 - 非模板 Markdown 是否已进入索引；
 - 索引和 frontmatter 的核心字段是否一致；
-- 正式文档是否包含“更新记录”。
+- 正式文档是否包含“更新记录”；
+- 信息候选池处理结果是否符合 `metadata/taxonomy.json`；
+- 信息候选池处理统计是否覆盖全部候选处理枚举；
+- 本地 Codex 自动化任务存在时，校验其状态、工作目录和调度时间是否与 `metadata/automation-plan.json` 一致。

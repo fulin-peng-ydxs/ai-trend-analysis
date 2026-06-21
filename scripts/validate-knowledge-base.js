@@ -166,6 +166,100 @@ function validateNoTemplateInstructions(file) {
   }
 }
 
+function validateCandidatePool(file, taxonomy) {
+  const content = readMarkdown(file);
+  const allowedDecisions = new Set(taxonomy.candidate_decisions || []);
+  const allowedSourceTiers = new Set((taxonomy.source_tiers || []).map((item) => item.id));
+
+  if (!allowedDecisions.size) {
+    throw new Error("metadata/taxonomy.json candidate_decisions must contain at least one item");
+  }
+
+  for (const decision of allowedDecisions) {
+    const rowPattern = new RegExp(`\\|\\s*${decision}\\s*\\|`);
+    const descriptionPattern = new RegExp("`" + decision + "`");
+    if (!rowPattern.test(content)) {
+      throw new Error(`${file} processing stats missing decision row: ${decision}`);
+    }
+    if (!descriptionPattern.test(content)) {
+      throw new Error(`${file} processing description missing decision: ${decision}`);
+    }
+  }
+
+  const recordsStart = content.indexOf("## 候选记录");
+  if (recordsStart === -1) {
+    throw new Error(`${file} missing 候选记录 section`);
+  }
+  const recordsEnd = content.indexOf("\n## ", recordsStart + 1);
+  const recordsSection = content.slice(recordsStart, recordsEnd === -1 ? content.length : recordsEnd);
+  const rows = recordsSection.split(/\r?\n/).filter((line) => line.trim().startsWith("|"));
+  for (const row of rows) {
+    if (/^\|\s*-+\s*\|/.test(row) || row.includes("处理结果")) continue;
+    const cells = row.split("|").slice(1, -1).map((cell) => cell.trim());
+    if (cells.length !== 7) {
+      throw new Error(`${file} candidate row must contain 7 columns: ${row}`);
+    }
+    const sourceTier = cells[1];
+    const decision = cells[6];
+    if (sourceTier !== "-" && !sourceTier.includes("/") && !allowedSourceTiers.has(sourceTier)) {
+      throw new Error(`${file} candidate row has invalid source tier: ${sourceTier}`);
+    }
+    if (!allowedDecisions.has(decision)) {
+      throw new Error(`${file} candidate row has invalid decision: ${decision}`);
+    }
+  }
+}
+
+function scheduleRequirements(schedule) {
+  if (schedule === "每天 22:00") return ["FREQ=DAILY", "BYHOUR=22"];
+  if (schedule === "每周一 22:00") return ["FREQ=WEEKLY", "BYDAY=MO", "BYHOUR=22"];
+  if (schedule === "每月 1 日 22:00") return ["FREQ=MONTHLY", "BYMONTHDAY=1", "BYHOUR=22"];
+  if (schedule === "1/4/7/10 月 1 日 23:00") {
+    return ["FREQ=MONTHLY", "BYMONTH=1,4,7,10", "BYMONTHDAY=1", "BYHOUR=23"];
+  }
+  throw new Error(`unsupported automation schedule in metadata/automation-plan.json: ${schedule}`);
+}
+
+function readTomlScalar(content, key) {
+  const match = content.match(new RegExp(`^${key}\\s*=\\s*"([^"]*)"`, "m"));
+  return match ? match[1] : undefined;
+}
+
+function validateAutomations() {
+  const plan = readJson("metadata/automation-plan.json");
+  if (!Array.isArray(plan.configured_automations)) {
+    throw new Error("metadata/automation-plan.json configured_automations must be an array");
+  }
+
+  const home = process.env.HOME;
+  if (!home) return;
+  const automationRoot = path.join(home, ".codex", "automations");
+  if (!fs.existsSync(automationRoot)) return;
+
+  for (const item of plan.configured_automations) {
+    if (!item.automation_id || !item.job_id || !item.schedule) {
+      throw new Error("configured automations must contain automation_id, job_id and schedule");
+    }
+    const file = path.join(automationRoot, item.automation_id, "automation.toml");
+    if (!fs.existsSync(file)) {
+      throw new Error(`configured automation does not exist locally: ${item.automation_id}`);
+    }
+    const content = fs.readFileSync(file, "utf8");
+    if (readTomlScalar(content, "status") !== "ACTIVE") {
+      throw new Error(`automation ${item.automation_id} must be ACTIVE`);
+    }
+    if (!content.includes(`"${root}"`)) {
+      throw new Error(`automation ${item.automation_id} cwd must include ${root}`);
+    }
+    const rrule = readTomlScalar(content, "rrule") || "";
+    for (const required of scheduleRequirements(item.schedule)) {
+      if (!rrule.includes(required)) {
+        throw new Error(`automation ${item.automation_id} rrule mismatch for schedule ${item.schedule}: missing ${required}`);
+      }
+    }
+  }
+}
+
 function validateDirectionRegistry(taxonomy, sources) {
   const registry = readJson("metadata/direction-registry.json");
   const allowedDirectionStatuses = new Set((taxonomy.direction_statuses || []).map((item) => item.id));
@@ -311,6 +405,9 @@ function main() {
     validateUpdateRecord(file);
     validateCurrentJudgment(file, frontmatter.category);
     validateNoTemplateInstructions(file, frontmatter.category);
+    if (frontmatter.category === "信息候选池") {
+      validateCandidatePool(file, taxonomy);
+    }
 
     if (!allowedCategories.has(frontmatter.category)) {
       throw new Error(`${file} category is not defined in metadata/taxonomy.json: ${frontmatter.category}`);
@@ -328,6 +425,7 @@ function main() {
 
   validateDirectionRegistry(taxonomy, sources);
   validateSourceRegistry(taxonomy);
+  validateAutomations();
 
   console.log(`Knowledge base validation passed. Indexed documents: ${sources.documents.length}. Markdown files: ${markdownFiles.length}.`);
 }

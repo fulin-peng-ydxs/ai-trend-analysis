@@ -1,11 +1,11 @@
 {
   "updated_at": "2026-06-21",
   "period_policy": {
-    "active_research_period": "2026Q3",
+    "active_research_period": "2026Q2",
     "period_mode": "configured_active_period",
     "candidate_pool_rule": "优先写入 active_research_period 对应的信息候选池；未配置时再按当前日期选择季度文件。",
-    "watchlist_rule": "优先更新 active_research_period 对应的观察清单；季度复盘时可同步下一季度观察重点。",
-    "quarterly_review_rule": "1/4/7/10 月 1 日运行季度复盘时，复盘上一自然季度，并更新 active_research_period 或下一季度观察清单。"
+    "watchlist_rule": "优先更新 active_research_period 对应的观察清单；active_research_period 默认与当前自然季度一致。",
+    "quarterly_review_rule": "1/4/7/10 月 1 日运行季度复盘时，复盘上一自然季度；复盘完成后，将 active_research_period 切换或确认到运行日所在自然季度，并创建或更新该季度观察清单。"
   },
   "jobs": {
     "daily": {

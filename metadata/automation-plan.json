@@ -4,10 +4,10 @@
   "principle": "先自动进入候选池，再由自动化按规则判断是否更新正式知识库；冲突或重大不确定事项标记 review",
   "period_policy": {
     "state_source": "metadata/update-state.json.period_policy",
-    "default_active_research_period": "2026Q3",
+    "default_active_research_period": "2026Q2",
     "candidate_pool_rule": "优先使用 active_research_period 对应的信息候选池；未配置时按当前日期选择季度文件。",
-    "watchlist_rule": "优先使用 active_research_period 对应的观察清单；季度复盘可创建或调整下一季度观察清单。",
-    "quarterly_review_rule": "1/4/7/10 月 1 日复盘上一自然季度，同时更新 active_research_period 或下一季度观察重点。"
+    "watchlist_rule": "优先使用 active_research_period 对应的观察清单；active_research_period 默认与当前自然季度一致。",
+    "quarterly_review_rule": "1/4/7/10 月 1 日复盘上一自然季度；复盘完成后，将 active_research_period 切换或确认到运行日所在自然季度，并创建或更新该季度观察重点。"
   },
   "configured_automations": [
     {
@@ -28,7 +28,7 @@
     {
       "automation_id": "ai-4",
       "job_id": "quarterly_review",
-      "schedule": "1/4/7/10 月 1 日 22:00"
+      "schedule": "1/4/7/10 月 1 日 23:00"
     }
   ],
   "jobs": [
@@ -74,6 +74,7 @@
       "frequency": "weekly",
       "mode": "automatic_with_review_fallback",
       "writes_to": [
+        "data-source/05_信息候选池/",
         "data-source/01_方向研究/",
         "data-source/03_观察清单/",
         "metadata/direction-registry.json",
@@ -93,6 +94,7 @@
       ],
       "allowed_actions": [
         "根据候选池提出正式更新建议",
+        "回写候选记录处理结果和处理统计",
         "更新已有正式文档",
         "新增或升级方向候选",
         "调整方向状态",
@@ -166,7 +168,7 @@
         "按当前年度或季度选择或新建复盘记录",
         "复盘已验证判断",
         "记录被削弱或证伪的判断",
-        "调整下一季度观察重点",
+        "调整运行日所在季度观察重点",
         "同步方向状态和元数据",
         "运行校验脚本"
       ],
