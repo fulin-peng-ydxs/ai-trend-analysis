@@ -2,6 +2,14 @@ const fs = require("fs");
 const path = require("path");
 
 const root = process.cwd();
+
+// 知识库结构校验脚本。
+//
+// 设计边界：
+// - 校验机器可读取的稳定契约，例如 metadata 索引、frontmatter、枚举值、自动化配置和注册表引用。
+// - 校验知识库维护闭环所需的基础卫生，例如正式文档必须有更新记录，不能残留模板说明。
+// - 不校验投资判断本身是否正确，也不把某个模板章节标题或表格结构写死为全局规则；
+//   具体章节表达由模板、技能和人工判断共同约束，脚本只守住跨文档稳定不变量。
 const requiredFields = [
   "schema_version",
   "title",
@@ -18,6 +26,7 @@ function readJson(file) {
   return JSON.parse(fs.readFileSync(fullPath, "utf8"));
 }
 
+// 遍历 data-source 下的 Markdown，用于发现“存在但未被 metadata/sources.json 索引”的正式文档。
 function walkMarkdown(dir) {
   const fullDir = path.join(root, dir);
   if (!fs.existsSync(fullDir)) return [];
@@ -35,6 +44,8 @@ function walkMarkdown(dir) {
   return files.sort();
 }
 
+// 所有知识库 Markdown 都必须使用 YAML frontmatter。
+// 这里不引入完整 YAML 解析器，是因为当前契约只依赖一层标量和一层列表。
 function extractFrontmatter(file) {
   const content = fs.readFileSync(path.join(root, file), "utf8");
   if (!content.startsWith("---\n")) {
@@ -53,12 +64,15 @@ function readMarkdown(file) {
   return fs.readFileSync(path.join(root, file), "utf8");
 }
 
+// 读取 frontmatter 中的一层标量字段，例如 title/status/confidence。
 function getScalar(frontmatter, field) {
   const match = frontmatter.match(new RegExp(`^${field}:\\s*(.*)$`, "m"));
   if (!match) return undefined;
   return match[1].trim().replace(/^["']|["']$/g, "");
 }
 
+// 读取 frontmatter 中的一层列表字段，例如 tags/sources。
+// 同时兼容极少量 inline 值，避免因为空数组或单值写法导致脚本误判。
 function getList(frontmatter, field) {
   const lines = frontmatter.split(/\r?\n/);
   const start = lines.findIndex((line) => line === `${field}:`);
@@ -79,6 +93,8 @@ function getList(frontmatter, field) {
   return values;
 }
 
+// frontmatter 是文档和 metadata/sources.json、注册表之间的主同步点。
+// 这里先校验基础字段存在，再校验格式和最小可用性。
 function parseFrontmatter(file) {
   const frontmatter = extractFrontmatter(file);
   for (const field of requiredFields) {
@@ -117,10 +133,12 @@ function assertEqual(file, field, left, right) {
   }
 }
 
+// 模板目录只用于生成正式文档，不纳入正式知识库索引和更新记录要求。
 function isTemplate(file) {
   return file.startsWith("data-source/99_模板/");
 }
 
+// 正式文档必须保留“更新记录”，这样自动化更新、人工复盘和历史追踪能形成闭环。
 function validateUpdateRecord(file) {
   if (isTemplate(file)) return;
   const content = readMarkdown(file);
@@ -129,25 +147,7 @@ function validateUpdateRecord(file) {
   }
 }
 
-function validateCurrentJudgment(file, category) {
-  if (isTemplate(file) || category !== "方向研究") return;
-  const content = readMarkdown(file);
-  if (!content.includes("## 8. 当前判断")) {
-    throw new Error(`${file} missing 当前判断 section`);
-  }
-  if (!content.includes("> 判断摘要：")) {
-    throw new Error(`${file} missing 判断摘要 in 当前判断 section`);
-  }
-
-  const requiredRows = ["方向状态", "文档状态", "置信度", "核心结论", "关键追问", "下一步"];
-  for (const row of requiredRows) {
-    const pattern = new RegExp(`\\|\\s*${row}\\s*\\|`);
-    if (!pattern.test(content)) {
-      throw new Error(`${file} 当前判断 missing row: ${row}`);
-    }
-  }
-}
-
+// 正式文档中不能残留模板填写提示，否则技能后续读取时容易把说明文本当成真实内容。
 function validateNoTemplateInstructions(file) {
   if (isTemplate(file)) return;
   const content = readMarkdown(file);
@@ -166,6 +166,9 @@ function validateNoTemplateInstructions(file) {
   }
 }
 
+// 候选池是自动化日频/周频任务最容易写入的文档。
+// 这里校验候选记录表格形状、来源分层和“处理结果”枚举，确保任务输出能被后续流程稳定读取。
+// 注意：candidate_decisions 表示候选信息的已处理状态，不表示“下一步建议动作”。
 function validateCandidatePool(file, taxonomy) {
   const content = readMarkdown(file);
   const allowedDecisions = new Set(taxonomy.candidate_decisions || []);
@@ -210,6 +213,11 @@ function validateCandidatePool(file, taxonomy) {
   }
 }
 
+// automation-plan.json 使用中文时间表达给技能和 README 阅读；
+// 本函数把这些表达转换为本机 automation.toml 中应出现的 RRULE 片段。
+// 当前本机自动化存在两类表现：
+// - 日频/周频直接以北京时间小时写入 RRULE。
+// - 月频/季频在 Codex 卡片中展示北京时间，但 RRULE 小时采用 UTC 等价值。
 function scheduleRequirements(schedule) {
   if (schedule === "每天 22:00") return ["FREQ=DAILY", "BYHOUR=22"];
   if (schedule === "每周一 22:00") return ["FREQ=WEEKLY", "BYDAY=MO", "BYHOUR=22"];
@@ -221,11 +229,14 @@ function scheduleRequirements(schedule) {
   throw new Error(`unsupported automation schedule in metadata/automation-plan.json: ${schedule}`);
 }
 
+// automation.toml 里只需要读取 status/rrule 这类简单字符串字段。
 function readTomlScalar(content, key) {
   const match = content.match(new RegExp(`^${key}\\s*=\\s*"([^"]*)"`, "m"));
   return match ? match[1] : undefined;
 }
 
+// 校验 automation-plan.json 和本机 Codex 自动化配置是否一致。
+// 如果当前机器没有 ~/.codex/automations，则跳过本机配置校验，避免仓库在无自动化环境中无法检查。
 function validateAutomations() {
   const plan = readJson("metadata/automation-plan.json");
   if (!Array.isArray(plan.configured_automations)) {
@@ -261,6 +272,8 @@ function validateAutomations() {
   }
 }
 
+// 方向注册表用于把“方向名称/状态/标签/正式文档”集中管理。
+// 脚本只校验注册表引用和文档 frontmatter 的一致性，不再强制某个方向文档必须有固定章节名。
 function validateDirectionRegistry(taxonomy, sources) {
   const registry = readJson("metadata/direction-registry.json");
   const allowedDirectionStatuses = new Set((taxonomy.direction_statuses || []).map((item) => item.id));
@@ -310,6 +323,7 @@ function validateDirectionRegistry(taxonomy, sources) {
   }
 
   const candidateIds = new Set();
+  // 候选方向可以先进入注册表，但不能和正式方向重名/重 ID；状态必须保持 candidate。
   for (const direction of registry.candidate_directions) {
     if (!direction.id || ids.has(direction.id) || candidateIds.has(direction.id)) {
       throw new Error(`duplicate or empty candidate direction id: ${direction.id}`);
@@ -321,6 +335,8 @@ function validateDirectionRegistry(taxonomy, sources) {
   }
 }
 
+// 来源注册表是“哪些来源值得自动化/人工定期看”的清单。
+// 它不要求每个来源都已经产出文档，但要求来源 ID、分层、URL 和关注点可被技能稳定读取。
 function validateSourceRegistry(taxonomy) {
   const registry = readJson("metadata/source-registry.json");
   const allowedTiers = new Set((taxonomy.source_tiers || []).map((item) => item.id));
@@ -363,6 +379,8 @@ function main() {
     throw new Error("metadata/sources.json documents must be an array");
   }
 
+  // 第一轮以 metadata/sources.json 为准，校验索引项和实际文档 frontmatter 是否同步。
+  // sources.json 是外部检索、技能入口和索引类工具最稳定的读取入口，因此这里要求它不能漂移。
   const ids = new Set();
   const indexedPaths = new Set();
   for (const doc of sources.documents) {
@@ -378,7 +396,6 @@ function main() {
 
     const frontmatter = parseFrontmatter(doc.path);
     validateUpdateRecord(doc.path);
-    validateCurrentJudgment(doc.path, frontmatter.category);
     validateNoTemplateInstructions(doc.path, frontmatter.category);
 
     assertEqual(doc.path, "title", doc.title, frontmatter.title);
@@ -400,11 +417,12 @@ function main() {
     }
   }
 
+  // 第二轮以文件系统为准，发现遗漏索引的正式 Markdown，并对模板以外的文档执行通用卫生检查。
+  // 这样可以同时覆盖“索引指向不存在文件”和“文件存在但未入索引”两类问题。
   const markdownFiles = walkMarkdown("data-source");
   for (const file of markdownFiles) {
     const frontmatter = parseFrontmatter(file);
     validateUpdateRecord(file);
-    validateCurrentJudgment(file, frontmatter.category);
     validateNoTemplateInstructions(file, frontmatter.category);
     if (frontmatter.category === "信息候选池") {
       validateCandidatePool(file, taxonomy);
@@ -424,6 +442,7 @@ function main() {
     }
   }
 
+  // 注册表和自动化配置是跨文档维护闭环的一部分，放在文档基础校验之后执行。
   validateDirectionRegistry(taxonomy, sources);
   validateSourceRegistry(taxonomy);
   validateAutomations();

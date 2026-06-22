@@ -38,7 +38,7 @@ metadata/
   taxonomy.json    # 分类、状态、置信度、标签规范
   direction-registry.json # 方向总表和方向状态
   source-registry.json # 固定信息源注册表
-  automation-plan.json # 自动化维护方案草案
+  automation-plan.json # 自动化维护计划和校验基准
   update-state.json # 自动化任务上次处理状态
 
 CHANGELOG.md       # 全局更新记录
@@ -133,7 +133,7 @@ sources:
 
 ## 当前闭环
 
-当前项目已经配置知识库更新闭环；由于项目创建于 2026-06-21，自动化任务尚未完成首次运行，实际运行结果以 `metadata/update-state.json` 为准：
+当前项目已经配置知识库更新闭环。日频任务已完成首次运行；周频、月频和季度任务尚未完成首次运行，实际运行结果以 `metadata/update-state.json` 为准：
 
 ```text
 固定来源注册表
@@ -153,6 +153,8 @@ sources:
 - `ai-2`：周频候选复核，每周一 22:00；
 - `ai-3`：月频观察清单更新，每月 1 日 22:00；
 - `ai-4`：季度判断复盘，1/4/7/10 月 1 日 23:00。
+
+以上时间按北京时间说明；真实 Codex 自动化配置以本机自动化目录和本地校验脚本为准。
 
 ## 外部系统接入建议
 
