@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21",
+  "updated_at": "2026-06-22",
   "description": "AI 趋势投资知识库方向总表。自动化任务应优先读取本文件识别当前方向、新方向候选和方向状态。",
   "new_direction_policy": {
     "candidate_condition": "不属于现有方向，但满足入库标准或反复出现的 AI 产业趋势信息，先进入信息候选池并标记 new_direction_candidate。",
@@ -15,7 +15,7 @@
       "document": "data-source/01_方向研究/AI推理基础设施.md",
       "tags": ["AI", "推理", "数据中心", "资本开支"],
       "started_at": "2026-06-20",
-      "updated_at": "2026-06-21",
+      "updated_at": "2026-06-22",
       "thesis": "AI 从训练转向大规模使用后，推理需求可能成为持续基础设施资本开支的核心驱动。",
       "key_bottlenecks": ["推理成本", "推理芯片", "服务器", "调度系统", "电力与散热"],
       "automation_scope": "日频重点关注，周频复核候选信息并更新正式文档。"
@@ -27,7 +27,7 @@
       "document": "data-source/01_方向研究/AI Agent.md",
       "tags": ["AI", "Agent", "推理", "企业软件"],
       "started_at": "2026-06-20",
-      "updated_at": "2026-06-21",
+      "updated_at": "2026-06-22",
       "thesis": "Agent 可能放大推理调用和企业工作流集成需求，但应用层收入和留存仍需验证。",
       "key_bottlenecks": ["推理成本", "工具调用", "权限安全", "企业付费", "评估体系"],
       "automation_scope": "日频进入候选池，周频判断是否增强或削弱正式判断。"
@@ -51,7 +51,7 @@
       "document": "data-source/01_方向研究/CPO与下一代光互连.md",
       "tags": ["AI", "CPO", "光模块", "数据中心", "网络"],
       "started_at": "2026-06-20",
-      "updated_at": "2026-06-21",
+      "updated_at": "2026-06-22",
       "thesis": "AI 集群扩大后，数据中心内部互连可能成为 GPU 之后的二级瓶颈。",
       "key_bottlenecks": ["带宽密度", "功耗", "良率", "封装散热", "客户认证"],
       "automation_scope": "日频重点关注 800G、1.6T、硅光、CPO 和大客户网络架构变化。"
@@ -63,11 +63,36 @@
       "document": "data-source/01_方向研究/电力与散热.md",
       "tags": ["AI", "电力", "散热", "数据中心", "资本开支"],
       "started_at": "2026-06-20",
-      "updated_at": "2026-06-21",
+      "updated_at": "2026-06-22",
       "thesis": "AI 数据中心扩张后，电力、并网、变压器、液冷和高密度机房可能成为硬约束。",
       "key_bottlenecks": ["电网接入", "变压器", "UPS", "液冷", "高功率机柜"],
       "automation_scope": "日频重点关注云厂商资本开支、并网延迟、液冷渗透率和电力设备订单。"
     }
   ],
-  "candidate_directions": []
+  "candidate_directions": [
+    {
+      "id": "ai_ran_edge_infrastructure",
+      "name": "AI-RAN/边缘AI基础设施",
+      "status": "candidate",
+      "tags": ["AI", "AI-RAN", "边缘AI", "电信网络", "6G"],
+      "first_seen_at": "2026-03-01",
+      "updated_at": "2026-06-22",
+      "source_tier": "tier_1",
+      "evidence": "NVIDIA 联合 BT、Cisco、Ericsson、Nokia、SK Telecom、T-Mobile 等推进 AI-native 6G 平台，把 AI 嵌入 RAN、边缘和核心网络。",
+      "watching_threshold": "出现运营商真实 CapEx、商用部署、边缘推理收入或设备订单后，升级为 watching。",
+      "reason_not_promoted": "当前已有技术联盟和平台叙事，但商业化节奏、付款方和收入流向尚未形成完整链条。"
+    },
+    {
+      "id": "ai_memory_hbm_supply_bottleneck",
+      "name": "AI存储/HBM供给瓶颈",
+      "status": "candidate",
+      "tags": ["AI", "HBM", "存储", "DRAM", "NAND", "供应链"],
+      "first_seen_at": "2026-06-22",
+      "updated_at": "2026-06-22",
+      "source_tier": "tier_2",
+      "evidence": "IDC 指出 AI 基础设施建设、GPU 服务器扩张和推理规模化正在吸收 HBM、高密度 DRAM 和企业级 NAND 供给。",
+      "watching_threshold": "出现多个 tier_1/tier_2 来源验证 HBM、DRAM 或企业级 NAND 的订单、价格、产能和交期紧张后，升级为 watching。",
+      "reason_not_promoted": "当前能验证供应链瓶颈方向，但还缺少受益环节、资本开支传导和验证信号的完整方向研究链条。"
+    }
+  ]
 }

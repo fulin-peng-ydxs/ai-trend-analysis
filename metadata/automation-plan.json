@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21",
+  "updated_at": "2026-06-23",
   "status": "active",
   "principle": "先自动进入候选池，再由自动化按规则判断是否更新正式知识库；冲突或重大不确定事项标记 review",
   "period_policy": {
@@ -13,12 +13,12 @@
     {
       "automation_id": "ai",
       "job_id": "daily_candidate_collection",
-      "schedule": "每天 22:00"
+      "schedule": "每天 20:00"
     },
     {
       "automation_id": "ai-2",
       "job_id": "weekly_candidate_review",
-      "schedule": "每周一 22:00"
+      "schedule": "每周一 21:00"
     },
     {
       "automation_id": "ai-3",
@@ -29,6 +29,11 @@
       "automation_id": "ai-4",
       "job_id": "quarterly_review",
       "schedule": "1/4/7/10 月 1 日 23:00"
+    },
+    {
+      "automation_id": "ai-5",
+      "job_id": "nightly_git_push",
+      "schedule": "每天 23:00"
     }
   ],
   "jobs": [
@@ -173,6 +178,36 @@
         "调整运行日所在季度观察重点",
         "同步方向状态和元数据",
         "运行校验脚本"
+      ],
+      "requires_confirmation": false
+    },
+    {
+      "id": "nightly_git_push",
+      "name": "夜间自动提交并推送仓库变更",
+      "frequency": "daily",
+      "mode": "automatic_with_validation_gate",
+      "writes_to": [
+        "仓库中所有 Git 可见文件"
+      ],
+      "reads_from": [
+        "README.md",
+        "metadata/automation-plan.json",
+        "metadata/update-state.json",
+        "scripts/validate-knowledge-base.js",
+        "仓库中所有 Git 可见文件"
+      ],
+      "allowed_actions": [
+        "检查 Git 可见变化",
+        "仅在仓库事实与说明不一致时补充 README 或自动化留痕",
+        "运行本地校验脚本",
+        "暂存全部 Git 可见变化",
+        "按提交消息规范生成 commit message",
+        "创建提交并推送远端"
+      ],
+      "blocked_actions": [
+        "校验失败时继续提交或推送",
+        "为了制造提交而改写无关文档",
+        "处理其他仓库"
       ],
       "requires_confirmation": false
     }

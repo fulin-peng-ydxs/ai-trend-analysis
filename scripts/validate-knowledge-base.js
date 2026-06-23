@@ -219,7 +219,10 @@ function validateCandidatePool(file, taxonomy) {
 // - 日频/周频直接以北京时间小时写入 RRULE。
 // - 月频/季频在 Codex 卡片中展示北京时间，但 RRULE 小时采用 UTC 等价值。
 function scheduleRequirements(schedule) {
+  if (schedule === "每天 20:00") return ["FREQ=DAILY", "BYHOUR=20"];
   if (schedule === "每天 22:00") return ["FREQ=DAILY", "BYHOUR=22"];
+  if (schedule === "每天 23:00") return ["FREQ=DAILY", "BYHOUR=23"];
+  if (schedule === "每周一 21:00") return ["FREQ=WEEKLY", "BYDAY=MO", "BYHOUR=21"];
   if (schedule === "每周一 22:00") return ["FREQ=WEEKLY", "BYDAY=MO", "BYHOUR=22"];
   // Monthly/quarterly Codex automation cards display the local intended time when RRULE hours use UTC.
   if (schedule === "每月 1 日 22:00") return ["FREQ=MONTHLY", "BYMONTHDAY=1", "BYHOUR=14"];

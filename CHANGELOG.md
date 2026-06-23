@@ -1,5 +1,14 @@
 # 更新记录
 
+## 2026-06-22
+
+- 执行周频候选复核，处理 2026Q2 信息候选池当前 10 条候选信息。
+- 将 NVIDIA/IREN 5GW AI 工厂、Meta CapEx 上修、Alphabet 技术基础设施 CapEx 结构、TrendForce CPO/NPO 市场规模、Microsoft Agent/Foundry token、NVIDIA 高温液冷等 6 条候选写入正式方向研究或 2026Q2 观察清单。
+- 将 AI-RAN/边缘AI基础设施、AI存储/HBM供给瓶颈登记为 `metadata/direction-registry.json` 的新方向候选，暂不新建正式方向文档。
+- 将 Envision Energy AI Power Systems 保持为 `watch`，等待订单、并网、经济性和客户采用证据。
+- 将 Chevron/Microsoft 供电协议标记为 `review`，等待 Microsoft、Chevron 或监管文件正式确认。
+- 同步候选池处理统计、方向注册表、来源注册表、文档索引更新时间和周频任务运行状态。
+
 ## 2026-06-20
 
 - 初始化 AI 趋势投资知识源仓库定位。

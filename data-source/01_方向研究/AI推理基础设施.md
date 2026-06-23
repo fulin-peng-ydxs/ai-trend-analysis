@@ -3,7 +3,7 @@ schema_version: 1
 title: AI推理基础设施
 category: 方向研究
 status: tracking
-updated_at: 2026-06-21
+updated_at: 2026-06-22
 confidence: high
 tags:
   - AI
@@ -17,6 +17,14 @@ sources:
     url: https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast
   - name: Amazon Q1 2026 results
     url: https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/default.aspx
+  - name: NVIDIA and IREN strategic partnership
+    url: https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-IREN-Announce-Strategic-Partnership-to-Accelerate-Deployment-of-up-to-5-Gigawatts-of-AI-Infrastructure/default.aspx
+  - name: Alphabet 2026 Q1 earnings call
+    url: https://abc.xyz/investor/events/event-details/2026/2026-Q1-Earnings-Call-2026-nW8kCrBAKS/default.aspx
+  - name: Microsoft FY2026 Q3 earnings call
+    url: https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3
+  - name: NVIDIA liquid cooling AI factories
+    url: https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/
 ---
 
 # AI推理基础设施
@@ -33,6 +41,10 @@ sources:
 | 数据中心收入继续高速增长 | tier_1 | NVIDIA FY2027 Q1 总收入 816 亿美元、数据中心收入 752 亿美元，数据中心网络收入 148 亿美元 | 高 | 增强 |
 | AI 收入进入规模化阶段 | tier_1 | Microsoft FY2026 Q3 披露 AI 业务年化收入运行率超过 370 亿美元 | 高 | 增强 |
 | 云厂商继续投入 AI 基础设施 | tier_1 | Amazon Q1 2026 披露 AWS 增长并强调 Trainium、NVIDIA GPU 与 AI 基础设施投入 | 高 | 增强 |
+| AI 工厂扩容向园区和电力管线前置 | tier_1 | NVIDIA 与 IREN 计划在全球数据中心管线中部署最多 5GW、面向 DSX 架构的 AI 基础设施 | 高 | 增强 |
+| 技术基础设施 CapEx 同时覆盖服务器、数据中心和网络 | tier_1 | Alphabet Q1 2026 CapEx 达 357 亿美元，技术基础设施投入约 60% 用于服务器、40% 用于数据中心和网络设备 | 高 | 增强 |
+| Agent 和 Foundry token 使用量开始验证推理需求 | tier_1 | Microsoft 披露 AI ARR 超过 370 亿美元，Foundry 年内将有超过 300 家客户处理超 1 万亿 token | 中高 | 增强 |
+| 高温液冷成为下一代 AI 工厂基础设计 | tier_1 | NVIDIA 披露 Rubin 代 AI 基础设施采用 100% 液冷架构，DSX 参考设计可减少机械制冷和设施冷却用水需求 | 中高 | 增强 |
 | 推理从单次训练变成持续使用需求 | tier_1/tier_3 | 搜索、办公、客服、代码、多模态和 Agent 都会持续消耗推理算力 | 高 | 增强 |
 
 ## 2. 核心瓶颈
@@ -54,6 +66,7 @@ sources:
 | 付款方 | 支出类型 | 预算或订单信号 | 时间节奏 | 确定性 |
 | --- | --- | --- | --- | --- |
 | 云厂商 | 硬件/数据中心/网络/电力 | AI 基础设施投入、GPU/自研芯片部署、数据中心扩张 | 短期/中期 | 高 |
+| AI 数据中心业主 | 园区/电力/数据中心运营 | IREN 这类算力基础设施运营商与芯片厂商绑定 DSX AI 工厂架构和电力管线 | 短期/中期 | 中高 |
 | 模型厂商 | 硬件/云服务 | 推理请求量增长、长上下文和多模态需求扩大 | 中期 | 中高 |
 | 企业客户 | 云服务/推理平台 | 企业 Agent、AI 搜索、AI 编程助手和办公 AI 付费渗透 | 中期 | 中 |
 
@@ -96,6 +109,9 @@ sources:
 | 验证信号 | 当前状态 | 触发阈值 | 观察频率 | 影响方向 |
 | --- | --- | --- | --- | --- |
 | 云厂商季度资本开支继续上修 | 已出现 | Microsoft、Amazon、Meta、Alphabet 等继续提高 AI 或数据中心投入 | event | 增强 |
+| AI 工厂园区和电力管线被提前锁定 | 已出现 | 芯片厂商、云厂商或 AI 数据中心业主以战略合作方式锁定 GW 级电力和园区资源 | event | 增强 |
+| 技术基础设施投入结构继续指向网络和数据中心 | 已出现 | 云厂商披露 CapEx 在服务器、网络设备、数据中心之间同步扩张 | event | 增强 |
+| 高温液冷和节水架构进入参考设计 | 已出现 | 下一代 AI 工厂参考设计采用 100% 液冷、高温冷却液、干冷器或近零设施冷却用水方案 | event | 增强 |
 | AI 收入覆盖折旧和电力成本 | 待验证 | AI 收入增速、毛利率和折旧压力匹配度改善 | event | 增强/削弱 |
 | GPU 和推理芯片继续供不应求 | 已出现 | 出货、收入和交期继续指向供给紧张 | event | 增强 |
 | 单 token 成本下降带来更大使用量 | 待验证 | 成本下降后，使用量弹性超过价格下降影响 | monthly | 增强 |
@@ -123,6 +139,10 @@ sources:
 | NVIDIA FY2027 Q1 results | tier_1 | https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2027/default.aspx | 总收入、数据中心收入和数据中心网络收入验证 AI 基础设施需求。 |
 | Microsoft FY2026 Q3 results | tier_1 | https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast | AI 业务年化收入运行率和 Azure 增长验证企业 AI 与云基础设施需求。 |
 | Amazon Q1 2026 results | tier_1 | https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/default.aspx | AWS 增长和 AI 基础设施投入验证云厂商持续扩容。 |
+| NVIDIA and IREN strategic partnership | tier_1 | https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-IREN-Announce-Strategic-Partnership-to-Accelerate-Deployment-of-up-to-5-Gigawatts-of-AI-Infrastructure/default.aspx | 5GW AI 基础设施管线和 DSX AI 工厂架构验证算力扩容向园区、电力和运营能力前置。 |
+| Alphabet 2026 Q1 earnings call | tier_1 | https://abc.xyz/investor/events/event-details/2026/2026-Q1-Earnings-Call-2026-nW8kCrBAKS/default.aspx | CapEx 结构显示服务器、数据中心和网络设备同步承接 AI 技术基础设施投入。 |
+| Microsoft FY2026 Q3 earnings call | tier_1 | https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3 | Foundry token 使用量和 Agent 负载验证推理需求外溢。 |
+| NVIDIA liquid cooling AI factories | tier_1 | https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/ | Rubin 与 DSX 参考设计验证下一代 AI 工厂对高温液冷、节水和设施能耗优化的要求。 |
 
 ## 更新记录
 
@@ -133,3 +153,4 @@ sources:
 | 2026-06-21 | 结构化 | 按新版模板补充当前判断状态表 | 模板规范同步 |
 | 2026-06-21 | 来源更新 | 将 NVIDIA 来源更新至 FY2027 Q1，并补充数据中心网络收入信号 | NVIDIA |
 | 2026-06-21 | 模板迁移 | 按新版方向研究模板补充趋势、瓶颈、资本开支、受益环节、稀缺性、定价和验证信号表格 | 模板规范同步 |
+| 2026-06-22 | 周频更新 | 补充 IREN 5GW AI 工厂、Alphabet 技术基础设施 CapEx 结构、Microsoft Foundry token 信号和 NVIDIA 高温液冷参考设计，强化推理基础设施向园区、网络、Agent 使用量和散热架构外溢的判断 | 周频候选复核 |

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21",
+  "updated_at": "2026-06-22",
   "description": "AI 趋势投资知识库来源注册表。自动化任务优先使用本文件中的来源，未登记来源只能作为补充并需标注来源层级。",
   "sources": [
     {
@@ -8,6 +8,13 @@
       "tier": "tier_1",
       "url": "https://investor.nvidia.com/",
       "focus": ["GPU", "AI推理基础设施", "数据中心", "网络"]
+    },
+    {
+      "id": "nvidia_blog",
+      "name": "NVIDIA Blog",
+      "tier": "tier_1",
+      "url": "https://blogs.nvidia.com/",
+      "focus": ["AI基础设施", "数据中心", "液冷", "系统架构"]
     },
     {
       "id": "microsoft_investor_relations",

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21",
+  "updated_at": "2026-06-22",
   "period_policy": {
     "active_research_period": "2026Q2",
     "period_mode": "configured_active_period",
@@ -9,19 +9,30 @@
   },
   "jobs": {
     "daily": {
-      "last_success_at": "2026-06-21T22:02:10+08:00",
+      "last_success_at": "2026-06-22T22:02:36+08:00",
       "last_status": "success",
       "last_error": "",
-      "last_candidate_count": 6,
-      "last_summary": "追加 6 条候选信息到 2026Q2 候选池，覆盖 AI推理基础设施、CPO与下一代光互连、电力与散热、AI Agent，并识别 AI-RAN/边缘AI基础设施新方向候选。"
+      "last_candidate_count": 4,
+      "last_summary": "追加 4 条候选信息到 2026Q2 候选池，覆盖电力与散热、AI推理基础设施，并识别 AI存储/HBM供给瓶颈新方向候选。"
     },
     "weekly": {
-      "last_success_at": null,
-      "last_status": "not_run",
+      "last_success_at": "2026-06-22T22:18:00+08:00",
+      "last_status": "success",
       "last_error": "",
-      "last_candidate_count": 0,
-      "last_updated_documents": [],
-      "last_summary": ""
+      "last_candidate_count": 10,
+      "last_updated_documents": [
+        "data-source/05_信息候选池/2026Q2_信息候选池.md",
+        "data-source/01_方向研究/AI推理基础设施.md",
+        "data-source/01_方向研究/电力与散热.md",
+        "data-source/01_方向研究/CPO与下一代光互连.md",
+        "data-source/01_方向研究/AI Agent.md",
+        "data-source/03_观察清单/2026Q2_观察清单.md",
+        "metadata/direction-registry.json",
+        "metadata/sources.json",
+        "metadata/source-registry.json",
+        "CHANGELOG.md"
+      ],
+      "last_summary": "复核 10 条候选信息：6 条写入正式方向研究或观察清单，2 条登记为新方向候选，1 条保持 watch，1 条因缺少官方披露标记 review。"
     },
     "monthly": {
       "last_success_at": null,
