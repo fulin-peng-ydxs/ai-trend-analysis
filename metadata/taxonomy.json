@@ -2,7 +2,7 @@
   "project": {
     "name": "AI趋势投资知识源仓库",
     "description": "面向 AI 趋势投资研究的 Markdown 知识数据源仓库",
-    "updated_at": "2026-06-21"
+    "updated_at": "2026-06-27"
   },
   "categories": [
     {
@@ -40,6 +40,12 @@
       "name": "信息候选池",
       "directory": "data-source/05_信息候选池",
       "description": "承接待判断、待确认或暂不进入正式知识库的信息"
+    },
+    {
+      "id": "core_company_watchlist",
+      "name": "核心标的观察池",
+      "directory": "data-source/06_核心标的观察池",
+      "description": "按方向、瓶颈、收入承接和验证信号跟踪 A 股主板上市公司"
     },
     {
       "id": "template",
@@ -122,6 +128,38 @@
       "automation_policy": "不主动更新，除非出现强反转证据"
     }
   ],
+  "company_statuses": [
+    {
+      "id": "candidate",
+      "name": "候选标的",
+      "automation_policy": "只证明相关性，尚未充分证明收入承接或验证信号"
+    },
+    {
+      "id": "tracking",
+      "name": "持续跟踪",
+      "automation_policy": "已有方向关联和业务承接证据，月频更新验证信号"
+    },
+    {
+      "id": "validated",
+      "name": "已验证",
+      "automation_policy": "订单、收入、利润、客户认证或产能证据已验证关键判断"
+    },
+    {
+      "id": "weakened",
+      "name": "逻辑削弱",
+      "automation_policy": "相关性、收入承接或利润弹性被新证据削弱"
+    },
+    {
+      "id": "rejected",
+      "name": "已证伪",
+      "automation_policy": "仅剩概念相关或明确无法承接方向收入"
+    },
+    {
+      "id": "archived",
+      "name": "归档",
+      "automation_policy": "保留历史，不主动跟踪"
+    }
+  ],
   "core_chain": [
     "趋势",
     "瓶颈",
@@ -143,6 +181,10 @@
     "散热",
     "数据中心",
     "资本开支",
+    "A股",
+    "主板",
+    "核心标的观察池",
+    "公司注册表",
     "历史案例",
     "观察清单",
     "信息候选池",

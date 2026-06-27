@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-06-23",
+  "updated_at": "2026-06-27",
   "status": "active",
-  "principle": "先自动进入候选池，再由自动化按规则判断是否更新正式知识库；冲突或重大不确定事项标记 review",
+  "principle": "先自动进入候选池，再由自动化按规则判断是否更新正式知识库；公司层标的池是方向研究的派生观察对象，不输出买卖建议；冲突或重大不确定事项标记 review",
   "period_policy": {
     "state_source": "metadata/update-state.json.period_policy",
     "default_active_research_period": "2026Q2",
@@ -53,6 +53,7 @@
         "metadata/taxonomy.json",
         "metadata/sources.json",
         "metadata/direction-registry.json",
+        "metadata/company-registry.json",
         "metadata/source-registry.json",
         "metadata/update-state.json",
         "data-source/05_信息候选池/"
@@ -64,6 +65,7 @@
         "更新 metadata/update-state.json",
         "标注来源层级",
         "标注潜在影响方向",
+        "识别潜在公司影响但只写入候选池",
         "已有方向候选的处理结果标记为 watch",
         "标记 new_direction_candidate",
         "生成待处理摘要"
@@ -72,6 +74,7 @@
         "直接修改正式方向研究",
         "把尚未写入正式文档的候选记录标记为 update 或 create",
         "直接改变 status 或 confidence",
+        "直接修改核心标的观察池或公司注册表",
         "直接生成投资结论"
       ]
     },
@@ -84,7 +87,9 @@
         "data-source/05_信息候选池/",
         "data-source/01_方向研究/",
         "data-source/03_观察清单/",
+        "data-source/06_核心标的观察池/",
         "metadata/direction-registry.json",
+        "metadata/company-registry.json",
         "metadata/sources.json",
         "metadata/update-state.json",
         "CHANGELOG.md"
@@ -95,15 +100,19 @@
         "metadata/taxonomy.json",
         "metadata/sources.json",
         "metadata/direction-registry.json",
+        "metadata/company-registry.json",
         "metadata/source-registry.json",
         "metadata/update-state.json",
-        "data-source/05_信息候选池/"
+        "data-source/05_信息候选池/",
+        "data-source/06_核心标的观察池/"
       ],
       "allowed_actions": [
         "根据候选池提出正式更新建议",
         "回写候选记录处理结果和处理统计",
         "更新已有正式文档",
         "新增或升级方向候选",
+        "新增或调整 A 股主板核心标的观察池",
+        "更新公司注册表的状态、方向映射、验证信号和来源",
         "调整方向状态",
         "按 active_research_period 或当前季度选择/新建观察清单",
         "同步元数据",
@@ -118,7 +127,9 @@
       "mode": "automatic_with_review_fallback",
       "writes_to": [
         "data-source/03_观察清单/",
+        "data-source/06_核心标的观察池/",
         "metadata/direction-registry.json",
+        "metadata/company-registry.json",
         "metadata/sources.json",
         "metadata/update-state.json",
         "CHANGELOG.md"
@@ -129,15 +140,18 @@
         "metadata/taxonomy.json",
         "metadata/sources.json",
         "metadata/direction-registry.json",
+        "metadata/company-registry.json",
         "metadata/source-registry.json",
         "metadata/update-state.json",
         "data-source/05_信息候选池/",
         "data-source/03_观察清单/",
-        "data-source/01_方向研究/"
+        "data-source/01_方向研究/",
+        "data-source/06_核心标的观察池/"
       ],
       "allowed_actions": [
         "按 active_research_period 或当前季度选择/新建观察清单",
         "调整观察方向优先级",
+        "更新公司层跟踪信号和观察优先级",
         "新增或删除验证信号",
         "沉淀当月核心问题",
         "同步元数据",
@@ -153,7 +167,9 @@
       "writes_to": [
         "data-source/04_复盘记录/",
         "data-source/03_观察清单/",
+        "data-source/06_核心标的观察池/",
         "metadata/direction-registry.json",
+        "metadata/company-registry.json",
         "metadata/sources.json",
         "metadata/update-state.json",
         "CHANGELOG.md"
@@ -164,16 +180,19 @@
         "metadata/taxonomy.json",
         "metadata/sources.json",
         "metadata/direction-registry.json",
+        "metadata/company-registry.json",
         "metadata/source-registry.json",
         "metadata/update-state.json",
         "data-source/05_信息候选池/",
         "data-source/01_方向研究/",
         "data-source/03_观察清单/",
-        "data-source/04_复盘记录/"
+        "data-source/04_复盘记录/",
+        "data-source/06_核心标的观察池/"
       ],
       "allowed_actions": [
         "按当前年度或季度选择或新建复盘记录",
         "复盘已验证判断",
+        "复盘核心标的是否验证方向判断或只是相关但未兑现",
         "记录被削弱或证伪的判断",
         "调整运行日所在季度观察重点",
         "同步方向状态和元数据",
@@ -193,6 +212,7 @@
         "README.md",
         "metadata/automation-plan.json",
         "metadata/update-state.json",
+        "metadata/company-registry.json",
         "scripts/validate-knowledge-base.js",
         "仓库中所有 Git 可见文件"
       ],
@@ -218,6 +238,24 @@
     "tier_3": "通常先进入候选池",
     "low_priority": "只进入候选池，不直接更新正式文档"
   },
+  "company_watchlist_policy": {
+    "scope": "A 股主板核心标的观察池只作为方向研究的公司层派生对象，不替代投资决策。",
+    "daily": "识别公司相关信息并写入候选池，不直接改公司注册表或核心标的观察池。",
+    "weekly": "基于候选池判断是否新增、调整或降级公司观察记录，并同步公司注册表和正式观察池。",
+    "monthly": "更新公司验证信号、观察优先级和需要复盘的问题。",
+    "quarterly": "复盘公司是否验证方向判断，并为评分模型积累样本。",
+    "company_profile": "公司画像创建和更新以 metadata/company-registry.json.company_profile_policy 为唯一规则源。",
+    "forbidden": "不得输出买入、卖出、目标价、仓位建议；不得用股价涨跌替代产业证据。"
+  },
+  "deferred_enhancements": [
+    {
+      "id": "company_scoring_model",
+      "status": "watch",
+      "trigger": "核心标的观察池连续运行 1-2 个季度，并在季度复盘中积累公司状态变化、验证信号和偏差记录后启动。",
+      "planned_dimensions": ["方向匹配度", "兑现确定性", "定价拥挤度", "风险权重"],
+      "activation_rule": "评分只作为观察排序，不作为买卖建议；缺少季度复盘样本时不启用。"
+    }
+  ],
   "network_policy": {
     "daily": "如果外部网络不可用，记录 network_limited 到 metadata/update-state.json，不更新正式文档，不创建空候选信息，运行本地校验并报告网络受限。",
     "weekly": "如果外部网络不可用，仍处理本地候选池和已有文档；不得因为无法联网补充来源而阻断本地复核。",

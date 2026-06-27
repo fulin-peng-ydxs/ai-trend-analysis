@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-25",
+  "updated_at": "2026-06-27",
   "period_policy": {
     "active_research_period": "2026Q2",
     "period_mode": "configured_active_period",
@@ -9,11 +9,11 @@
   },
   "jobs": {
     "daily": {
-      "last_success_at": "2026-06-25T21:37:04+08:00",
+      "last_success_at": "2026-06-26T23:23:50+08:00",
       "last_status": "success",
       "last_error": "",
       "last_candidate_count": 3,
-      "last_summary": "追加 3 条候选信息到 2026Q2 候选池，覆盖 AI推理基础设施、AI Agent、电力与散热和云厂商区域资本开支；日频只追加候选池，已有方向信息全部标记为 watch，未直接修改正式文档。"
+      "last_summary": "追加 3 条候选信息到 2026Q2 候选池，覆盖 AI Agent、AI推理基础设施，并补充 AI存储/HBM供给瓶颈新方向候选证据；日频只追加候选池，已有方向信息标记为 watch，候选方向信息标记为 new_direction_candidate，未直接修改正式文档。"
     },
     "weekly": {
       "last_success_at": "2026-06-22T22:18:00+08:00",
@@ -49,11 +49,25 @@
       "last_summary": ""
     },
     "event": {
-      "last_success_at": null,
-      "last_status": "not_run",
+      "last_success_at": "2026-06-27T16:03:02+08:00",
+      "last_status": "success",
       "last_error": "",
-      "last_updated_documents": [],
-      "last_summary": ""
+      "last_updated_documents": [
+        "data-source/06_核心标的观察池/2026Q2_A股主板核心标的观察池.md",
+        "data-source/06_核心标的观察池/公司画像/工业富联.md",
+        "data-source/06_核心标的观察池/公司画像/埃斯顿.md",
+        "data-source/03_观察清单/2026Q2_观察清单.md",
+        "data-source/04_复盘记录/2026_判断复盘.md",
+        "metadata/company-registry.json",
+        "metadata/taxonomy.json",
+        "metadata/sources.json",
+        "metadata/source-registry.json",
+        "metadata/automation-plan.json",
+        "scripts/validate-knowledge-base.js",
+        "README.md",
+        "CHANGELOG.md"
+      ],
+      "last_summary": "初始化 A 股主板核心标的观察池后，按公司画像策略新增工业富联和埃斯顿画像，并在公司注册表与文档索引中回填画像路径；评分模型仍等待 1-2 个季度复盘样本后再启用。"
     }
   }
 }

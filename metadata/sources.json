@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-22",
+  "updated_at": "2026-06-27",
   "documents": [
     {
       "id": "ai_trend_investment_framework",
@@ -108,6 +108,33 @@
       "confidence": "medium",
       "path": "data-source/05_信息候选池/2026Q2_信息候选池.md",
       "tags": ["AI", "信息候选池", "2026Q2"]
+    },
+    {
+      "id": "core_company_watchlist_2026q2_a_share_main_board",
+      "title": "2026Q2 A股主板核心标的观察池",
+      "category": "核心标的观察池",
+      "status": "tracking",
+      "confidence": "medium",
+      "path": "data-source/06_核心标的观察池/2026Q2_A股主板核心标的观察池.md",
+      "tags": ["AI", "A股", "主板", "核心标的观察池", "2026Q2"]
+    },
+    {
+      "id": "company_profile_foxconn_industrial_internet",
+      "title": "工业富联公司画像",
+      "category": "核心标的观察池",
+      "status": "tracking",
+      "confidence": "medium_high",
+      "path": "data-source/06_核心标的观察池/公司画像/工业富联.md",
+      "tags": ["AI", "A股", "主板", "工业富联", "AI推理基础设施", "CPO与下一代光互连", "电力与散热"]
+    },
+    {
+      "id": "company_profile_estun",
+      "title": "埃斯顿公司画像",
+      "category": "核心标的观察池",
+      "status": "tracking",
+      "confidence": "medium",
+      "path": "data-source/06_核心标的观察池/公司画像/埃斯顿.md",
+      "tags": ["AI", "A股", "主板", "埃斯顿", "机器人"]
     }
   ]
 }

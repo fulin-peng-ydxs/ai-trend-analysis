@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-22",
+  "updated_at": "2026-06-27",
   "description": "AI 趋势投资知识库来源注册表。自动化任务优先使用本文件中的来源，未登记来源只能作为补充并需标注来源层级。",
   "sources": [
     {
@@ -78,6 +78,27 @@
       "tier": "tier_2",
       "url": "https://www.gartner.com/",
       "focus": ["企业AI", "IT支出", "云计算", "技术趋势"]
+    },
+    {
+      "id": "sse_listed_company_announcements",
+      "name": "上海证券交易所上市公司公告",
+      "tier": "tier_1",
+      "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/",
+      "focus": ["A股主板", "公司公告", "年报", "监管披露"]
+    },
+    {
+      "id": "szse_listed_company_announcements",
+      "name": "深圳证券交易所上市公司公告",
+      "tier": "tier_1",
+      "url": "https://www.szse.cn/disclosure/listed/notice/index.html",
+      "focus": ["A股主板", "公司公告", "年报", "监管披露"]
+    },
+    {
+      "id": "cninfo_disclosure",
+      "name": "巨潮资讯上市公司公告",
+      "tier": "tier_1",
+      "url": "https://www.cninfo.com.cn/new/index",
+      "focus": ["A股", "公司公告", "年报", "监管披露"]
     }
   ]
 }

@@ -371,6 +371,107 @@ function validateSourceRegistry(taxonomy) {
   }
 }
 
+// 公司注册表是方向研究和公司层观察池之间的连接层。
+// 这里校验稳定字段：公司身份、主板范围、方向引用、状态枚举、置信度和来源入口。
+function validateCompanyRegistry(taxonomy) {
+  const registry = readJson("metadata/company-registry.json");
+  const directionRegistry = readJson("metadata/direction-registry.json");
+  const allowedCompanyStatuses = new Set((taxonomy.company_statuses || []).map((item) => item.id));
+  const allowedConfidence = new Set(taxonomy.confidence_levels || []);
+  const allowedTiers = new Set((taxonomy.source_tiers || []).map((item) => item.id));
+  const directionIds = new Set([
+    ...(directionRegistry.directions || []).map((item) => item.id),
+    ...(directionRegistry.candidate_directions || []).map((item) => item.id),
+  ]);
+
+  if (!allowedCompanyStatuses.size) {
+    throw new Error("metadata/taxonomy.json company_statuses must contain at least one item");
+  }
+  if (!Array.isArray(registry.companies)) {
+    throw new Error("metadata/company-registry.json companies must be an array");
+  }
+  if (!registry.company_profile_policy || typeof registry.company_profile_policy !== "object") {
+    throw new Error("metadata/company-registry.json company_profile_policy must be an object");
+  }
+  if (!registry.company_profile_policy.template || !fs.existsSync(path.join(root, registry.company_profile_policy.template))) {
+    throw new Error("metadata/company-registry.json company_profile_policy.template must point to an existing template");
+  }
+  if (!registry.company_profile_policy.output_directory) {
+    throw new Error("metadata/company-registry.json company_profile_policy.output_directory is required");
+  }
+  if (!Array.isArray(registry.company_profile_policy.create_conditions) || !registry.company_profile_policy.create_conditions.length) {
+    throw new Error("metadata/company-registry.json company_profile_policy.create_conditions must contain at least one item");
+  }
+  if (!Array.isArray(registry.company_profile_policy.blocked_conditions) || !registry.company_profile_policy.blocked_conditions.length) {
+    throw new Error("metadata/company-registry.json company_profile_policy.blocked_conditions must contain at least one item");
+  }
+
+  const ids = new Set();
+  const tickers = new Set();
+  for (const company of registry.companies) {
+    if (!company.id || ids.has(company.id)) {
+      throw new Error(`duplicate or empty company id: ${company.id}`);
+    }
+    ids.add(company.id);
+    if (!company.name) {
+      throw new Error(`company ${company.id} missing name`);
+    }
+    if (!company.ticker || tickers.has(company.ticker)) {
+      throw new Error(`duplicate or empty company ticker: ${company.ticker}`);
+    }
+    tickers.add(company.ticker);
+    if (!["SSE", "SZSE"].includes(company.exchange)) {
+      throw new Error(`company ${company.id} exchange must be SSE or SZSE`);
+    }
+    if (company.exchange === "SSE" && !company.ticker.endsWith(".SH")) {
+      throw new Error(`company ${company.id} SSE ticker must end with .SH`);
+    }
+    if (company.exchange === "SZSE" && !company.ticker.endsWith(".SZ")) {
+      throw new Error(`company ${company.id} SZSE ticker must end with .SZ`);
+    }
+    if (company.board !== "main_board") {
+      throw new Error(`company ${company.id} board must be main_board`);
+    }
+    if (company.market !== "A_share") {
+      throw new Error(`company ${company.id} market must be A_share`);
+    }
+    if (!allowedCompanyStatuses.has(company.status)) {
+      throw new Error(`company ${company.id} has invalid status: ${company.status}`);
+    }
+    if (!allowedConfidence.has(company.confidence)) {
+      throw new Error(`company ${company.id} has invalid confidence: ${company.confidence}`);
+    }
+    if (!Array.isArray(company.linked_directions) || !company.linked_directions.length) {
+      throw new Error(`company ${company.id} linked_directions must contain at least one item`);
+    }
+    for (const directionId of company.linked_directions) {
+      if (!directionIds.has(directionId)) {
+        throw new Error(`company ${company.id} references unknown direction: ${directionId}`);
+      }
+    }
+    if (!company.bottleneck || !company.revenue_path) {
+      throw new Error(`company ${company.id} must contain bottleneck and revenue_path`);
+    }
+    if (!Array.isArray(company.verification_signals) || !company.verification_signals.length) {
+      throw new Error(`company ${company.id} verification_signals must contain at least one item`);
+    }
+    if (!allowedTiers.has(company.source_tier)) {
+      throw new Error(`company ${company.id} has invalid source_tier: ${company.source_tier}`);
+    }
+    if (!Array.isArray(company.source_urls) || !company.source_urls.length) {
+      throw new Error(`company ${company.id} source_urls must contain at least one item`);
+    }
+    for (const url of company.source_urls) {
+      if (!/^https?:\/\//.test(url)) {
+        throw new Error(`company ${company.id} source url must start with http:// or https://`);
+      }
+    }
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(company.last_verified_at || "")) {
+      throw new Error(`company ${company.id} last_verified_at must be YYYY-MM-DD`);
+    }
+  }
+}
+
 function main() {
   const sources = readJson("metadata/sources.json");
   const taxonomy = readJson("metadata/taxonomy.json");
@@ -447,6 +548,7 @@ function main() {
 
   // 注册表和自动化配置是跨文档维护闭环的一部分，放在文档基础校验之后执行。
   validateDirectionRegistry(taxonomy, sources);
+  validateCompanyRegistry(taxonomy);
   validateSourceRegistry(taxonomy);
   validateAutomations();
 
