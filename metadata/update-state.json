@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-27",
+  "updated_at": "2026-06-28",
   "period_policy": {
     "active_research_period": "2026Q2",
     "period_mode": "configured_active_period",
@@ -9,11 +9,11 @@
   },
   "jobs": {
     "daily": {
-      "last_success_at": "2026-06-26T23:23:50+08:00",
+      "last_success_at": "2026-06-28T20:05:19+08:00",
       "last_status": "success",
       "last_error": "",
-      "last_candidate_count": 3,
-      "last_summary": "追加 3 条候选信息到 2026Q2 候选池，覆盖 AI Agent、AI推理基础设施，并补充 AI存储/HBM供给瓶颈新方向候选证据；日频只追加候选池，已有方向信息标记为 watch，候选方向信息标记为 new_direction_candidate，未直接修改正式文档。"
+      "last_candidate_count": 4,
+      "last_summary": "追加 4 条候选信息到 2026Q2 候选池，覆盖 AI Agent、AI推理基础设施、CPO与下一代光互连，并补充定制推理芯片、异构推理平台和 AI 软件栈证据；本次均属于已有方向相关信息，日频统一标记为 watch，未直接修改正式文档、公司注册表或核心标的观察池。"
     },
     "weekly": {
       "last_success_at": "2026-06-22T22:18:00+08:00",
