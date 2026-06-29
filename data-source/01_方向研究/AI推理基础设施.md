@@ -3,7 +3,7 @@ schema_version: 1
 title: AI推理基础设施
 category: 方向研究
 status: tracking
-updated_at: 2026-06-22
+updated_at: 2026-06-29
 confidence: high
 tags:
   - AI
@@ -25,6 +25,18 @@ sources:
     url: https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3
   - name: NVIDIA liquid cooling AI factories
     url: https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/
+  - name: NVIDIA Vera Rubin for science
+    url: https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Vera-Rubin-Delivers-World-Class-Supercomputers-for-Science/default.aspx
+  - name: NVIDIA and AWS AI production scale
+    url: https://blogs.nvidia.com/blog/nvidia-aws-ai-production-scale/
+  - name: Amazon and Pinterest AI infrastructure agreement
+    url: https://www.aboutamazon.com/news/aws/pinterest-aws-4-billion-ai-infrastructure-deal
+  - name: OpenAI Broadcom Jalapeno inference chip
+    url: https://openai.com/index/openai-broadcom-jalapeno-inference-chip/
+  - name: Qualcomm data center roadmap
+    url: https://www.qualcomm.com/news/releases/2026/06/qualcomm-unveils-comprehensive-data-center-roadmap-for-the-agent
+  - name: Firmus NVIDIA DSX AI Factory campus
+    url: https://firmus.co/newsroom/firmus-to-build-170-000-gpu-ai-factor-y-campus-with-nvidia-for-global-ai-natives
 ---
 
 # AI推理基础设施
@@ -45,6 +57,10 @@ sources:
 | 技术基础设施 CapEx 同时覆盖服务器、数据中心和网络 | tier_1 | Alphabet Q1 2026 CapEx 达 357 亿美元，技术基础设施投入约 60% 用于服务器、40% 用于数据中心和网络设备 | 高 | 增强 |
 | Agent 和 Foundry token 使用量开始验证推理需求 | tier_1 | Microsoft 披露 AI ARR 超过 370 亿美元，Foundry 年内将有超过 300 家客户处理超 1 万亿 token | 中高 | 增强 |
 | 高温液冷成为下一代 AI 工厂基础设计 | tier_1 | NVIDIA 披露 Rubin 代 AI 基础设施采用 100% 液冷架构，DSX 参考设计可减少机械制冷和设施冷却用水需求 | 中高 | 增强 |
+| 整机架系统和科研/工业客户继续采用下一代平台 | tier_1 | NVIDIA Vera Rubin 平台披露单机架 AI for science 算力、FP64 能力、NVLink-C2C、ConnectX-9、BlueField-4 和直接液冷，LRZ、NERSC、LANL 等系统将采用 | 中高 | 增强 |
+| 应用公司以多年云承诺锁定 AI 基础设施 | tier_1 | Pinterest 与 AWS 达成至 2031 年的 40 亿美元云服务承诺，用于 AI 训练、推理、视觉搜索、推荐和 Pinterest Assistant | 高 | 增强 |
+| 模型厂商和芯片厂商推进定制推理平台 | tier_1 | OpenAI/Broadcom Jalapeno 推理芯片、Qualcomm Dragonfly 数据中心路线和 Modular 收购共同指向 ASIC、CPU、加速器、连接和软件栈一体化 | 中高 | 增强 |
+| 区域 AI 工厂进入承购和园区建设阶段 | tier_1 | Firmus 与 NVIDIA 合作规划印尼 Batam 360MW DSX AI Factory，覆盖 17 万颗 AI 加速器和多年客户承购协议 | 中高 | 增强 |
 | 推理从单次训练变成持续使用需求 | tier_1/tier_3 | 搜索、办公、客服、代码、多模态和 Agent 都会持续消耗推理算力 | 高 | 增强 |
 
 ## 2. 核心瓶颈
@@ -56,7 +72,9 @@ sources:
 | 推理算力 | 高 | 推理请求量、多模态和 Agent 调用持续增长 | GPU / ASIC / 服务器 | 数据中心收入、推理芯片出货和云厂商扩容 |
 | 单 token 成本 | 高 | 推理使用量增长但成本下降不够快 | 云平台 / 模型服务 | AI 收入能否覆盖折旧、电力和芯片成本 |
 | 网络和存储 | 中高 | 集群规模扩大，节点间通信和数据访问压力上升 | 交换机 / 网卡 / 光模块 / 存储 | 数据中心网络收入、光模块和交换芯片需求 |
+| HBM 和数据中心存储 | 中高 | 推理和训练集群扩大，HBM、服务器 DRAM 和企业级 SSD 被高优先级 AI 需求吸收 | 内存 / SSD / AI 服务器 | HBM 出货、服务器 DRAM 价格、企业级 SSD 容量和交期 |
 | 电力与散热 | 高 | 高密度推理集群提高机柜功率和散热压力 | 电力设备 / 液冷 / 数据中心 | 并网延迟、液冷渗透率、变压器和 UPS 订单 |
+| 异构推理软件栈 | 中高 | CPU、GPU、NPU、ASIC 和云端/边缘部署并存，性能可移植性和调度效率成为瓶颈 | 编译器 / 运行时 / 云平台 | Modular 类软件栈、向量检索加速、跨硬件部署效率 |
 | 调度系统 | 中 | 多模型、多租户和低延迟推理需求提升 | 云平台 / 推理服务 | 推理服务效率、延迟和利用率改善 |
 
 ## 3. 是否会形成资本开支
@@ -67,6 +85,8 @@ sources:
 | --- | --- | --- | --- | --- |
 | 云厂商 | 硬件/数据中心/网络/电力 | AI 基础设施投入、GPU/自研芯片部署、数据中心扩张 | 短期/中期 | 高 |
 | AI 数据中心业主 | 园区/电力/数据中心运营 | IREN 这类算力基础设施运营商与芯片厂商绑定 DSX AI 工厂架构和电力管线 | 短期/中期 | 中高 |
+| 应用公司 | 云服务/自研芯片/托管基础设施 | Pinterest 多年云承诺、模型公司自研推理芯片和 Agent 产品对低延迟推理的持续需求 | 短期/中期 | 中高 |
+| 区域 AI 工厂运营商 | 园区/电力/液冷/GPU 云 | Firmus 类区域 AI 工厂以承购协议和收入分成模式绑定算力供给 | 中期 | 中 |
 | 模型厂商 | 硬件/云服务 | 推理请求量增长、长上下文和多模态需求扩大 | 中期 | 中高 |
 | 企业客户 | 云服务/推理平台 | 企业 Agent、AI 搜索、AI 编程助手和办公 AI 付费渗透 | 中期 | 中 |
 
@@ -114,6 +134,10 @@ sources:
 | 高温液冷和节水架构进入参考设计 | 已出现 | 下一代 AI 工厂参考设计采用 100% 液冷、高温冷却液、干冷器或近零设施冷却用水方案 | event | 增强 |
 | AI 收入覆盖折旧和电力成本 | 待验证 | AI 收入增速、毛利率和折旧压力匹配度改善 | event | 增强/削弱 |
 | GPU 和推理芯片继续供不应求 | 已出现 | 出货、收入和交期继续指向供给紧张 | event | 增强 |
+| 定制 ASIC 和异构推理平台进入部署 | 已出现 | OpenAI/Broadcom、Qualcomm 等路线显示模型厂商和芯片厂商继续为推理成本、能效和供给安全投入 | event | 增强/削弱 GPU 集中度 |
+| 应用公司多年云基础设施承诺 | 已出现 | 应用公司围绕推荐、视觉搜索、Assistant 和个性化推理签署多年云承诺 | event | 增强 |
+| HBM、服务器 DRAM 和企业级 SSD 紧张 | 观察中 | 存储厂商财报和行业研究显示 AI 数据中心需求吸收高端存储供给 | monthly/event | 增强/约束交付 |
+| 隔离环境和主权 AI 推理部署 | 观察中 | 政府、关键基础设施或区域 AI 工厂要求私有、隔离或本地化推理部署 | monthly/event | 增强 |
 | 单 token 成本下降带来更大使用量 | 待验证 | 成本下降后，使用量弹性超过价格下降影响 | monthly | 增强 |
 | Agent、AI 搜索和 AI 编程助手付费渗透率提升 | 观察中 | 企业或消费者付费、使用时长和留存提升 | weekly/monthly | 增强 |
 
@@ -143,6 +167,12 @@ sources:
 | Alphabet 2026 Q1 earnings call | tier_1 | https://abc.xyz/investor/events/event-details/2026/2026-Q1-Earnings-Call-2026-nW8kCrBAKS/default.aspx | CapEx 结构显示服务器、数据中心和网络设备同步承接 AI 技术基础设施投入。 |
 | Microsoft FY2026 Q3 earnings call | tier_1 | https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3 | Foundry token 使用量和 Agent 负载验证推理需求外溢。 |
 | NVIDIA liquid cooling AI factories | tier_1 | https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/ | Rubin 与 DSX 参考设计验证下一代 AI 工厂对高温液冷、节水和设施能耗优化的要求。 |
+| NVIDIA Vera Rubin for science | tier_1 | https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Vera-Rubin-Delivers-World-Class-Supercomputers-for-Science/default.aspx | 整机架系统、网络/DPU 和直接液冷验证基础设施从芯片扩展到系统级交付。 |
+| NVIDIA and AWS AI production scale | tier_1 | https://blogs.nvidia.com/blog/nvidia-aws-ai-production-scale/ | 云平台向推理、图形、数据分析、向量数据库和托管训练工作负载扩展。 |
+| Amazon and Pinterest AI infrastructure agreement | tier_1 | https://www.aboutamazon.com/news/aws/pinterest-aws-4-billion-ai-infrastructure-deal | 应用公司多年云承诺验证推荐、视觉搜索和 Assistant 对 AI 基础设施的真实需求。 |
+| OpenAI Broadcom Jalapeno inference chip | tier_1 | https://openai.com/index/openai-broadcom-jalapeno-inference-chip/ | 模型厂商向定制推理芯片、多代平台和 GW 级数据中心延伸。 |
+| Qualcomm data center roadmap | tier_1 | https://www.qualcomm.com/news/releases/2026/06/qualcomm-unveils-comprehensive-data-center-roadmap-for-the-agent | 异构推理平台、CPU/加速器/连接和低 TCO 路线补充 GPU 之外的供给路径。 |
+| Firmus NVIDIA DSX AI Factory campus | tier_1 | https://firmus.co/newsroom/firmus-to-build-170-000-gpu-ai-factor-y-campus-with-nvidia-for-global-ai-natives | 区域 AI 工厂、液冷架构和客户承购协议验证算力供给区域化。 |
 
 ## 更新记录
 
@@ -154,3 +184,4 @@ sources:
 | 2026-06-21 | 来源更新 | 将 NVIDIA 来源更新至 FY2027 Q1，并补充数据中心网络收入信号 | NVIDIA |
 | 2026-06-21 | 模板迁移 | 按新版方向研究模板补充趋势、瓶颈、资本开支、受益环节、稀缺性、定价和验证信号表格 | 模板规范同步 |
 | 2026-06-22 | 周频更新 | 补充 IREN 5GW AI 工厂、Alphabet 技术基础设施 CapEx 结构、Microsoft Foundry token 信号和 NVIDIA 高温液冷参考设计，强化推理基础设施向园区、网络、Agent 使用量和散热架构外溢的判断 | 周频候选复核 |
+| 2026-06-29 | 周频更新 | 补充 Vera Rubin 整机架系统、AWS/Pinterest 多年云承诺、OpenAI/Broadcom 推理 ASIC、Qualcomm 异构推理平台、Firmus 区域 AI 工厂和 HBM/存储供给线索，强化推理基础设施向定制芯片、软件栈、存储、电力园区和应用客户承诺外溢的判断 | 周频候选复核 |
