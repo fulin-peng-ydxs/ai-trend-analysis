@@ -1,5 +1,16 @@
 # 更新记录
 
+## 2026-06-29
+
+- 执行周频候选复核，处理本窗口 24 条候选信息，并用 Chevron 官方披露关闭前序 Chevron/Microsoft 供电协议 review 项。
+- 更新 `AI推理基础设施`，补充 Vera Rubin 整机架系统、AWS/Pinterest 多年云承诺、OpenAI/Broadcom 推理 ASIC、Qualcomm 异构推理平台、Firmus 区域 AI 工厂和 HBM/存储供给线索。
+- 更新 `电力与散热`，补充 Project Kilby 2.67GW 长期供电协议、800V HVDC、高功率 Rubin Ultra 机架和区域 AI 工厂 speed-to-power 证据。
+- 更新 `CPO与下一代光互连`，补充高端光模块占比、CPO 渗透率、Micro LED CPO 放量节奏和定制推理平台互连需求。
+- 更新 `AI Agent`，补充 AWS AgentCore、Pinterest Assistant、OpenAI 多代理能力、Palantir 隔离环境部署和 Modular 异构软件栈。
+- 更新 `机器人`，补充 NVIDIA Halos 全栈安全系统和 Agility Robotics 多年订单、客户环境部署与融资信息。
+- 将 `AI存储/HBM供给瓶颈` 从新方向候选升级为 `watching`，暂不新建正式方向研究文档；`AI-RAN/边缘AI基础设施` 继续保持候选。
+- 回写 2026Q2 信息候选池处理统计：`update` 23 条、`watch` 8 条、`new_direction_candidate` 1 条、`review` 1 条、`create` 0 条、`ignore` 0 条。
+
 ## 2026-06-27
 
 - 新增 `data-source/06_核心标的观察池`，用于承接方向研究派生出的 A 股主板公司观察池。

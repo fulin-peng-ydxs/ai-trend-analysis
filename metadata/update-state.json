@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29",
+  "updated_at": "2026-06-30",
   "period_policy": {
     "active_research_period": "2026Q2",
     "period_mode": "configured_active_period",
@@ -9,30 +9,30 @@
   },
   "jobs": {
     "daily": {
-      "last_success_at": "2026-06-29T22:48:40+08:00",
+      "last_success_at": "2026-06-30T21:35:37+08:00",
       "last_status": "success",
       "last_error": "",
-      "last_candidate_count": 4,
-      "last_summary": "追加 4 条候选信息到 2026Q2 候选池，覆盖 AI推理基础设施、AI Agent、CPO与下一代光互连、电力与散热，并补充区域 AI 工厂、主权 AI、Micro LED CPO 和模块化数据中心证据；本次均属于已有方向相关信息，日频统一标记为 watch，未直接修改正式文档、公司注册表或核心标的观察池。"
+      "last_candidate_count": 3,
+      "last_summary": "追加 3 条候选信息到 2026Q2 候选池，覆盖 AI存储/HBM供给瓶颈和 AI推理基础设施，并补充韩国半导体中心投资、DRAM 诉讼风险和 HBM/GDDR 异构推理服务技术证据；其中 2 条标记 watch、1 条诉讼类信息标记 review，未直接修改正式方向研究、历史案例、观察清单、复盘记录、公司注册表或核心标的观察池。"
     },
     "weekly": {
-      "last_success_at": "2026-06-22T22:18:00+08:00",
+      "last_success_at": "2026-06-29T23:08:07+08:00",
       "last_status": "success",
       "last_error": "",
-      "last_candidate_count": 10,
+      "last_candidate_count": 24,
       "last_updated_documents": [
         "data-source/05_信息候选池/2026Q2_信息候选池.md",
         "data-source/01_方向研究/AI推理基础设施.md",
         "data-source/01_方向研究/电力与散热.md",
         "data-source/01_方向研究/CPO与下一代光互连.md",
         "data-source/01_方向研究/AI Agent.md",
+        "data-source/01_方向研究/机器人.md",
         "data-source/03_观察清单/2026Q2_观察清单.md",
         "metadata/direction-registry.json",
         "metadata/sources.json",
-        "metadata/source-registry.json",
         "CHANGELOG.md"
       ],
-      "last_summary": "复核 10 条候选信息：6 条写入正式方向研究或观察清单，2 条登记为新方向候选，1 条保持 watch，1 条因缺少官方披露标记 review。"
+      "last_summary": "复核本窗口 24 条候选并关闭前序 Chevron/Microsoft review：23 条写入正式方向研究或观察清单，AI存储/HBM供给瓶颈升级为 watching 但未新建正式方向文档，AI-RAN 继续保持 new_direction_candidate，Gulf News/Amazon 印度投资记录因缺少官方披露标记 review。"
     },
     "monthly": {
       "last_success_at": null,
