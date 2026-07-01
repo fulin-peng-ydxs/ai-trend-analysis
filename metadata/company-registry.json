@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-27",
+  "updated_at": "2026-07-01",
   "description": "AI 趋势投资知识库公司注册表。用于把方向研究中的受益环节映射到 A 股主板上市公司观察池，不构成投资建议。",
   "scope": {
     "market": "A_share",
@@ -52,6 +52,56 @@
         "风险权重"
       ],
       "activation_rule": "不得在缺少至少一个完整季度复盘样本时强行打分；评分只作为观察排序，不作为买卖建议。"
+    }
+  ],
+  "monthly_review_focus": [
+    {
+      "id": "ai_server_systems",
+      "linked_directions": ["ai_inference_infrastructure"],
+      "priority": "high",
+      "companies": ["foxconn_industrial_internet", "inspur_information", "sugon", "unisplendour", "zte"],
+      "verification_signals": ["AI 服务器订单", "推理服务器收入", "智算中心交付", "毛利率", "供应链交付"],
+      "review_question": "AI 基础设施资本开支是否真实传导到主板服务器和系统集成公司。"
+    },
+    {
+      "id": "optical_interconnect_and_pcb",
+      "linked_directions": ["cpo_optical_interconnect", "ai_inference_infrastructure"],
+      "priority": "high",
+      "companies": ["hgtech", "accelink", "cambridge_industries", "wus_printed_circuit", "shennan_circuits"],
+      "verification_signals": ["800G/1.6T 订单", "客户认证", "高速光模块收入", "AI 服务器 PCB 收入", "高端产能", "现金流"],
+      "review_question": "网络和光互连瓶颈是否传导到主板光模块、器件和 PCB 公司利润。"
+    },
+    {
+      "id": "power_cooling_equipment",
+      "linked_directions": ["power_and_cooling"],
+      "priority": "high",
+      "companies": ["tbea", "sieyuan_electric", "xj_electric", "envicool", "kehua_data", "canatal"],
+      "verification_signals": ["变压器订单", "开关设备订单", "UPS 收入", "液冷订单", "数据中心温控收入", "交付周期", "毛利率"],
+      "review_question": "AI 数据中心电力散热约束是否传导到主板电力设备、供配电和温控公司。"
+    },
+    {
+      "id": "agent_software",
+      "linked_directions": ["ai_agent"],
+      "priority": "medium_high",
+      "companies": ["iflytek", "yonyou_network", "weaver_network", "baosight_software"],
+      "verification_signals": ["AI 产品收入", "订阅收入", "付费用户", "行业订单", "客户留存", "项目利润"],
+      "review_question": "Agent 生产化是否形成可持续软件收入，而非只增加产品叙事。"
+    },
+    {
+      "id": "robotics_supply_chain",
+      "linked_directions": ["robotics"],
+      "priority": "medium",
+      "companies": ["estun", "tuopu_group", "sanhua_intelligent_controls", "shuanghuan_driveline"],
+      "verification_signals": ["机器人销量", "批量订单", "客户定点", "零部件收入", "海外收入", "毛利率"],
+      "review_question": "机器人方向是否从客户试点进入批量交付，并对主板公司形成可追溯收入。"
+    },
+    {
+      "id": "memory_hbm_gap",
+      "linked_directions": ["ai_memory_hbm_supply_bottleneck"],
+      "priority": "medium",
+      "companies": [],
+      "verification_signals": ["HBM 出货", "服务器 DRAM 价格", "企业级 SSD 容量", "先进封装产能", "交付周期"],
+      "review_question": "AI存储/HBM供给瓶颈升级为 tracking 前，是否需要补齐可验证的 A 股主板公司承接对象。"
     }
   ],
   "companies": [

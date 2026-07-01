@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-30",
+  "updated_at": "2026-07-01",
   "period_policy": {
     "active_research_period": "2026Q2",
     "period_mode": "configured_active_period",
@@ -35,11 +35,17 @@
       "last_summary": "复核本窗口 24 条候选并关闭前序 Chevron/Microsoft review：23 条写入正式方向研究或观察清单，AI存储/HBM供给瓶颈升级为 watching 但未新建正式方向文档，AI-RAN 继续保持 new_direction_candidate，Gulf News/Amazon 印度投资记录因缺少官方披露标记 review。"
     },
     "monthly": {
-      "last_success_at": null,
-      "last_status": "not_run",
+      "last_success_at": "2026-07-01T22:01:49+08:00",
+      "last_status": "success",
       "last_error": "",
-      "last_updated_documents": [],
-      "last_summary": ""
+      "last_updated_documents": [
+        "data-source/03_观察清单/2026Q2_观察清单.md",
+        "data-source/06_核心标的观察池/2026Q2_A股主板核心标的观察池.md",
+        "metadata/company-registry.json",
+        "metadata/update-state.json",
+        "CHANGELOG.md"
+      ],
+      "last_summary": "基于 2026Q2 候选池、方向状态、公司注册表和已更新正式文档完成首次月频观察清单更新：AI Agent 和 AI存储/HBM供给瓶颈观察优先级升为中高；补充模块化同址数据中心、HBM/GDDR 异构推理服务、韩国半导体中心投资和 DRAM 诉讼 review 等观察问题；同步公司层月频复盘焦点，但未调整方向状态或公司状态。"
     },
     "quarterly": {
       "last_success_at": null,

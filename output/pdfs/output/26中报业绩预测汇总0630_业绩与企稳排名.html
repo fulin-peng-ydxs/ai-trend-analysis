@@ -1,0 +1,2434 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>26中报业绩预测汇总0630：业绩强弱、板块分化与止跌企稳排名</title>
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --paper: #fffdf8;
+      --ink: #1d2327;
+      --muted: #687076;
+      --line: #dedbd2;
+      --good: #0f7a55;
+      --good-bg: #e7f4ee;
+      --stable: #b56a00;
+      --stable-bg: #fff0d2;
+      --bad: #b42318;
+      --bad-bg: #fde8e5;
+      --mixed: #4b63a8;
+      --mixed-bg: #e9edfb;
+      --neutral: #586069;
+      --neutral-bg: #eef0f2;
+      --shadow: 0 10px 30px rgba(34, 40, 46, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.65;
+      letter-spacing: 0;
+    }
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+    .hero {
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #fffdf8 0%, #f8fbf7 52%, #fff8ed 100%);
+      border-radius: 8px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(24px, 3vw, 38px);
+      line-height: 1.22;
+      letter-spacing: 0;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 10px;
+      background: rgba(255, 255, 255, .7);
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      min-height: 150px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: #fff;
+    }
+    .summary-card h2 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+    .summary-card p {
+      margin: 0;
+      color: #3b4248;
+      font-size: 14px;
+    }
+    .summary-card.good { border-color: #a9d8c4; background: var(--good-bg); }
+    .summary-card.stable { border-color: #f2cf8d; background: var(--stable-bg); }
+    .summary-card.bad { border-color: #f4b1aa; background: var(--bad-bg); }
+    .summary-card.mixed { border-color: #b8c4eb; background: var(--mixed-bg); }
+    .toc {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 12px 0;
+      margin: 16px 0;
+      background: rgba(246, 244, 239, .92);
+      backdrop-filter: blur(10px);
+    }
+    .nav-pill {
+      white-space: nowrap;
+      text-decoration: none;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 12px;
+      background: #fff;
+      font-size: 14px;
+    }
+    .nav-good { border-color: #b7ddcb; }
+    .nav-stable { border-color: #f1ce87; }
+    .nav-bad { border-color: #f0aba4; }
+    .nav-mixed { border-color: #bec8ea; }
+    .report-section {
+      margin: 16px 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      scroll-margin-top: 74px;
+    }
+    .report-section h2 {
+      margin: 0 0 16px;
+      padding-left: 12px;
+      border-left: 5px solid var(--neutral);
+      font-size: 24px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+    .section-good h2 { border-left-color: var(--good); }
+    .section-stable h2 { border-left-color: var(--stable); }
+    .section-bad h2 { border-left-color: var(--bad); }
+    .section-mixed h2 { border-left-color: var(--mixed); }
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 19px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+    p { margin: 10px 0 14px; }
+    ul, ol { margin: 8px 0 18px 22px; padding: 0; }
+    li { margin: 6px 0; }
+    code {
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: #f1eee6;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 14px 0 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    table {
+      width: 100%;
+      min-width: 920px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #ebe7dc;
+      vertical-align: top;
+      text-align: left;
+      white-space: nowrap;
+    }
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #f4f0e7;
+      color: #33383d;
+      font-weight: 700;
+    }
+    td:last-child, th:last-child {
+      white-space: normal;
+      min-width: 220px;
+    }
+    tbody tr:hover { background: #fbfaf6; }
+    .row-good td:first-child { border-left: 5px solid var(--good); }
+    .row-stable td:first-child { border-left: 5px solid var(--stable); }
+    .row-bad td:first-child { border-left: 5px solid var(--bad); }
+    .row-mixed td:first-child { border-left: 5px solid var(--mixed); }
+    .badge, .check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 42px;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .badge-good, .check { color: var(--good); background: var(--good-bg); }
+    .badge-stable { color: var(--stable); background: var(--stable-bg); }
+    .badge-bad { color: var(--bad); background: var(--bad-bg); }
+    .badge-mixed { color: var(--mixed); background: var(--mixed-bg); }
+    .metric-strong, .metric-good { color: var(--good); font-weight: 700; }
+    .metric-stable { color: var(--stable); font-weight: 700; }
+    .metric-bad { color: var(--bad); font-weight: 700; }
+    footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    @media (max-width: 860px) {
+      .page { width: min(100% - 20px, 1180px); padding-top: 16px; }
+      .hero, .report-section { padding: 18px; }
+      .summary-grid { grid-template-columns: 1fr; }
+      .toc { top: 0; }
+      table { min-width: 820px; }
+      h1 { font-size: 24px; }
+      .report-section h2 { font-size: 20px; }
+    }
+    @media print {
+      body { background: #fff; }
+      .toc { display: none; }
+      .page { width: 100%; padding: 0; }
+      .hero, .report-section { box-shadow: none; break-inside: avoid; }
+      .table-wrap { overflow: visible; }
+      table { min-width: 0; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <h1>26中报业绩预测汇总0630：业绩强弱、板块分化与止跌企稳排名</h1>
+      <div class="meta">
+        <span>基于 PDF 表内预测整理</span>
+        <span>生成时间：2026-06-30 23:19</span>
+        <span>不构成投资建议</span>
+      </div>
+      <div class="summary-grid" aria-label="重点速览">
+        <article class="summary-card good">
+          <h2>业绩最好的重点</h2>
+          <p>通信光模块/国产算力、电子存储/AI PCB、锂电材料修复，是表内最明确的高景气主线。</p>
+        </article>
+        <article class="summary-card stable">
+          <h2>止跌企稳重点</h2>
+          <p>锂电隔膜、氟化工、VC/溶剂、光伏局部减亏、半导体材料和建材新材料，重点看扭亏和转正。</p>
+        </article>
+        <article class="summary-card bad">
+          <h2>业绩偏差重点</h2>
+          <p>光伏主链、生猪养殖、军工多数公司、公用事业短期低增、白酒多数公司和 EDA/硅片弱项需要谨慎。</p>
+        </article>
+        <article class="summary-card mixed">
+          <h2>最容易误判</h2>
+          <p>电子、电新、汽车和消费不能按一级板块简单判断，必须拆到子行业和个股看分化。</p>
+        </article>
+      </div>
+    </header>
+    <nav class="toc" aria-label="章节导航">
+      <a class="nav-pill nav-neutral" href="#0-读表口径">0. 读表口径</a>
+<a class="nav-pill nav-neutral" href="#1-总览排名">1. 总览排名</a>
+<a class="nav-pill nav-good" href="#2-业绩好的板块和个股">2. 业绩好的板块和个股</a>
+<a class="nav-pill nav-bad" href="#3-业绩不好的板块和个股">3. 业绩不好的板块和个股</a>
+<a class="nav-pill nav-stable" href="#4-止跌企稳排名">4. 止跌企稳排名</a>
+<a class="nav-pill nav-mixed" href="#5-板块内部差异总结">5. 板块内部差异总结</a>
+<a class="nav-pill nav-neutral" href="#6-补充页验证">6. 补充页验证</a>
+<a class="nav-pill nav-neutral" href="#7-最终结论">7. 最终结论</a>
+    </nav>
+    <section id="0-读表口径" class="report-section section-neutral">
+<h2>0. 读表口径</h2>
+<p>本报告只基于 PDF 表内预测做横向比较，不构成投资建议。PDF 为图片型表格，已做 OCR 抽取并对关键行回看页面校验。</p>
+<p>为避免原表“2Q26/2026 混在一起”不好读，本文统一改成以下格式：</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>字段</th>
+<th>含义</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="字段">2Q26收入</td>
+<td data-label="含义">2026 年二季度收入预测</td>
+</tr>
+<tr>
+<td data-label="字段">2Q26收入同比</td>
+<td data-label="含义">2026 年二季度收入同比增速</td>
+</tr>
+<tr>
+<td data-label="字段">2Q26净利</td>
+<td data-label="含义">2026 年二季度归母净利润预测</td>
+</tr>
+<tr>
+<td data-label="字段">2Q26净利同比</td>
+<td data-label="含义">2026 年二季度归母净利润同比增速</td>
+</tr>
+<tr>
+<td data-label="字段">2026收入</td>
+<td data-label="含义">2026 全年收入预测</td>
+</tr>
+<tr>
+<td data-label="字段">2026净利</td>
+<td data-label="含义">2026 全年归母净利润预测</td>
+</tr>
+<tr>
+<td data-label="字段">2026净利同比</td>
+<td data-label="含义">2026 全年归母净利润同比增速</td>
+</tr>
+<tr class="row-good">
+<td data-label="字段">超预期</td>
+<td data-label="含义">原表勾选“2Q26业绩是否超市场预期”</td>
+</tr>
+</tbody></table></div>
+<p>单位说明：</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>数据范围</th>
+<th>单位</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="数据范围">A股/港股主表大多数公司</td>
+<td data-label="单位">百万元人民币</td>
+</tr>
+<tr>
+<td data-label="数据范围">通信主表</td>
+<td data-label="单位">亿元人民币</td>
+</tr>
+<tr>
+<td data-label="数据范围">海外科技主表</td>
+<td data-label="单位">百万美元</td>
+</tr>
+<tr>
+<td data-label="数据范围">公用事业主表</td>
+<td data-label="单位">亿元人民币，且多数只给净利润</td>
+</tr>
+<tr>
+<td data-label="数据范围">补充页</td>
+<td data-label="单位">口径不完全统一，单独标注，不直接纳入主排名</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="1-总览排名" class="report-section section-neutral">
+<h2>1. 总览排名</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>排名</th>
+<th>板块/方向</th>
+<th>业绩强度</th>
+<th>内部分化</th>
+<th>代表结论</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="排名">1</td>
+<td data-label="板块/方向">通信：光模块、国产算力芯片</td>
+<td data-label="业绩强度" class="cell-good"><span class="badge badge-good">很强</span></td>
+<td data-label="内部分化">弱项较少，个别器件增速低于头部</td>
+<td data-label="代表结论">800G/1.6T、硅光、光芯片、国产算力同时放量，收入和利润都有高弹性。</td>
+</tr>
+<tr>
+<td data-label="排名">2</td>
+<td data-label="板块/方向">电子：存储、AI PCB、半导体设备/材料</td>
+<td data-label="业绩强度" class="cell-good"><span class="badge badge-good">很强</span></td>
+<td data-label="内部分化">强弱差异最大</td>
+<td data-label="代表结论">存储涨价和 AI PCB 是最强；EDA、硅片、部分 SoC 仍有亏损或负增。</td>
+</tr>
+<tr>
+<td data-label="排名">3</td>
+<td data-label="板块/方向">电新：锂电材料、隔膜、氢能化工</td>
+<td data-label="业绩强度" class="cell-good"><span class="badge badge-good">强修复</span></td>
+<td data-label="内部分化">光伏链拖累明显</td>
+<td data-label="代表结论">锂电材料和氟化工利润弹性强，光伏主链 2Q26 仍弱。</td>
+</tr>
+<tr>
+<td data-label="排名">4</td>
+<td data-label="板块/方向">建材新材料：铜箔、玻纤、基建修复</td>
+<td data-label="业绩强度" class="cell-good"><span class="badge badge-good">强修复</span></td>
+<td data-label="内部分化">玻璃/部分消费建材偏弱</td>
+<td data-label="代表结论">低基数下利润弹性突出，尤其铜箔、玻纤、科顺股份。</td>
+</tr>
+<tr>
+<td data-label="排名">5</td>
+<td data-label="板块/方向">有色金属：小金属、电解铝、铜</td>
+<td data-label="业绩强度" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="内部分化">价格驱动，周期属性强</td>
+<td data-label="代表结论">稀土氧化物、电解铝、铜矿资源股利润弹性较好。</td>
+</tr>
+<tr>
+<td data-label="排名">6</td>
+<td data-label="板块/方向">汽车：强新车周期、商用车、部分零部件</td>
+<td data-label="业绩强度" class="cell-mixed"><span class="badge badge-mixed">分化强</span></td>
+<td data-label="内部分化">新势力分化非常明显</td>
+<td data-label="代表结论">零跑、一汽解放、岱美、继峰强；理想、小鹏 2Q26 利润承压。</td>
+</tr>
+<tr>
+<td data-label="排名">7</td>
+<td data-label="板块/方向">计算机：国产算力、算力租赁</td>
+<td data-label="业绩强度" class="cell-mixed"><span class="badge badge-mixed">局部强</span></td>
+<td data-label="内部分化">软件、医疗 IT 弹性弱于算力硬件</td>
+<td data-label="代表结论">寒武纪、海光、协创、浪潮代表算力链，其他方向不宜整体看好。</td>
+</tr>
+<tr>
+<td data-label="排名">8</td>
+<td data-label="板块/方向">医药</td>
+<td data-label="业绩强度" class="cell-good"><span class="badge badge-good">中等偏强</span></td>
+<td data-label="内部分化">创新药/CXO 好于传统器械</td>
+<td data-label="代表结论">百济、三生国健、药明康德好；迈瑞、鱼跃等偏稳或承压。</td>
+</tr>
+<tr>
+<td data-label="排名">9</td>
+<td data-label="板块/方向">食品饮料</td>
+<td data-label="业绩强度" class="cell-mixed"><span class="badge badge-mixed">分化</span></td>
+<td data-label="内部分化">白酒多数偏弱，零食/饮料更好</td>
+<td data-label="代表结论">五粮液、万辰、洽洽有弹性；多数白酒 2Q26 同比不佳。</td>
+</tr>
+<tr>
+<td data-label="排名">10</td>
+<td data-label="板块/方向">交运</td>
+<td data-label="业绩强度" class="cell-good"><span class="badge badge-good">局部好</span></td>
+<td data-label="内部分化">油运/快递/铁路好，航空仍在修复</td>
+<td data-label="代表结论">中远海能、大秦铁路、中通较好；航空更多是 2026 转盈预期。</td>
+</tr>
+<tr>
+<td data-label="排名">11</td>
+<td data-label="板块/方向">军工</td>
+<td data-label="业绩强度" class="cell-bad"><span class="badge badge-bad">偏弱</span></td>
+<td data-label="内部分化">洪都航空强，主机厂/军工电子多承压</td>
+<td data-label="代表结论">2Q26 多数利润同比下滑，不能按板块整体乐观。</td>
+</tr>
+<tr>
+<td data-label="排名">12</td>
+<td data-label="板块/方向">公用事业</td>
+<td data-label="业绩强度" class="cell-bad"><span class="badge badge-bad">短期弱</span></td>
+<td data-label="内部分化">防御属性强，业绩弹性弱</td>
+<td data-label="代表结论">火电、核电短期同比偏弱，水电相对稳。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="排名">13</td>
+<td data-label="板块/方向">农林牧渔</td>
+<td data-label="业绩强度" class="cell-stable"><span class="badge badge-stable">弱中有企稳</span></td>
+<td data-label="内部分化">生猪弱，牧业转盈</td>
+<td data-label="代表结论" class="metric-bad">生猪养殖转亏，现代牧业/优然牧业有扭亏。</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="2-业绩好的板块和个股" class="report-section section-good">
+<h2>2. 业绩好的板块和个股</h2>
+<h3 class="sub-good">2.1 通信：光模块、国产算力芯片</h3>
+<p>单位：亿元人民币。</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>强弱标签</th>
+<th>公司</th>
+<th>子行业</th>
+<th>2Q26收入</th>
+<th>2Q26收入同比</th>
+<th>2Q26净利</th>
+<th>2Q26净利同比</th>
+<th>2026收入</th>
+<th>2026净利</th>
+<th>2026净利同比</th>
+<th>超预期</th>
+<th>解读</th>
+</tr></thead><tbody>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">寒武纪</td>
+<td data-label="子行业">国产芯片</td>
+<td data-label="2Q26收入">45.00</td>
+<td data-label="2Q26收入同比" class="metric-strong">154%</td>
+<td data-label="2Q26净利">18.00</td>
+<td data-label="2Q26净利同比" class="metric-strong">164%</td>
+<td data-label="2026收入">156.86</td>
+<td data-label="2026净利">51.22</td>
+<td data-label="2026净利同比" class="metric-strong">149%</td>
+<td data-label="超预期"><span class="check">超预期</span></td>
+<td data-label="解读">国产大模型与芯片加速迭代，收入和利润都处在高弹性阶段。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">中际旭创</td>
+<td data-label="子行业">光模块</td>
+<td data-label="2Q26收入">289.12</td>
+<td data-label="2Q26收入同比" class="metric-strong">133%</td>
+<td data-label="2Q26净利">85.00</td>
+<td data-label="2Q26净利同比" class="metric-strong">252%</td>
+<td data-label="2026收入">937.56</td>
+<td data-label="2026净利">298.07</td>
+<td data-label="2026净利同比" class="metric-strong">176%</td>
+<td data-label="超预期"><span class="check">超预期</span></td>
+<td data-label="解读">800G 高景气、1.6T 率先放量，利润弹性非常强。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">新易盛</td>
+<td data-label="子行业">光模块</td>
+<td data-label="2Q26收入">114.11</td>
+<td data-label="2Q26收入同比" class="metric-good">79%</td>
+<td data-label="2Q26净利">38.00</td>
+<td data-label="2Q26净利同比" class="metric-good">60%</td>
+<td data-label="2026收入">490.98</td>
+<td data-label="2026净利">185.34</td>
+<td data-label="2026净利同比" class="metric-good">94%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">AI 大客户需求旺盛，1.6T 交付改善带动业绩。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">稳强</span></td>
+<td data-label="公司">天孚通信</td>
+<td data-label="子行业">光模块</td>
+<td data-label="2Q26收入">16.22</td>
+<td data-label="2Q26收入同比">7%</td>
+<td data-label="2Q26净利">6.00</td>
+<td data-label="2Q26净利同比">7%</td>
+<td data-label="2026收入">87.42</td>
+<td data-label="2026净利">33.30</td>
+<td data-label="2026净利同比" class="metric-good">65%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">当季增速低于头部，但全年仍有较强改善。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">源杰科技</td>
+<td data-label="子行业">光模块</td>
+<td data-label="2Q26收入">4.95</td>
+<td data-label="2Q26收入同比" class="metric-strong">311%</td>
+<td data-label="2Q26净利">2.50</td>
+<td data-label="2Q26净利同比" class="metric-strong">674%</td>
+<td data-label="2026收入">16.59</td>
+<td data-label="2026净利">7.72</td>
+<td data-label="2026净利同比" class="metric-strong">305%</td>
+<td data-label="超预期"><span class="check">超预期</span></td>
+<td data-label="解读">数据中心 CW 光源放量，利润弹性极高。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">太辰光</td>
+<td data-label="子行业">光模块</td>
+<td data-label="2Q26收入">9.33</td>
+<td data-label="2Q26收入同比" class="metric-strong">104%</td>
+<td data-label="2Q26净利">1.80</td>
+<td data-label="2Q26净利同比" class="metric-good">92%</td>
+<td data-label="2026收入">28.77</td>
+<td data-label="2026净利">6.28</td>
+<td data-label="2026净利同比" class="metric-strong">110%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">高密度光连接器恢复增长，受益 CPO/OIO 趋势。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">亨通光电</td>
+<td data-label="子行业">光模块</td>
+<td data-label="2Q26收入">403.23</td>
+<td data-label="2Q26收入同比" class="metric-strong">115%</td>
+<td data-label="2Q26净利">25.00</td>
+<td data-label="2Q26净利同比" class="metric-strong">137%</td>
+<td data-label="2026收入">838.83</td>
+<td data-label="2026净利">69.58</td>
+<td data-label="2026净利同比" class="metric-strong">160%</td>
+<td data-label="超预期"><span class="check">超预期</span></td>
+<td data-label="解读">光通信与能源互联共振，海缆和光纤需求释放。</td>
+</tr>
+</tbody></table></div>
+<p>板块解读：通信是全表最干净的高景气方向。头部光模块、光芯片和国产算力芯片同时高增，且 2Q26 与 2026 全年延续性都强。内部差异主要是头部弹性强弱，不是方向性好坏。</p>
+<h3 class="sub-good">2.2 电子：存储、AI PCB、半导体设备/材料</h3>
+<p>单位：百万元人民币；海外科技单独在后表列示。</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>强弱标签</th>
+<th>公司</th>
+<th>子行业</th>
+<th>2Q26收入</th>
+<th>2Q26收入同比</th>
+<th>2Q26净利</th>
+<th>2Q26净利同比</th>
+<th>2026收入</th>
+<th>2026净利</th>
+<th>2026净利同比</th>
+<th>超预期</th>
+<th>解读</th>
+</tr></thead><tbody>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">兆易创新</td>
+<td data-label="子行业">存储/芯片</td>
+<td data-label="2Q26收入">10000</td>
+<td data-label="2Q26收入同比" class="metric-strong">346%</td>
+<td data-label="2Q26净利">5000</td>
+<td data-label="2Q26净利同比" class="metric-strong">1367%</td>
+<td data-label="2026收入">35000</td>
+<td data-label="2026净利">20000</td>
+<td data-label="2026净利同比" class="metric-strong">1114%</td>
+<td data-label="超预期"><span class="check">超预期</span></td>
+<td data-label="解读">DDR4 涨价、端侧 AI 和 3D 堆叠 DRAM 带来高弹性。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">普冉股份</td>
+<td data-label="子行业">存储/芯片</td>
+<td data-label="2Q26收入">2500</td>
+<td data-label="2Q26收入同比" class="metric-strong">400%</td>
+<td data-label="2Q26净利">800</td>
+<td data-label="2Q26净利同比" class="metric-strong">3493%</td>
+<td data-label="2026收入">10000</td>
+<td data-label="2026净利">3000</td>
+<td data-label="2026净利同比" class="metric-strong">1346%</td>
+<td data-label="超预期"><span class="check">超预期</span></td>
+<td data-label="解读">AI 终端需求和存储涨价周期驱动。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">江波龙</td>
+<td data-label="子行业">存储模组</td>
+<td data-label="2Q26收入">15000</td>
+<td data-label="2Q26收入同比" class="metric-strong">153%</td>
+<td data-label="2Q26净利">6000</td>
+<td data-label="2Q26净利同比">NA</td>
+<td data-label="2026收入">65000</td>
+<td data-label="2026净利">25000</td>
+<td data-label="2026净利同比" class="metric-strong">1656%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">深度受益存储芯片涨价。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">北京君正</td>
+<td data-label="子行业">存储/SoC</td>
+<td data-label="2Q26收入">2500</td>
+<td data-label="2Q26收入同比" class="metric-strong">110%</td>
+<td data-label="2Q26净利">600</td>
+<td data-label="2Q26净利同比" class="metric-strong">364%</td>
+<td data-label="2026收入">10000</td>
+<td data-label="2026净利">3000</td>
+<td data-label="2026净利同比" class="metric-strong">697%</td>
+<td data-label="超预期"><span class="check">超预期</span></td>
+<td data-label="解读">消费类 SoC 和行业智能化改善。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">生益科技</td>
+<td data-label="子行业">AI PCB/CCL</td>
+<td data-label="2Q26收入">10000</td>
+<td data-label="2Q26收入同比">41%</td>
+<td data-label="2Q26净利">1800</td>
+<td data-label="2Q26净利同比" class="metric-strong">109%</td>
+<td data-label="2026收入">45000</td>
+<td data-label="2026净利">7650</td>
+<td data-label="2026净利同比" class="metric-strong">129%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">覆铜板涨价，进入海外 AI 供应链。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">南亚新材</td>
+<td data-label="子行业">AI PCB/CCL</td>
+<td data-label="2Q26收入">2500</td>
+<td data-label="2Q26收入同比" class="metric-good">85%</td>
+<td data-label="2Q26净利">238</td>
+<td data-label="2Q26净利同比" class="metric-strong">259%</td>
+<td data-label="2026收入">10000</td>
+<td data-label="2026净利">1000</td>
+<td data-label="2026净利同比" class="metric-strong">316%</td>
+<td data-label="超预期"><span class="check">超预期</span></td>
+<td data-label="解读">国产算力覆铜板，M10 海外大厂送样。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">生益电子</td>
+<td data-label="子行业">AI PCB</td>
+<td data-label="2Q26收入">3000</td>
+<td data-label="2Q26收入同比">37%</td>
+<td data-label="2Q26净利">500</td>
+<td data-label="2Q26净利同比" class="metric-good">51%</td>
+<td data-label="2026收入">13200</td>
+<td data-label="2026净利">2500</td>
+<td data-label="2026净利同比" class="metric-good">70%</td>
+<td data-label="超预期"><span class="check">超预期</span></td>
+<td data-label="解读">亚马逊核心供应商，交换机 PCB 放量。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">广合科技</td>
+<td data-label="子行业">AI PCB</td>
+<td data-label="2Q26收入">2500</td>
+<td data-label="2Q26收入同比" class="metric-good">91%</td>
+<td data-label="2Q26净利">525</td>
+<td data-label="2Q26净利同比" class="metric-strong">109%</td>
+<td data-label="2026收入">10000</td>
+<td data-label="2026净利">2500</td>
+<td data-label="2026净利同比" class="metric-strong">146%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">CPU 主板和 AI PCB 需求带动。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">稳强</span></td>
+<td data-label="公司">沪电股份</td>
+<td data-label="子行业">AI PCB</td>
+<td data-label="2Q26收入">7500</td>
+<td data-label="2Q26收入同比" class="metric-good">68%</td>
+<td data-label="2Q26净利">1550</td>
+<td data-label="2Q26净利同比" class="metric-good">68%</td>
+<td data-label="2026收入">30000</td>
+<td data-label="2026净利">6500</td>
+<td data-label="2026净利同比" class="metric-good">70%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">交换机和 AI 服务器需求强。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="强弱标签" class="cell-bad"><span class="badge badge-bad">分化偏弱</span></td>
+<td data-label="公司">景旺电子</td>
+<td data-label="子行业">PCB</td>
+<td data-label="2Q26收入">4000</td>
+<td data-label="2Q26收入同比">7%</td>
+<td data-label="2Q26净利">280</td>
+<td data-label="2Q26净利同比" class="metric-bad">-14%</td>
+<td data-label="2026收入">19000</td>
+<td data-label="2026净利">2200</td>
+<td data-label="2026净利同比" class="metric-good">79%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">2Q26 利润同比弱，但 2026 有恢复。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">中微公司</td>
+<td data-label="子行业">半导体设备</td>
+<td data-label="2Q26收入">3502</td>
+<td data-label="2Q26收入同比">26%</td>
+<td data-label="2Q26净利">945</td>
+<td data-label="2Q26净利同比" class="metric-strong">140%</td>
+<td data-label="2026收入">16321</td>
+<td data-label="2026净利">3132</td>
+<td data-label="2026净利同比">48%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">刻蚀设备龙头，存储扩产弹性大。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">中科飞测</td>
+<td data-label="子行业">半导体设备</td>
+<td data-label="2Q26收入">576</td>
+<td data-label="2Q26收入同比">41%</td>
+<td data-label="2Q26净利">7</td>
+<td data-label="2Q26净利同比" class="metric-strong">314%</td>
+<td data-label="2026收入">3057</td>
+<td data-label="2026净利">376</td>
+<td data-label="2026净利同比" class="metric-strong">542%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">量检测设备订单有望随产品突破放量。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">精测电子</td>
+<td data-label="子行业">半导体设备</td>
+<td data-label="2Q26收入">830</td>
+<td data-label="2Q26收入同比">20%</td>
+<td data-label="2Q26净利">45</td>
+<td data-label="2Q26净利同比" class="metric-strong">553%</td>
+<td data-label="2026收入">4317</td>
+<td data-label="2026净利">332</td>
+<td data-label="2026净利同比" class="metric-strong">305%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">先进制程明场、OCD、膜厚、电子束设备交付。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">稳强</span></td>
+<td data-label="公司">雅克科技</td>
+<td data-label="子行业">半导体材料</td>
+<td data-label="2Q26收入">2803</td>
+<td data-label="2Q26收入同比">29%</td>
+<td data-label="2Q26净利">442</td>
+<td data-label="2Q26净利同比">46%</td>
+<td data-label="2026收入">10094</td>
+<td data-label="2026净利">1388</td>
+<td data-label="2026净利同比">35%</td>
+<td data-label="超预期"><span class="check">超预期</span></td>
+<td data-label="解读">半导体材料平台化，前驱体业务强。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">稳强</span></td>
+<td data-label="公司">鼎龙股份</td>
+<td data-label="子行业">半导体材料</td>
+<td data-label="2Q26收入">889</td>
+<td data-label="2Q26收入同比" class="metric-bad">-2%</td>
+<td data-label="2Q26净利">299</td>
+<td data-label="2Q26净利同比" class="metric-good">53%</td>
+<td data-label="2026收入">4015</td>
+<td data-label="2026净利">1261</td>
+<td data-label="2026净利同比" class="metric-good">59%</td>
+<td data-label="超预期"><span class="check">超预期</span></td>
+<td data-label="解读">抛光垫龙头，利润端强于收入端。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="强弱标签" class="cell-stable"><span class="badge badge-stable">企稳</span></td>
+<td data-label="公司">立昂微</td>
+<td data-label="子行业">半导体硅片</td>
+<td data-label="2Q26收入">1200</td>
+<td data-label="2Q26收入同比">42%</td>
+<td data-label="2Q26净利" class="metric-bad">-17</td>
+<td data-label="2Q26净利同比" class="metric-stable">减亏</td>
+<td data-label="2026收入">4636</td>
+<td data-label="2026净利">113</td>
+<td data-label="2026净利同比" class="metric-stable">扭亏</td>
+<td data-label="超预期"></td>
+<td data-label="解读" class="metric-bad">2Q26 仍亏，但 2026 扭亏。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="强弱标签" class="cell-bad"><span class="badge badge-bad">弱</span></td>
+<td data-label="公司">沪硅股份</td>
+<td data-label="子行业">半导体硅片</td>
+<td data-label="2Q26收入">1190</td>
+<td data-label="2Q26收入同比">33%</td>
+<td data-label="2Q26净利" class="metric-bad">-545</td>
+<td data-label="2Q26净利同比" class="metric-bad">亏损扩大</td>
+<td data-label="2026收入">5328</td>
+<td data-label="2026净利" class="metric-bad">-2146</td>
+<td data-label="2026净利同比" class="metric-bad">亏损扩大</td>
+<td data-label="超预期"></td>
+<td data-label="解读">收入增长但利润继续恶化。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="强弱标签" class="cell-bad"><span class="badge badge-bad">弱</span></td>
+<td data-label="公司">华大九天</td>
+<td data-label="子行业">EDA</td>
+<td data-label="2Q26收入">327</td>
+<td data-label="2Q26收入同比">22%</td>
+<td data-label="2Q26净利" class="metric-bad">-17</td>
+<td data-label="2Q26净利同比" class="metric-bad">亏损扩大</td>
+<td data-label="2026收入">1582</td>
+<td data-label="2026净利" class="metric-bad">-60</td>
+<td data-label="2026净利同比" class="metric-bad">转亏</td>
+<td data-label="超预期"></td>
+<td data-label="解读">国产 EDA 逻辑长期，但当期利润差。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="强弱标签" class="cell-bad"><span class="badge badge-bad">弱</span></td>
+<td data-label="公司">概伦电子</td>
+<td data-label="子行业">EDA</td>
+<td data-label="2Q26收入">151</td>
+<td data-label="2Q26收入同比">19%</td>
+<td data-label="2Q26净利">15</td>
+<td data-label="2Q26净利同比" class="metric-bad">-67%</td>
+<td data-label="2026收入">559</td>
+<td data-label="2026净利">25</td>
+<td data-label="2026净利同比" class="metric-bad">-28%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">收入增长但利润同比下滑。</td>
+</tr>
+</tbody></table></div>
+<p>电子内部对比：</p>
+<ul>
+<li>最强：存储涨价和 AI PCB，表现为收入和利润同时高增。</li>
+<li>第二梯队：半导体设备和材料，利润弹性明显，但公司之间差异较大。</li>
+<li>反向拖累：EDA、硅片、部分 PCB 个股，收入未必差，但利润端下滑或亏损扩大。</li>
+</ul>
+<h3 class="sub-neutral">2.3 海外科技</h3>
+<p>单位：百万美元。</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>强弱标签</th>
+<th>公司</th>
+<th>2Q26收入</th>
+<th>2Q26收入同比</th>
+<th>2Q26净利</th>
+<th>2Q26净利同比</th>
+<th>2026收入</th>
+<th>2026净利</th>
+<th>2026净利同比</th>
+<th>超预期</th>
+<th>解读</th>
+</tr></thead><tbody>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">英伟达</td>
+<td data-label="2Q26收入">91239</td>
+<td data-label="2Q26收入同比" class="metric-good">95%</td>
+<td data-label="2Q26净利">51500</td>
+<td data-label="2Q26净利同比" class="metric-strong">100%</td>
+<td data-label="2026收入">429888</td>
+<td data-label="2026净利">227600</td>
+<td data-label="2026净利同比" class="metric-good">90%</td>
+<td data-label="超预期"><span class="check">超预期</span></td>
+<td data-label="解读">全球最大 GPU 公司，仍是 AI 算力核心锚。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">台积电</td>
+<td data-label="2Q26收入">40000</td>
+<td data-label="2Q26收入同比">33%</td>
+<td data-label="2Q26净利">19800</td>
+<td data-label="2Q26净利同比" class="metric-good">54%</td>
+<td data-label="2026收入">125180</td>
+<td data-label="2026净利">83300</td>
+<td data-label="2026净利同比" class="metric-good">53%</td>
+<td data-label="超预期"><span class="check">超预期</span></td>
+<td data-label="解读">全球最大晶圆代工厂，先进制程需求强。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">博通</td>
+<td data-label="2Q26收入">29931</td>
+<td data-label="2Q26收入同比" class="metric-good">88%</td>
+<td data-label="2Q26净利">15900</td>
+<td data-label="2Q26净利同比" class="metric-good">89%</td>
+<td data-label="2026收入">108269</td>
+<td data-label="2026净利">51722</td>
+<td data-label="2026净利同比" class="metric-good">53%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">交换机芯片和 AI 定制芯片受益。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">AMD</td>
+<td data-label="2Q26收入">11200</td>
+<td data-label="2Q26收入同比">46%</td>
+<td data-label="2Q26净利">2650</td>
+<td data-label="2Q26净利同比" class="metric-strong">239%</td>
+<td data-label="2026收入">55306</td>
+<td data-label="2026净利">13391</td>
+<td data-label="2026净利同比" class="metric-good">96%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">CPU/GPU 平台受益于 AI 与服务器需求。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">Credo</td>
+<td data-label="2Q26收入">470</td>
+<td data-label="2Q26收入同比" class="metric-strong">110%</td>
+<td data-label="2Q26净利">230</td>
+<td data-label="2Q26净利同比" class="metric-strong">134%</td>
+<td data-label="2026收入">2451</td>
+<td data-label="2026净利">960</td>
+<td data-label="2026净利同比">48%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">AEC 龙头，高速互连需求驱动。</td>
+</tr>
+</tbody></table></div>
+<h3 class="sub-neutral">2.4 电新：锂电材料/氢能化工强，光伏链弱</h3>
+<p>单位：百万元人民币。</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>强弱标签</th>
+<th>公司</th>
+<th>子行业</th>
+<th>2Q26收入</th>
+<th>2Q26收入同比</th>
+<th>2Q26净利</th>
+<th>2Q26净利同比</th>
+<th>2026收入</th>
+<th>2026净利</th>
+<th>2026净利同比</th>
+<th>超预期</th>
+<th>解读</th>
+</tr></thead><tbody>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">天赐材料</td>
+<td data-label="子行业">锂电电解液</td>
+<td data-label="2Q26收入">7600-8000</td>
+<td data-label="2Q26收入同比" class="metric-strong">118%</td>
+<td data-label="2Q26净利">1400-1700</td>
+<td data-label="2Q26净利同比" class="metric-strong">1213%</td>
+<td data-label="2026收入">33000</td>
+<td data-label="2026净利">6700</td>
+<td data-label="2026净利同比" class="metric-strong">392%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">电解液利润弹性极高。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">湖南裕能</td>
+<td data-label="子行业">铁锂</td>
+<td data-label="2Q26收入">16000</td>
+<td data-label="2Q26收入同比" class="metric-strong">111%</td>
+<td data-label="2Q26净利">1000-1500</td>
+<td data-label="2Q26净利同比" class="metric-strong">545%</td>
+<td data-label="2026收入">63622</td>
+<td data-label="2026净利">3800-4500</td>
+<td data-label="2026净利同比" class="metric-strong">213%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">铁锂提价和碳酸锂库存受益。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">富临精工</td>
+<td data-label="子行业">铁锂</td>
+<td data-label="2Q26收入">6500</td>
+<td data-label="2Q26收入同比" class="metric-strong">109%</td>
+<td data-label="2Q26净利">300-350</td>
+<td data-label="2Q26净利同比" class="metric-strong">610%</td>
+<td data-label="2026收入">36268</td>
+<td data-label="2026净利">1600-1800</td>
+<td data-label="2026净利同比" class="metric-strong">298%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">高压实铁锂份额和盈利改善。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">星源材质</td>
+<td data-label="子行业">隔膜</td>
+<td data-label="2Q26收入">1100-1300</td>
+<td data-label="2Q26收入同比">20%</td>
+<td data-label="2Q26净利">120-180</td>
+<td data-label="2Q26净利同比" class="metric-strong">178%</td>
+<td data-label="2026收入">6000</td>
+<td data-label="2026净利">480-720</td>
+<td data-label="2026净利同比" class="metric-strong">1567%</td>
+<td data-label="超预期"><span class="check">超预期</span></td>
+<td data-label="解读">干法、湿法价格利润改善。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">亿纬锂能</td>
+<td data-label="子行业">锂电池</td>
+<td data-label="2Q26收入">24658</td>
+<td data-label="2Q26收入同比" class="metric-good">60%</td>
+<td data-label="2Q26净利">1684-1925</td>
+<td data-label="2Q26净利同比" class="metric-strong">257%</td>
+<td data-label="2026收入">99323</td>
+<td data-label="2026净利">7000-7500</td>
+<td data-label="2026净利同比" class="metric-good">74%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">储能电池高稼动率。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="强弱标签" class="cell-stable"><span class="badge badge-stable">企稳</span></td>
+<td data-label="公司">恩捷股份</td>
+<td data-label="子行业">隔膜</td>
+<td data-label="2Q26收入">4485-4680</td>
+<td data-label="2Q26收入同比" class="metric-good">50%</td>
+<td data-label="2Q26净利">300-350</td>
+<td data-label="2Q26净利同比" class="metric-stable">同比扭亏</td>
+<td data-label="2026收入">18600</td>
+<td data-label="2026净利">2000</td>
+<td data-label="2026净利同比" class="metric-strong">1300%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">隔膜盈利、份额超额韧性。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="强弱标签" class="cell-stable"><span class="badge badge-stable">企稳</span></td>
+<td data-label="公司">多氟多</td>
+<td data-label="子行业">氟化工</td>
+<td data-label="2Q26收入">3700</td>
+<td data-label="2Q26收入同比" class="metric-good">66%</td>
+<td data-label="2Q26净利">400-500</td>
+<td data-label="2Q26净利同比" class="metric-stable">转正</td>
+<td data-label="2026收入">16904</td>
+<td data-label="2026净利">2000-2200</td>
+<td data-label="2026净利同比" class="metric-strong">2455%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">6F 价格高位，氟化工涨价。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="强弱标签" class="cell-stable"><span class="badge badge-stable">企稳</span></td>
+<td data-label="公司">华盛锂电</td>
+<td data-label="子行业">VC</td>
+<td data-label="2Q26收入">400</td>
+<td data-label="2Q26收入同比" class="metric-strong">118%</td>
+<td data-label="2Q26净利">180-220</td>
+<td data-label="2Q26净利同比" class="metric-stable">转正</td>
+<td data-label="2026收入">1500</td>
+<td data-label="2026净利">800-1000</td>
+<td data-label="2026净利同比" class="metric-strong">6689%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">VC 价格高位带动。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="强弱标签" class="cell-stable"><span class="badge badge-stable">企稳</span></td>
+<td data-label="公司">海科新源</td>
+<td data-label="子行业">溶剂</td>
+<td data-label="2Q26收入">1600</td>
+<td data-label="2Q26收入同比">35%</td>
+<td data-label="2Q26净利">270-300</td>
+<td data-label="2Q26净利同比" class="metric-stable">转正</td>
+<td data-label="2026收入">7200</td>
+<td data-label="2026净利">900-1200</td>
+<td data-label="2026净利同比" class="metric-stable">转正</td>
+<td data-label="超预期"></td>
+<td data-label="解读">溶剂涨价和丙二醇提价。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="强弱标签" class="cell-stable"><span class="badge badge-stable">企稳</span></td>
+<td data-label="公司">钧达股份</td>
+<td data-label="子行业">光伏电池片</td>
+<td data-label="2Q26收入">2500-2550</td>
+<td data-label="2Q26收入同比">41%</td>
+<td data-label="2Q26净利" class="metric-bad">-30至20</td>
+<td data-label="2Q26净利同比" class="metric-stable">同比减亏</td>
+<td data-label="2026收入">10000-10050</td>
+<td data-label="2026净利">350-400</td>
+<td data-label="2026净利同比" class="metric-stable">同比扭亏</td>
+<td data-label="超预期"></td>
+<td data-label="解读" class="metric-stable">光伏中少数减亏修复个股。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="强弱标签" class="cell-stable"><span class="badge badge-stable">企稳</span></td>
+<td data-label="公司">高测股份</td>
+<td data-label="子行业">光伏设备</td>
+<td data-label="2Q26收入">950-1000</td>
+<td data-label="2Q26收入同比">27%</td>
+<td data-label="2Q26净利">0-50</td>
+<td data-label="2Q26净利同比" class="metric-stable">同比扭亏</td>
+<td data-label="2026收入">4150-4200</td>
+<td data-label="2026净利">150-200</td>
+<td data-label="2026净利同比" class="metric-stable">同比扭亏</td>
+<td data-label="超预期"></td>
+<td data-label="解读">新产品迭代帮助穿越周期。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="强弱标签" class="cell-bad"><span class="badge badge-bad">弱</span></td>
+<td data-label="公司">福莱特</td>
+<td data-label="子行业">光伏玻璃</td>
+<td data-label="2Q26收入">3300</td>
+<td data-label="2Q26收入同比" class="metric-bad">-10%</td>
+<td data-label="2Q26净利">150-450</td>
+<td data-label="2Q26净利同比" class="metric-bad">-165%</td>
+<td data-label="2026收入">14000</td>
+<td data-label="2026净利">1200-1400</td>
+<td data-label="2026净利同比" class="metric-bad">-100%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">光伏玻璃仍承压。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="强弱标签" class="cell-bad"><span class="badge badge-bad">弱</span></td>
+<td data-label="公司">阿特斯</td>
+<td data-label="子行业">光伏</td>
+<td data-label="2Q26收入">9000</td>
+<td data-label="2Q26收入同比" class="metric-bad">-28%</td>
+<td data-label="2Q26净利">200-400</td>
+<td data-label="2Q26净利同比" class="metric-bad">-56%</td>
+<td data-label="2026收入">38000</td>
+<td data-label="2026净利">1500-2000</td>
+<td data-label="2026净利同比" class="metric-good">72%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">2Q26 弱，全年有恢复预期。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="强弱标签" class="cell-bad"><span class="badge badge-bad">弱</span></td>
+<td data-label="公司">隆基绿能</td>
+<td data-label="子行业">硅片/一体化</td>
+<td data-label="2Q26收入">15000</td>
+<td data-label="2Q26收入同比" class="metric-bad">-22%</td>
+<td data-label="2Q26净利" class="metric-bad">-2000至-1300</td>
+<td data-label="2Q26净利同比" class="metric-bad">-46%</td>
+<td data-label="2026收入">60000</td>
+<td data-label="2026净利" class="metric-bad">-5000至-3000</td>
+<td data-label="2026净利同比">38%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">仍处亏损修复阶段。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="强弱标签" class="cell-bad"><span class="badge badge-bad">弱</span></td>
+<td data-label="公司">晶澳科技</td>
+<td data-label="子行业">光伏</td>
+<td data-label="2Q26收入">9500</td>
+<td data-label="2Q26收入同比" class="metric-bad">-28%</td>
+<td data-label="2Q26净利" class="metric-bad">-2000至-1300</td>
+<td data-label="2Q26净利同比" class="metric-bad">-22%</td>
+<td data-label="2026收入">43000</td>
+<td data-label="2026净利" class="metric-bad">-5000至-3000</td>
+<td data-label="2026净利同比">40%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">2Q26 收入和利润都弱。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="强弱标签" class="cell-bad"><span class="badge badge-bad">弱</span></td>
+<td data-label="公司">通威股份</td>
+<td data-label="子行业">多晶硅/电池片</td>
+<td data-label="2Q26收入">11000</td>
+<td data-label="2Q26收入同比" class="metric-bad">-55%</td>
+<td data-label="2Q26净利">300-450</td>
+<td data-label="2Q26净利同比" class="metric-bad">-10%</td>
+<td data-label="2026收入">60000</td>
+<td data-label="2026净利">1700-2000</td>
+<td data-label="2026净利同比">27%</td>
+<td data-label="超预期"></td>
+<td data-label="解读">收入承压明显。</td>
+</tr>
+</tbody></table></div>
+<p>电新内部对比：</p>
+<ul>
+<li>锂电材料、隔膜、氟化工：从低位修复转向利润释放，是板块中最值得跟踪的方向。</li>
+<li>光伏主链：2Q26 仍弱，部分公司只是“减亏/全年修复”，不是当季高景气。</li>
+<li>结论：不能把电新当成一个整体板块看，必须拆成锂电修复和光伏承压两条链。</li>
+</ul>
+<h3 class="sub-mixed">2.5 汽车：新车周期强，利润分化更强</h3>
+<p>单位：百万元人民币。</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>强弱标签</th>
+<th>公司</th>
+<th>子行业</th>
+<th>2Q26收入</th>
+<th>2Q26收入同比</th>
+<th>2Q26净利</th>
+<th>2Q26净利同比</th>
+<th>2026收入</th>
+<th>2026净利</th>
+<th>2026净利同比</th>
+<th>解读</th>
+</tr></thead><tbody>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">零跑汽车</td>
+<td data-label="子行业">乘用车</td>
+<td data-label="2Q26收入">25502</td>
+<td data-label="2Q26收入同比" class="metric-good">79%</td>
+<td data-label="2Q26净利">557</td>
+<td data-label="2Q26净利同比" class="metric-strong">448%</td>
+<td data-label="2026收入">106453</td>
+<td data-label="2026净利">4210</td>
+<td data-label="2026净利同比" class="metric-strong">682%</td>
+<td data-label="解读">强势新车周期，销量和出口提速。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">吉利汽车</td>
+<td data-label="子行业">乘用车</td>
+<td data-label="2Q26收入">105930</td>
+<td data-label="2Q26收入同比">36%</td>
+<td data-label="2Q26净利">5467</td>
+<td data-label="2Q26净利同比" class="metric-good">51%</td>
+<td data-label="2026收入">456142</td>
+<td data-label="2026净利">22661</td>
+<td data-label="2026净利同比">34%</td>
+<td data-label="解读">出口和高端车型贡献利润弹性。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">稳强</span></td>
+<td data-label="公司">比亚迪</td>
+<td data-label="子行业">乘用车</td>
+<td data-label="2Q26收入">220491</td>
+<td data-label="2Q26收入同比">10%</td>
+<td data-label="2Q26净利">8232</td>
+<td data-label="2Q26净利同比">30%</td>
+<td data-label="2026收入">962091</td>
+<td data-label="2026净利">38212</td>
+<td data-label="2026净利同比">17%</td>
+<td data-label="解读">出口延续高增，利润底部向上。</td>
+</tr>
+<tr class="row-mixed">
+<td data-label="强弱标签" class="cell-mixed"><span class="badge badge-mixed">分化</span></td>
+<td data-label="公司">长城汽车</td>
+<td data-label="子行业">乘用车</td>
+<td data-label="2Q26收入">59820</td>
+<td data-label="2Q26收入同比">14%</td>
+<td data-label="2Q26净利">4230</td>
+<td data-label="2Q26净利同比" class="metric-bad">-8%</td>
+<td data-label="2026收入">260883</td>
+<td data-label="2026净利">12853</td>
+<td data-label="2026净利同比">30%</td>
+<td data-label="解读">当季利润弱，全年新车大年修复。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="强弱标签" class="cell-bad"><span class="badge badge-bad">弱</span></td>
+<td data-label="公司">理想汽车</td>
+<td data-label="子行业">乘用车</td>
+<td data-label="2Q26收入">24197</td>
+<td data-label="2Q26收入同比" class="metric-bad">-20%</td>
+<td data-label="2Q26净利" class="metric-bad">-1202</td>
+<td data-label="2Q26净利同比" class="metric-bad">-210%</td>
+<td data-label="2026收入">122419</td>
+<td data-label="2026净利">1714</td>
+<td data-label="2026净利同比" class="metric-good">52%</td>
+<td data-label="解读">2Q26 亏损和同比压力明显，全年押注反转。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="强弱标签" class="cell-bad"><span class="badge badge-bad">弱</span></td>
+<td data-label="公司">小鹏汽车</td>
+<td data-label="子行业">乘用车</td>
+<td data-label="2Q26收入">19600</td>
+<td data-label="2Q26收入同比">7%</td>
+<td data-label="2Q26净利" class="metric-bad">-1000</td>
+<td data-label="2Q26净利同比" class="metric-bad">-109%</td>
+<td data-label="2026收入">95500</td>
+<td data-label="2026净利" class="metric-bad">-1790</td>
+<td data-label="2026净利同比" class="metric-bad">-57%</td>
+<td data-label="解读" class="metric-bad">当季仍亏，利润端未企稳。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">一汽解放</td>
+<td data-label="子行业">商用车</td>
+<td data-label="2Q26收入">19500</td>
+<td data-label="2Q26收入同比">42%</td>
+<td data-label="2Q26净利">250</td>
+<td data-label="2Q26净利同比" class="metric-strong">2760%</td>
+<td data-label="2026收入">67000</td>
+<td data-label="2026净利">1000</td>
+<td data-label="2026净利同比">38%</td>
+<td data-label="解读">重卡出口和发动机转型弹性。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">岱美股份</td>
+<td data-label="子行业">汽零</td>
+<td data-label="2Q26收入">1680</td>
+<td data-label="2Q26收入同比">6%</td>
+<td data-label="2Q26净利">240</td>
+<td data-label="2Q26净利同比" class="metric-strong">642%</td>
+<td data-label="2026收入">7370</td>
+<td data-label="2026净利">1040</td>
+<td data-label="2026净利同比" class="metric-good">58%</td>
+<td data-label="解读">内饰业务和机器人第二成长曲线。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">继峰股份</td>
+<td data-label="子行业">汽零</td>
+<td data-label="2Q26收入">6750</td>
+<td data-label="2Q26收入同比">23%</td>
+<td data-label="2Q26净利">180</td>
+<td data-label="2Q26净利同比" class="metric-strong">264%</td>
+<td data-label="2026收入">27100</td>
+<td data-label="2026净利">801</td>
+<td data-label="2026净利同比" class="metric-good">77%</td>
+<td data-label="解读">海外子公司改善，座椅业务兑现。</td>
+</tr>
+</tbody></table></div>
+<p>汽车内部对比：零跑、吉利、一汽解放和部分零部件强；理想、小鹏当季利润弱。汽车板块应按公司新车周期和盈利兑现分层，不宜整体打包。</p>
+<h3 class="sub-neutral">2.6 建材新材料：低位修复和新材料弹性</h3>
+<p>单位：百万元人民币。</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>强弱标签</th>
+<th>公司</th>
+<th>子行业</th>
+<th>2Q26收入</th>
+<th>2Q26收入同比</th>
+<th>2Q26净利</th>
+<th>2Q26净利同比</th>
+<th>2026收入</th>
+<th>2026净利</th>
+<th>2026净利同比</th>
+<th>解读</th>
+</tr></thead><tbody>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">宏和科技</td>
+<td data-label="子行业">铜箔</td>
+<td data-label="2Q26收入">550</td>
+<td data-label="2Q26收入同比" class="metric-good">81%</td>
+<td data-label="2Q26净利">260</td>
+<td data-label="2Q26净利同比" class="metric-strong">360%</td>
+<td data-label="2026收入">2400</td>
+<td data-label="2026净利">1200</td>
+<td data-label="2026净利同比" class="metric-strong">494%</td>
+<td data-label="解读">铜箔方向利润弹性突出。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">铜冠铜箔</td>
+<td data-label="子行业">铜箔</td>
+<td data-label="2Q26收入">2100</td>
+<td data-label="2Q26收入同比">15%</td>
+<td data-label="2Q26净利">140</td>
+<td data-label="2Q26净利同比" class="metric-strong">364%</td>
+<td data-label="2026收入">2400</td>
+<td data-label="2026净利">1000</td>
+<td data-label="2026净利同比" class="metric-strong">1496%</td>
+<td data-label="解读">同样体现低基数和铜箔修复。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">国际复材</td>
+<td data-label="子行业">玻纤</td>
+<td data-label="2Q26收入">2700</td>
+<td data-label="2Q26收入同比">18%</td>
+<td data-label="2Q26净利">380</td>
+<td data-label="2Q26净利同比" class="metric-strong">113%</td>
+<td data-label="2026收入">11400</td>
+<td data-label="2026净利">1850</td>
+<td data-label="2026净利同比" class="metric-strong">579%</td>
+<td data-label="解读">玻纤景气修复明显。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">稳强</span></td>
+<td data-label="公司">中国巨石</td>
+<td data-label="子行业">玻纤</td>
+<td data-label="2Q26收入">5600</td>
+<td data-label="2Q26收入同比">21%</td>
+<td data-label="2Q26净利">1760</td>
+<td data-label="2Q26净利同比" class="metric-good">84%</td>
+<td data-label="2026收入">24000</td>
+<td data-label="2026净利">8500</td>
+<td data-label="2026净利同比" class="metric-strong">159%</td>
+<td data-label="解读">玻纤龙头弹性恢复。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="强弱标签" class="cell-stable"><span class="badge badge-stable">企稳</span></td>
+<td data-label="公司">科顺股份</td>
+<td data-label="子行业">基建</td>
+<td data-label="2Q26收入">1916</td>
+<td data-label="2Q26收入同比">5%</td>
+<td data-label="2Q26净利">123</td>
+<td data-label="2Q26净利同比" class="metric-strong">1805%</td>
+<td data-label="2026收入">6346</td>
+<td data-label="2026净利">350</td>
+<td data-label="2026净利同比" class="metric-stable">扭亏为盈</td>
+<td data-label="解读">低基数下利润弹性极大。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="强弱标签" class="cell-bad"><span class="badge badge-bad">弱</span></td>
+<td data-label="公司">旗滨集团</td>
+<td data-label="子行业">玻璃</td>
+<td data-label="2Q26收入">4105</td>
+<td data-label="2Q26收入同比">5%</td>
+<td data-label="2Q26净利">30</td>
+<td data-label="2Q26净利同比" class="metric-bad">-93%</td>
+<td data-label="2026收入">17311</td>
+<td data-label="2026净利">300</td>
+<td data-label="2026净利同比" class="metric-bad">-52%</td>
+<td data-label="解读">玻璃方向仍弱。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="强弱标签" class="cell-bad"><span class="badge badge-bad">偏弱</span></td>
+<td data-label="公司">兔宝宝</td>
+<td data-label="子行业">消费建材</td>
+<td data-label="2Q26收入">2647</td>
+<td data-label="2Q26收入同比">12%</td>
+<td data-label="2Q26净利">160</td>
+<td data-label="2Q26净利同比" class="metric-bad">-4%</td>
+<td data-label="2026收入">9948</td>
+<td data-label="2026净利">1050</td>
+<td data-label="2026净利同比" class="metric-good">50%</td>
+<td data-label="解读">当季净利弱，全年有恢复。</td>
+</tr>
+</tbody></table></div>
+<h3 class="sub-neutral">2.7 有色金属：价格驱动型强景气</h3>
+<p>单位：百万元人民币。</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>强弱标签</th>
+<th>公司</th>
+<th>子行业</th>
+<th>2Q26收入</th>
+<th>2Q26收入同比</th>
+<th>2Q26净利</th>
+<th>2Q26净利同比</th>
+<th>2026收入</th>
+<th>2026净利</th>
+<th>2026净利同比</th>
+<th>解读</th>
+</tr></thead><tbody>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">中稀有色</td>
+<td data-label="子行业">小金属</td>
+<td data-label="2Q26收入">1500</td>
+<td data-label="2Q26收入同比">28%</td>
+<td data-label="2Q26净利">150</td>
+<td data-label="2Q26净利同比" class="metric-strong">500%</td>
+<td data-label="2026收入">7000</td>
+<td data-label="2026净利">800</td>
+<td data-label="2026净利同比" class="metric-strong">525%</td>
+<td data-label="解读">氧化镝、氧化钕价格上涨，加工费提升。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">天山铝业</td>
+<td data-label="子行业">电解铝</td>
+<td data-label="2Q26收入">8757</td>
+<td data-label="2Q26收入同比">18%</td>
+<td data-label="2Q26净利">2297</td>
+<td data-label="2Q26净利同比" class="metric-strong">124%</td>
+<td data-label="2026收入">33585</td>
+<td data-label="2026净利">8777</td>
+<td data-label="2026净利同比" class="metric-good">82%</td>
+<td data-label="解读">电解铝盈利支撑强。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">云铝股份</td>
+<td data-label="子行业">电解铝</td>
+<td data-label="2Q26收入">16368</td>
+<td data-label="2Q26收入同比">10%</td>
+<td data-label="2Q26净利">3643</td>
+<td data-label="2Q26净利同比">49%</td>
+<td data-label="2026收入">63960</td>
+<td data-label="2026净利">13343</td>
+<td data-label="2026净利同比" class="metric-strong">120%</td>
+<td data-label="解读">绿电铝标的，分红提升潜力。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">神火股份</td>
+<td data-label="子行业">电解铝/煤</td>
+<td data-label="2Q26收入">12800</td>
+<td data-label="2Q26收入同比">18%</td>
+<td data-label="2Q26净利">2420</td>
+<td data-label="2Q26净利同比" class="metric-strong">102%</td>
+<td data-label="2026收入">49502</td>
+<td data-label="2026净利">8970</td>
+<td data-label="2026净利同比" class="metric-strong">124%</td>
+<td data-label="解读">电解铝低成本产能，煤炭业务改善。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">稳强</span></td>
+<td data-label="公司">紫金矿业</td>
+<td data-label="子行业">铜</td>
+<td data-label="2Q26收入">107990</td>
+<td data-label="2Q26收入同比">22%</td>
+<td data-label="2Q26净利">20000</td>
+<td data-label="2Q26净利同比" class="metric-good">52%</td>
+<td data-label="2026收入">431962</td>
+<td data-label="2026净利">85000</td>
+<td data-label="2026净利同比" class="metric-good">64%</td>
+<td data-label="解读">量增和资源价格共振。</td>
+</tr>
+<tr class="row-good">
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">稳强</span></td>
+<td data-label="公司">洛阳钼业</td>
+<td data-label="子行业">铜钴</td>
+<td data-label="2Q26收入">68000</td>
+<td data-label="2Q26收入同比">39%</td>
+<td data-label="2Q26净利">8500</td>
+<td data-label="2Q26净利同比" class="metric-good">80%</td>
+<td data-label="2026收入">275000</td>
+<td data-label="2026净利">33000</td>
+<td data-label="2026净利同比" class="metric-good">62%</td>
+<td data-label="解读">铜钴放量确定性强。</td>
+</tr>
+</tbody></table></div>
+<p>有色内部对比：小金属弹性最高，电解铝确定性强，铜资源股稳健。风险是价格驱动属性强，后续需要持续验证商品价格。</p>
+<h3 class="sub-neutral">2.8 其他板块中表现较好的个股</h3>
+<p>单位：百万元人民币；公用事业另见弱项表。</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>板块</th>
+<th>强弱标签</th>
+<th>公司</th>
+<th>2Q26收入</th>
+<th>2Q26收入同比</th>
+<th>2Q26净利</th>
+<th>2Q26净利同比</th>
+<th>2026净利</th>
+<th>2026净利同比</th>
+<th>解读</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="板块">计算机</td>
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">寒武纪</td>
+<td data-label="2Q26收入">4500</td>
+<td data-label="2Q26收入同比" class="metric-strong">150%</td>
+<td data-label="2Q26净利">15</td>
+<td data-label="2Q26净利同比" class="metric-strong">300%</td>
+<td data-label="2026净利"></td>
+<td data-label="2026净利同比"></td>
+<td data-label="解读">国产算力核心弹性。</td>
+</tr>
+<tr>
+<td data-label="板块">计算机</td>
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">海光信息</td>
+<td data-label="2Q26收入">5515</td>
+<td data-label="2Q26收入同比" class="metric-good">80%</td>
+<td data-label="2Q26净利">1217</td>
+<td data-label="2Q26净利同比" class="metric-good">75%</td>
+<td data-label="2026净利">4503</td>
+<td data-label="2026净利同比" class="metric-good">77%</td>
+<td data-label="解读">国产 CPU/GPU 一体化布局。</td>
+</tr>
+<tr>
+<td data-label="板块">医药</td>
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">百济神州</td>
+<td data-label="2Q26收入">11400</td>
+<td data-label="2Q26收入同比">19%</td>
+<td data-label="2Q26净利">1190</td>
+<td data-label="2Q26净利同比" class="metric-strong">200%</td>
+<td data-label="2026净利">5390</td>
+<td data-label="2026净利同比" class="metric-strong">140%</td>
+<td data-label="解读">泽布替尼放量，盈利能力加速。</td>
+</tr>
+<tr class="row-good">
+<td data-label="板块">医药</td>
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">三生国健</td>
+<td data-label="2Q26收入">420</td>
+<td data-label="2Q26收入同比">28%</td>
+<td data-label="2Q26净利">160</td>
+<td data-label="2Q26净利同比" class="metric-good">84%</td>
+<td data-label="2026净利">610</td>
+<td data-label="2026净利同比" class="metric-bad">-79%</td>
+<td data-label="解读">2Q26 强，且被勾选超预期。</td>
+</tr>
+<tr>
+<td data-label="板块">医药</td>
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">稳强</span></td>
+<td data-label="公司">药明康德</td>
+<td data-label="2Q26收入">13931</td>
+<td data-label="2Q26收入同比">25%</td>
+<td data-label="2Q26净利">4623</td>
+<td data-label="2Q26净利同比">27%</td>
+<td data-label="2026净利">19530</td>
+<td data-label="2026净利同比">31%</td>
+<td data-label="解读">Tides 业务放量。</td>
+</tr>
+<tr>
+<td data-label="板块">食品饮料</td>
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">五粮液</td>
+<td data-label="2Q26收入">8351</td>
+<td data-label="2Q26收入同比">30%</td>
+<td data-label="2Q26净利">2505</td>
+<td data-label="2Q26净利同比" class="metric-strong">1107%</td>
+<td data-label="2026净利">17869</td>
+<td data-label="2026净利同比" class="metric-strong">100%</td>
+<td data-label="解读">表内显示极高利润弹性，需注意低基数/口径。</td>
+</tr>
+<tr>
+<td data-label="板块">食品饮料</td>
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">万辰集团</td>
+<td data-label="2Q26收入">17054</td>
+<td data-label="2Q26收入同比">45%</td>
+<td data-label="2Q26净利">616</td>
+<td data-label="2Q26净利同比" class="metric-strong">140%</td>
+<td data-label="2026净利">2694</td>
+<td data-label="2026净利同比" class="metric-strong">100%</td>
+<td data-label="解读">零食渠道和规模扩张弹性。</td>
+</tr>
+<tr>
+<td data-label="板块">食品饮料</td>
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">洽洽食品</td>
+<td data-label="2Q26收入">1217</td>
+<td data-label="2Q26收入同比">3%</td>
+<td data-label="2Q26净利">80</td>
+<td data-label="2Q26净利同比" class="metric-strong">600%</td>
+<td data-label="2026净利">657</td>
+<td data-label="2026净利同比" class="metric-strong">106%</td>
+<td data-label="解读">低基数利润修复。</td>
+</tr>
+<tr>
+<td data-label="板块">交运</td>
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">中远海能</td>
+<td data-label="2Q26收入">8577</td>
+<td data-label="2Q26收入同比">46%</td>
+<td data-label="2Q26净利">2350</td>
+<td data-label="2Q26净利同比" class="metric-strong">102%</td>
+<td data-label="2026净利">12396</td>
+<td data-label="2026净利同比" class="metric-strong">207%</td>
+<td data-label="解读">油运景气。</td>
+</tr>
+<tr>
+<td data-label="板块">交运</td>
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">大秦铁路</td>
+<td data-label="2Q26收入">21420</td>
+<td data-label="2Q26收入同比">10%</td>
+<td data-label="2Q26净利">2550</td>
+<td data-label="2Q26净利同比" class="metric-good">65%</td>
+<td data-label="2026净利">7709</td>
+<td data-label="2026净利同比">31%</td>
+<td data-label="解读">运煤主通道，服务刚性。</td>
+</tr>
+<tr>
+<td data-label="板块">军工</td>
+<td data-label="强弱标签" class="cell-good"><span class="badge badge-good">强</span></td>
+<td data-label="公司">洪都航空</td>
+<td data-label="2Q26收入">1533</td>
+<td data-label="2Q26收入同比" class="metric-good">73%</td>
+<td data-label="2Q26净利">15</td>
+<td data-label="2Q26净利同比" class="metric-strong">168%</td>
+<td data-label="2026净利">100</td>
+<td data-label="2026净利同比" class="metric-strong">307%</td>
+<td data-label="解读">军工板块中少数高弹性个股。</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="3-业绩不好的板块和个股" class="report-section section-bad">
+<h2>3. 业绩不好的板块和个股</h2>
+<h3 class="sub-bad">3.1 弱势板块排名</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>排名</th>
+<th>弱势方向</th>
+<th>主要拖累个股</th>
+<th>核心判断</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="排名">1</td>
+<td data-label="弱势方向">光伏主链</td>
+<td data-label="主要拖累个股">福莱特、阿特斯、隆基绿能、晶澳科技、通威股份、捷佳伟创</td>
+<td data-label="核心判断">2Q26 收入或净利仍普遍承压，部分只是全年预期修复。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="排名">2</td>
+<td data-label="弱势方向">生猪养殖</td>
+<td data-label="主要拖累个股">牧原股份、温氏股份</td>
+<td data-label="核心判断" class="metric-bad">收入下滑且利润由盈转亏，是全表最明确的负面方向。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="排名">3</td>
+<td data-label="弱势方向">汽车新势力弱项</td>
+<td data-label="主要拖累个股">理想汽车、小鹏汽车</td>
+<td data-label="核心判断">行业有强者，但这两家公司当季利润仍明显承压。</td>
+</tr>
+<tr>
+<td data-label="排名">4</td>
+<td data-label="弱势方向">军工主机厂/军工电子</td>
+<td data-label="主要拖累个股">中航成飞、国博电子、振华科技、中航重机、航发动力</td>
+<td data-label="核心判断">多数 2Q26 净利同比下滑。</td>
+</tr>
+<tr>
+<td data-label="排名">5</td>
+<td data-label="弱势方向">公用事业短期低增</td>
+<td data-label="主要拖累个股">火电、核电、绿电部分公司</td>
+<td data-label="核心判断">适合防御和分红逻辑，但当季业绩弹性弱。</td>
+</tr>
+<tr>
+<td data-label="排名">6</td>
+<td data-label="弱势方向">部分白酒</td>
+<td data-label="主要拖累个股">山西汾酒、泸州老窖、古井贡酒、水井坊</td>
+<td data-label="核心判断">白酒多数收入或利润同比偏弱。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="排名">7</td>
+<td data-label="弱势方向">电子弱分支</td>
+<td data-label="主要拖累个股">华大九天、沪硅股份、概伦电子、景旺电子</td>
+<td data-label="核心判断" class="metric-bad">电子板块整体强，但不能忽略亏损扩大和利润下滑个股。</td>
+</tr>
+</tbody></table></div>
+<h3 class="sub-bad">3.2 负面个股明细</h3>
+<p>单位：除公用事业外为百万元人民币；公用事业为亿元人民币。</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>板块</th>
+<th>公司</th>
+<th>子行业</th>
+<th>2Q26收入</th>
+<th>2Q26收入同比</th>
+<th>2Q26净利</th>
+<th>2Q26净利同比</th>
+<th>2026净利</th>
+<th>2026净利同比</th>
+<th>负面原因</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="板块">电新</td>
+<td data-label="公司">福莱特</td>
+<td data-label="子行业">光伏玻璃</td>
+<td data-label="2Q26收入">3300</td>
+<td data-label="2Q26收入同比" class="metric-bad">-10%</td>
+<td data-label="2Q26净利">150-450</td>
+<td data-label="2Q26净利同比" class="metric-bad">-165%</td>
+<td data-label="2026净利">1200-1400</td>
+<td data-label="2026净利同比" class="metric-bad">-100%</td>
+<td data-label="负面原因">利润同比大幅下滑。</td>
+</tr>
+<tr>
+<td data-label="板块">电新</td>
+<td data-label="公司">阿特斯</td>
+<td data-label="子行业">光伏</td>
+<td data-label="2Q26收入">9000</td>
+<td data-label="2Q26收入同比" class="metric-bad">-28%</td>
+<td data-label="2Q26净利">200-400</td>
+<td data-label="2Q26净利同比" class="metric-bad">-56%</td>
+<td data-label="2026净利">1500-2000</td>
+<td data-label="2026净利同比" class="metric-good">72%</td>
+<td data-label="负面原因">2Q26 当季弱，全年才修复。</td>
+</tr>
+<tr>
+<td data-label="板块">电新</td>
+<td data-label="公司">隆基绿能</td>
+<td data-label="子行业">硅片/一体化</td>
+<td data-label="2Q26收入">15000</td>
+<td data-label="2Q26收入同比" class="metric-bad">-22%</td>
+<td data-label="2Q26净利" class="metric-bad">-2000至-1300</td>
+<td data-label="2Q26净利同比" class="metric-bad">-46%</td>
+<td data-label="2026净利" class="metric-bad">-5000至-3000</td>
+<td data-label="2026净利同比">38%</td>
+<td data-label="负面原因" class="metric-bad">仍亏损。</td>
+</tr>
+<tr>
+<td data-label="板块">电新</td>
+<td data-label="公司">晶澳科技</td>
+<td data-label="子行业">光伏</td>
+<td data-label="2Q26收入">9500</td>
+<td data-label="2Q26收入同比" class="metric-bad">-28%</td>
+<td data-label="2Q26净利" class="metric-bad">-2000至-1300</td>
+<td data-label="2Q26净利同比" class="metric-bad">-22%</td>
+<td data-label="2026净利" class="metric-bad">-5000至-3000</td>
+<td data-label="2026净利同比">40%</td>
+<td data-label="负面原因">收入和净利均弱。</td>
+</tr>
+<tr>
+<td data-label="板块">电新</td>
+<td data-label="公司">通威股份</td>
+<td data-label="子行业">多晶硅/电池片</td>
+<td data-label="2Q26收入">11000</td>
+<td data-label="2Q26收入同比" class="metric-bad">-55%</td>
+<td data-label="2Q26净利">300-450</td>
+<td data-label="2Q26净利同比" class="metric-bad">-10%</td>
+<td data-label="2026净利">1700-2000</td>
+<td data-label="2026净利同比">27%</td>
+<td data-label="负面原因">收入压力最大。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="板块">农林牧渔</td>
+<td data-label="公司">牧原股份</td>
+<td data-label="子行业">生猪养殖</td>
+<td data-label="2Q26收入">27045</td>
+<td data-label="2Q26收入同比" class="metric-bad">-33%</td>
+<td data-label="2Q26净利" class="metric-bad">-4798</td>
+<td data-label="2Q26净利同比" class="metric-bad">由盈转亏</td>
+<td data-label="2026净利" class="metric-bad">-3186</td>
+<td data-label="2026净利同比" class="metric-bad">由盈转亏</td>
+<td data-label="负面原因">生猪周期压力。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="板块">农林牧渔</td>
+<td data-label="公司">温氏股份</td>
+<td data-label="子行业">生猪养殖</td>
+<td data-label="2Q26收入">20431</td>
+<td data-label="2Q26收入同比" class="metric-bad">-20%</td>
+<td data-label="2Q26净利" class="metric-bad">-2628</td>
+<td data-label="2Q26净利同比" class="metric-bad">由盈转亏</td>
+<td data-label="2026净利" class="metric-bad">-2162</td>
+<td data-label="2026净利同比" class="metric-bad">由盈转亏</td>
+<td data-label="负面原因" class="metric-bad">同样由盈转亏。</td>
+</tr>
+<tr>
+<td data-label="板块">汽车</td>
+<td data-label="公司">理想汽车</td>
+<td data-label="子行业">乘用车</td>
+<td data-label="2Q26收入">24197</td>
+<td data-label="2Q26收入同比" class="metric-bad">-20%</td>
+<td data-label="2Q26净利" class="metric-bad">-1202</td>
+<td data-label="2Q26净利同比" class="metric-bad">-210%</td>
+<td data-label="2026净利">1714</td>
+<td data-label="2026净利同比" class="metric-good">52%</td>
+<td data-label="负面原因">当季收入和净利双弱。</td>
+</tr>
+<tr>
+<td data-label="板块">汽车</td>
+<td data-label="公司">小鹏汽车</td>
+<td data-label="子行业">乘用车</td>
+<td data-label="2Q26收入">19600</td>
+<td data-label="2Q26收入同比">7%</td>
+<td data-label="2Q26净利" class="metric-bad">-1000</td>
+<td data-label="2Q26净利同比" class="metric-bad">-109%</td>
+<td data-label="2026净利" class="metric-bad">-1790</td>
+<td data-label="2026净利同比" class="metric-bad">-57%</td>
+<td data-label="负面原因">亏损仍未收敛到正向。</td>
+</tr>
+<tr>
+<td data-label="板块">军工</td>
+<td data-label="公司">国博电子</td>
+<td data-label="子行业">两机/电子</td>
+<td data-label="2Q26收入">7136</td>
+<td data-label="2Q26收入同比" class="metric-bad">-9%</td>
+<td data-label="2Q26净利">55</td>
+<td data-label="2Q26净利同比" class="metric-bad">-99%</td>
+<td data-label="2026净利">623</td>
+<td data-label="2026净利同比">23%</td>
+<td data-label="负面原因">当季利润大幅下滑。</td>
+</tr>
+<tr>
+<td data-label="板块">军工</td>
+<td data-label="公司">振华科技</td>
+<td data-label="子行业">军工电子</td>
+<td data-label="2Q26收入">1383</td>
+<td data-label="2Q26收入同比" class="metric-bad">-8%</td>
+<td data-label="2Q26净利">97</td>
+<td data-label="2Q26净利同比" class="metric-bad">-73%</td>
+<td data-label="2026净利">1116</td>
+<td data-label="2026净利同比">9%</td>
+<td data-label="负面原因">收入和利润双弱。</td>
+</tr>
+<tr>
+<td data-label="板块">军工</td>
+<td data-label="公司">中航成飞</td>
+<td data-label="子行业">主机厂</td>
+<td data-label="2Q26收入">2662</td>
+<td data-label="2Q26收入同比" class="metric-bad">-55%</td>
+<td data-label="2Q26净利">74</td>
+<td data-label="2Q26净利同比" class="metric-bad">-62%</td>
+<td data-label="2026净利">3700</td>
+<td data-label="2026净利同比">9%</td>
+<td data-label="负面原因">当季收入和利润承压。</td>
+</tr>
+<tr>
+<td data-label="板块">军工</td>
+<td data-label="公司">中航重机</td>
+<td data-label="子行业">两机</td>
+<td data-label="2Q26收入">3666</td>
+<td data-label="2Q26收入同比">15%</td>
+<td data-label="2Q26净利">113</td>
+<td data-label="2Q26净利同比" class="metric-bad">-66%</td>
+<td data-label="2026净利">745</td>
+<td data-label="2026净利同比">22%</td>
+<td data-label="负面原因">收入增长但利润下滑。</td>
+</tr>
+<tr>
+<td data-label="板块">食品饮料</td>
+<td data-label="公司">山西汾酒</td>
+<td data-label="子行业">白酒</td>
+<td data-label="2Q26收入">6325</td>
+<td data-label="2Q26收入同比" class="metric-bad">-15%</td>
+<td data-label="2Q26净利">1486</td>
+<td data-label="2Q26净利同比" class="metric-bad">-20%</td>
+<td data-label="2026净利">10049</td>
+<td data-label="2026净利同比" class="metric-bad">-18%</td>
+<td data-label="负面原因">白酒弱项代表。</td>
+</tr>
+<tr>
+<td data-label="板块">食品饮料</td>
+<td data-label="公司">泸州老窖</td>
+<td data-label="子行业">白酒</td>
+<td data-label="2Q26收入">6391</td>
+<td data-label="2Q26收入同比" class="metric-bad">-10%</td>
+<td data-label="2Q26净利">2456</td>
+<td data-label="2Q26净利同比" class="metric-bad">-20%</td>
+<td data-label="2026净利">9875</td>
+<td data-label="2026净利同比" class="metric-bad">-9%</td>
+<td data-label="负面原因">收入和利润下滑。</td>
+</tr>
+<tr>
+<td data-label="板块">食品饮料</td>
+<td data-label="公司">水井坊</td>
+<td data-label="子行业">白酒</td>
+<td data-label="2Q26收入">593</td>
+<td data-label="2Q26收入同比">10%</td>
+<td data-label="2Q26净利">30</td>
+<td data-label="2Q26净利同比" class="metric-bad">-135%</td>
+<td data-label="2026净利">570</td>
+<td data-label="2026净利同比">40%</td>
+<td data-label="负面原因">2Q26 利润同比大幅下滑。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="板块">电子</td>
+<td data-label="公司">华大九天</td>
+<td data-label="子行业">EDA</td>
+<td data-label="2Q26收入">327</td>
+<td data-label="2Q26收入同比">22%</td>
+<td data-label="2Q26净利" class="metric-bad">-17</td>
+<td data-label="2Q26净利同比" class="metric-bad">亏损扩大</td>
+<td data-label="2026净利" class="metric-bad">-60</td>
+<td data-label="2026净利同比" class="metric-bad">转亏</td>
+<td data-label="负面原因">长期逻辑不等于当期业绩强。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="板块">电子</td>
+<td data-label="公司">沪硅股份</td>
+<td data-label="子行业">半导体硅片</td>
+<td data-label="2Q26收入">1190</td>
+<td data-label="2Q26收入同比">33%</td>
+<td data-label="2Q26净利" class="metric-bad">-545</td>
+<td data-label="2Q26净利同比" class="metric-bad">亏损扩大</td>
+<td data-label="2026净利" class="metric-bad">-2146</td>
+<td data-label="2026净利同比" class="metric-bad">亏损扩大</td>
+<td data-label="负面原因" class="metric-bad">收入增长但亏损扩大。</td>
+</tr>
+<tr>
+<td data-label="板块">电子</td>
+<td data-label="公司">概伦电子</td>
+<td data-label="子行业">EDA</td>
+<td data-label="2Q26收入">151</td>
+<td data-label="2Q26收入同比">19%</td>
+<td data-label="2Q26净利">15</td>
+<td data-label="2Q26净利同比" class="metric-bad">-67%</td>
+<td data-label="2026净利">25</td>
+<td data-label="2026净利同比" class="metric-bad">-28%</td>
+<td data-label="负面原因">利润同比下滑。</td>
+</tr>
+<tr>
+<td data-label="板块">公用事业</td>
+<td data-label="公司">浙能电力</td>
+<td data-label="子行业">火电</td>
+<td data-label="2Q26收入">n.a</td>
+<td data-label="2Q26收入同比">n.a</td>
+<td data-label="2Q26净利">14.0-17.0</td>
+<td data-label="2Q26净利同比" class="metric-bad">-43%~-30%</td>
+<td data-label="2026净利">60</td>
+<td data-label="2026净利同比" class="metric-bad">-20%</td>
+<td data-label="负面原因">火电短期利润回落。</td>
+</tr>
+<tr>
+<td data-label="板块">公用事业</td>
+<td data-label="公司">华能国际</td>
+<td data-label="子行业">火电</td>
+<td data-label="2Q26收入">n.a</td>
+<td data-label="2Q26收入同比">n.a</td>
+<td data-label="2Q26净利">25.0-30.0</td>
+<td data-label="2Q26净利同比" class="metric-bad">-42%~-30%</td>
+<td data-label="2026净利">130</td>
+<td data-label="2026净利同比" class="metric-bad">-10%</td>
+<td data-label="负面原因">短期业绩弹性弱。</td>
+</tr>
+<tr>
+<td data-label="板块">公用事业</td>
+<td data-label="公司">中国核电</td>
+<td data-label="子行业">核电</td>
+<td data-label="2Q26收入">n.a</td>
+<td data-label="2Q26收入同比">n.a</td>
+<td data-label="2Q26净利">16.0-18.0</td>
+<td data-label="2Q26净利同比" class="metric-bad">-37%~-29%</td>
+<td data-label="2026净利">85</td>
+<td data-label="2026净利同比" class="metric-bad">-9%</td>
+<td data-label="负面原因">新能源短期承压。</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="4-止跌企稳排名" class="report-section section-stable">
+<h2>4. 止跌企稳排名</h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>排名</th>
+<th>企稳方向</th>
+<th>代表个股</th>
+<th>数据信号</th>
+<th>判断</th>
+</tr></thead><tbody>
+<tr class="row-stable">
+<td data-label="排名">1</td>
+<td data-label="企稳方向">锂电材料/氟化工</td>
+<td data-label="代表个股">恩捷股份、多氟多、华盛锂电、海科新源</td>
+<td data-label="数据信号" class="metric-stable">同比扭亏、转正、全年高增</td>
+<td data-label="判断">价格和盈利底部修复最明显。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="排名">2</td>
+<td data-label="企稳方向">光伏局部修复</td>
+<td data-label="代表个股">钧达股份、高测股份、爱旭股份</td>
+<td data-label="数据信号" class="metric-stable">减亏、扭亏，但主链仍弱</td>
+<td data-label="判断">是“弱中修复”，不是全行业反转。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="排名">3</td>
+<td data-label="企稳方向">半导体材料/硅片</td>
+<td data-label="代表个股">天岳先进、立昂微、西安奕材</td>
+<td data-label="数据信号" class="metric-stable">扭亏、减亏、国产化</td>
+<td data-label="判断">仍有亏损公司，但底部改善信号出现。</td>
+</tr>
+<tr>
+<td data-label="排名">4</td>
+<td data-label="企稳方向">建材新材料</td>
+<td data-label="代表个股">科顺股份、铜冠铜箔、宏和科技、国际复材</td>
+<td data-label="数据信号">低基数利润高弹性</td>
+<td data-label="判断">铜箔、玻纤、基建链修复清晰。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="排名">5</td>
+<td data-label="企稳方向">牧业</td>
+<td data-label="代表个股">现代牧业、优然牧业</td>
+<td data-label="数据信号" class="metric-stable">扭亏为盈</td>
+<td data-label="判断">牧业好于生猪养殖。</td>
+</tr>
+<tr>
+<td data-label="排名">6</td>
+<td data-label="企稳方向">航空</td>
+<td data-label="代表个股">南方航空、中国国航</td>
+<td data-label="数据信号" class="metric-bad">2Q26 仍亏，2026 转盈</td>
+<td data-label="判断">属于预期企稳，不是当季强势。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="排名">7</td>
+<td data-label="企稳方向">化工</td>
+<td data-label="代表个股">新化股份、华鲁恒升</td>
+<td data-label="数据信号" class="metric-stable">低成本、放量、局部减亏</td>
+<td data-label="判断">局部改善，非全面修复。</td>
+</tr>
+</tbody></table></div>
+<h3 class="sub-stable">4.1 企稳个股数据表</h3>
+<p>单位：百万元人民币；航空为百万元人民币。</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>公司</th>
+<th>方向</th>
+<th>2Q26收入</th>
+<th>2Q26收入同比</th>
+<th>2Q26净利</th>
+<th>2Q26净利同比</th>
+<th>2026收入</th>
+<th>2026净利</th>
+<th>2026净利同比</th>
+<th>企稳含义</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="公司">恩捷股份</td>
+<td data-label="方向">锂电隔膜</td>
+<td data-label="2Q26收入">4485-4680</td>
+<td data-label="2Q26收入同比" class="metric-good">50%</td>
+<td data-label="2Q26净利">300-350</td>
+<td data-label="2Q26净利同比" class="metric-stable">同比扭亏</td>
+<td data-label="2026收入">18600</td>
+<td data-label="2026净利">2000</td>
+<td data-label="2026净利同比" class="metric-strong">1300%</td>
+<td data-label="企稳含义">从亏损转盈利，且全年利润弹性大。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="公司">多氟多</td>
+<td data-label="方向">氟化工</td>
+<td data-label="2Q26收入">3700</td>
+<td data-label="2Q26收入同比" class="metric-good">66%</td>
+<td data-label="2Q26净利">400-500</td>
+<td data-label="2Q26净利同比" class="metric-stable">转正</td>
+<td data-label="2026收入">16904</td>
+<td data-label="2026净利">2000-2200</td>
+<td data-label="2026净利同比" class="metric-strong">2455%</td>
+<td data-label="企稳含义" class="metric-stable">产品涨价驱动转正。</td>
+</tr>
+<tr>
+<td data-label="公司">华盛锂电</td>
+<td data-label="方向">VC</td>
+<td data-label="2Q26收入">400</td>
+<td data-label="2Q26收入同比" class="metric-strong">118%</td>
+<td data-label="2Q26净利">180-220</td>
+<td data-label="2Q26净利同比" class="metric-stable">转正</td>
+<td data-label="2026收入">1500</td>
+<td data-label="2026净利">800-1000</td>
+<td data-label="2026净利同比" class="metric-strong">6689%</td>
+<td data-label="企稳含义">VC 价格高位。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="公司">海科新源</td>
+<td data-label="方向">溶剂</td>
+<td data-label="2Q26收入">1600</td>
+<td data-label="2Q26收入同比">35%</td>
+<td data-label="2Q26净利">270-300</td>
+<td data-label="2Q26净利同比" class="metric-stable">转正</td>
+<td data-label="2026收入">7200</td>
+<td data-label="2026净利">900-1200</td>
+<td data-label="2026净利同比" class="metric-stable">转正</td>
+<td data-label="企稳含义">溶剂和丙二醇提价。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="公司">钧达股份</td>
+<td data-label="方向">光伏电池片</td>
+<td data-label="2Q26收入">2500-2550</td>
+<td data-label="2Q26收入同比">41%</td>
+<td data-label="2Q26净利" class="metric-bad">-30至20</td>
+<td data-label="2Q26净利同比" class="metric-stable">同比减亏</td>
+<td data-label="2026收入">10000-10050</td>
+<td data-label="2026净利">350-400</td>
+<td data-label="2026净利同比" class="metric-stable">同比扭亏</td>
+<td data-label="企稳含义" class="metric-stable">光伏中少数减亏明确的公司。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="公司">爱旭股份</td>
+<td data-label="方向">光伏电池片</td>
+<td data-label="2Q26收入">5050-5100</td>
+<td data-label="2Q26收入同比">18%</td>
+<td data-label="2Q26净利" class="metric-bad">-250至-200</td>
+<td data-label="2Q26净利同比">同比亏损</td>
+<td data-label="2026收入">20350-20400</td>
+<td data-label="2026净利">500-550</td>
+<td data-label="2026净利同比" class="metric-stable">同比扭亏</td>
+<td data-label="企稳含义" class="metric-bad">2026 扭亏预期，但 2Q26 仍亏。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="公司">高测股份</td>
+<td data-label="方向">光伏设备</td>
+<td data-label="2Q26收入">950-1000</td>
+<td data-label="2Q26收入同比">27%</td>
+<td data-label="2Q26净利">0-50</td>
+<td data-label="2Q26净利同比" class="metric-stable">同比扭亏</td>
+<td data-label="2026收入">4150-4200</td>
+<td data-label="2026净利">150-200</td>
+<td data-label="2026净利同比" class="metric-stable">同比扭亏</td>
+<td data-label="企稳含义" class="metric-stable">当季和全年均扭亏。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="公司">天岳先进</td>
+<td data-label="方向">SiC 衬底</td>
+<td data-label="2Q26收入">430</td>
+<td data-label="2Q26收入同比">11%</td>
+<td data-label="2Q26净利">15</td>
+<td data-label="2Q26净利同比" class="metric-strong">650%</td>
+<td data-label="2026收入">1800</td>
+<td data-label="2026净利">100</td>
+<td data-label="2026净利同比" class="metric-stable">扭亏</td>
+<td data-label="企稳含义" class="metric-stable">SiC 放量带来利润转正。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="公司">立昂微</td>
+<td data-label="方向">半导体硅片</td>
+<td data-label="2Q26收入">1200</td>
+<td data-label="2Q26收入同比">42%</td>
+<td data-label="2Q26净利" class="metric-bad">-17</td>
+<td data-label="2Q26净利同比" class="metric-stable">减亏</td>
+<td data-label="2026收入">4636</td>
+<td data-label="2026净利">113</td>
+<td data-label="2026净利同比" class="metric-stable">扭亏</td>
+<td data-label="企稳含义" class="metric-bad">2Q26 仍亏，2026 转正。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="公司">西安奕材</td>
+<td data-label="方向">半导体硅片</td>
+<td data-label="2Q26收入">881</td>
+<td data-label="2Q26收入同比">36%</td>
+<td data-label="2Q26净利" class="metric-bad">-126</td>
+<td data-label="2Q26净利同比" class="metric-stable">减亏</td>
+<td data-label="2026收入">3445</td>
+<td data-label="2026净利" class="metric-bad">-601</td>
+<td data-label="2026净利同比" class="metric-stable">减亏</td>
+<td data-label="企稳含义">大硅片国产化，但仍未盈利。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="公司">科顺股份</td>
+<td data-label="方向">基建材料</td>
+<td data-label="2Q26收入">1916</td>
+<td data-label="2Q26收入同比">5%</td>
+<td data-label="2Q26净利">123</td>
+<td data-label="2Q26净利同比" class="metric-strong">1805%</td>
+<td data-label="2026收入">6346</td>
+<td data-label="2026净利">350</td>
+<td data-label="2026净利同比" class="metric-stable">扭亏为盈</td>
+<td data-label="企稳含义">低基数修复。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="公司">现代牧业</td>
+<td data-label="方向">牧业</td>
+<td data-label="2Q26收入">3580</td>
+<td data-label="2Q26收入同比">/</td>
+<td data-label="2Q26净利">40</td>
+<td data-label="2Q26净利同比" class="metric-stable">扭亏为盈</td>
+<td data-label="2026收入">16789</td>
+<td data-label="2026净利">940</td>
+<td data-label="2026净利同比" class="metric-stable">扭亏为盈</td>
+<td data-label="企稳含义">牧业好于生猪养殖。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="公司">优然牧业</td>
+<td data-label="方向">牧业</td>
+<td data-label="2Q26收入">6254</td>
+<td data-label="2Q26收入同比"></td>
+<td data-label="2Q26净利">220</td>
+<td data-label="2Q26净利同比" class="metric-stable">扭亏为盈</td>
+<td data-label="2026收入">21391</td>
+<td data-label="2026净利">1450</td>
+<td data-label="2026净利同比"></td>
+<td data-label="企稳含义" class="metric-stable">2Q26 扭亏。</td>
+</tr>
+<tr>
+<td data-label="公司">南方航空</td>
+<td data-label="方向">航空</td>
+<td data-label="2Q26收入">48940</td>
+<td data-label="2Q26收入同比">5%</td>
+<td data-label="2Q26净利" class="metric-bad">-3910</td>
+<td data-label="2Q26净利同比">NA</td>
+<td data-label="2026收入">199622</td>
+<td data-label="2026净利">1781</td>
+<td data-label="2026净利同比" class="metric-strong">108%</td>
+<td data-label="企稳含义" class="metric-bad">当季仍亏，全年转盈。</td>
+</tr>
+<tr>
+<td data-label="公司">中国国航</td>
+<td data-label="方向">航空</td>
+<td data-label="2Q26收入">46720</td>
+<td data-label="2Q26收入同比">10%</td>
+<td data-label="2Q26净利" class="metric-bad">-3310</td>
+<td data-label="2Q26净利同比">NA</td>
+<td data-label="2026收入">192271</td>
+<td data-label="2026净利">517</td>
+<td data-label="2026净利同比" class="metric-strong">129%</td>
+<td data-label="企稳含义">当季亏损，2026 修复。</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="5-板块内部差异总结" class="report-section section-mixed">
+<h2>5. 板块内部差异总结</h2>
+<h3 class="sub-good">5.1 电子</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>强势线</th>
+<th>反向线</th>
+<th>结论</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="强势线">存储：兆易创新、普冉股份、江波龙、北京君正</td>
+<td data-label="反向线">EDA：华大九天、概伦电子</td>
+<td data-label="结论">存储涨价是利润弹性核心，EDA 短期业绩不能跟随板块强度。</td>
+</tr>
+<tr>
+<td data-label="强势线">AI PCB/CCL：生益科技、南亚新材、生益电子、广合科技、沪电股份</td>
+<td data-label="反向线" class="metric-bad">部分 PCB：景旺电子当季净利 -14%</td>
+<td data-label="结论">AI 服务器链强，但普通 PCB/个别公司有滞后。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="强势线">半导体设备/材料：中微公司、中科飞测、精测电子、雅克科技、鼎龙股份</td>
+<td data-label="反向线" class="metric-bad">硅片：沪硅股份亏损扩大，立昂微仍在减亏</td>
+<td data-label="结论">设备材料总体强，硅片仍需等盈利拐点。</td>
+</tr>
+</tbody></table></div>
+<h3 class="sub-neutral">5.2 电新</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>强势线</th>
+<th>反向线</th>
+<th>结论</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="强势线">锂电材料：天赐材料、湖南裕能、富临精工、星源材质、亿纬锂能</td>
+<td data-label="反向线">光伏主链：福莱特、阿特斯、隆基绿能、晶澳科技、通威股份</td>
+<td data-label="结论">电新不能整体判断，锂电材料强修复，光伏仍弱。</td>
+</tr>
+<tr class="row-stable">
+<td data-label="强势线">氟化工/VC/溶剂：多氟多、华盛锂电、海科新源</td>
+<td data-label="反向线">光伏设备/电池片中仅少数企稳</td>
+<td data-label="结论" class="metric-stable">最值得跟踪的是价格修复和转正品种。</td>
+</tr>
+</tbody></table></div>
+<h3 class="sub-neutral">5.3 汽车</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>强势线</th>
+<th>反向线</th>
+<th>结论</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="强势线">零跑汽车、吉利汽车、比亚迪、一汽解放</td>
+<td data-label="反向线">理想汽车、小鹏汽车</td>
+<td data-label="结论">乘用车内部强弱差异很大，不能只看销量或行业景气。</td>
+</tr>
+<tr>
+<td data-label="强势线">岱美股份、继峰股份</td>
+<td data-label="反向线">爱柯迪、长城汽车当季利润偏弱</td>
+<td data-label="结论">零部件里业绩兑现度决定强弱。</td>
+</tr>
+</tbody></table></div>
+<h3 class="sub-neutral">5.4 消费</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>强势线</th>
+<th>反向线</th>
+<th>结论</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="强势线">五粮液、万辰集团、洽洽食品</td>
+<td data-label="反向线">山西汾酒、泸州老窖、古井贡酒、水井坊</td>
+<td data-label="结论">消费不是整体复苏，更多是低基数和个别经营改善。</td>
+</tr>
+<tr>
+<td data-label="强势线">医药创新药/CXO：百济神州、三生国健、药明康德</td>
+<td data-label="反向线">器械稳增长，鱼跃医疗当季利润承压</td>
+<td data-label="结论">医药内部创新药和 CXO 强于传统器械。</td>
+</tr>
+</tbody></table></div>
+<h3 class="sub-neutral">5.5 交运、公用、农林牧渔、军工</h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>板块</th>
+<th>强势/企稳</th>
+<th>弱项</th>
+<th>结论</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="板块">交运</td>
+<td data-label="强势/企稳">中远海能、大秦铁路、中通快递</td>
+<td data-label="弱项" class="metric-bad">航空当季仍亏</td>
+<td data-label="结论">交运看油运、铁路、快递，航空看全年转盈。</td>
+</tr>
+<tr>
+<td data-label="板块">公用事业</td>
+<td data-label="强势/企稳">长江电力、中国广核</td>
+<td data-label="弱项">火电、核电部分公司同比弱</td>
+<td data-label="结论">公用偏防御和分红，不是高弹性业绩线。</td>
+</tr>
+<tr class="row-bad">
+<td data-label="板块">农林牧渔</td>
+<td data-label="强势/企稳">现代牧业、优然牧业</td>
+<td data-label="弱项">牧原股份、温氏股份</td>
+<td data-label="结论" class="metric-bad">牧业扭亏，生猪养殖转亏。</td>
+</tr>
+<tr>
+<td data-label="板块">军工</td>
+<td data-label="强势/企稳">洪都航空</td>
+<td data-label="弱项">国博电子、振华科技、中航成飞、中航重机</td>
+<td data-label="结论">板块整体偏弱，只有个别高弹性。</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="6-补充页验证" class="report-section section-neutral">
+<h2>6. 补充页验证</h2>
+<p>PDF 第 17-22 页还有电子和通信的补充表，字段口径和主表不同，因此不直接纳入主排名，但结论方向一致。</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>补充页方向</th>
+<th>代表个股</th>
+<th>补充数据/结论</th>
+<th>对主排名的影响</th>
+</tr></thead><tbody>
+<tr>
+<td data-label="补充页方向">消费电子/算力硬件</td>
+<td data-label="代表个股">蓝特光学、汇聚科技、富瀚微、星宸科技</td>
+<td data-label="补充数据/结论">补充页显示部分消费电子和端侧 AI 芯片仍有高增区间。</td>
+<td data-label="对主排名的影响">强化电子内部“AI/算力相关强，普通消费电子分化”的判断。</td>
+</tr>
+<tr>
+<td data-label="补充页方向">半导体设备/封测</td>
+<td data-label="代表个股">北方华创、中微公司、拓荆科技、长电科技、通富微电</td>
+<td data-label="补充数据/结论">补充页强调存储和先进逻辑订单、先进封装需求。</td>
+<td data-label="对主排名的影响">强化半导体设备/封测是电子强支线。</td>
+</tr>
+<tr>
+<td data-label="补充页方向">存储/PCB</td>
+<td data-label="代表个股">兆易创新、北京君正、生益科技、南亚新材、沪电股份、深南电路、广合科技</td>
+<td data-label="补充数据/结论">补充页继续显示存储和 PCB 利润高弹性。</td>
+<td data-label="对主排名的影响">与主表排名完全一致，是电子最强线。</td>
+</tr>
+<tr class="row-good">
+<td data-label="补充页方向">通信光模块/光纤光缆</td>
+<td data-label="代表个股">中际旭创、新易盛、天孚通信、源杰科技、亨通光电、中天科技、长飞光纤</td>
+<td data-label="补充数据/结论">补充页用季度净利序列表明 2026Q2 仍处高景气。</td>
+<td data-label="对主排名的影响">强化通信是全表最强方向。</td>
+</tr>
+<tr>
+<td data-label="补充页方向">通信边缘/运营商</td>
+<td data-label="代表个股">运营商、部分 IDC、边缘计算公司</td>
+<td data-label="补充数据/结论">补充页中部分运营商或边缘计算同比偏弱。</td>
+<td data-label="对主排名的影响">提醒通信也要聚焦光模块/高速互连，而不是整个通信板块无差别看多。</td>
+</tr>
+</tbody></table></div>
+</section>
+<section id="7-最终结论" class="report-section section-neutral">
+<h2>7. 最终结论</h2>
+<ol>
+<li>最优先的高景气方向：通信光模块/国产算力、电子存储/AI PCB、锂电材料修复。</li>
+<li>最优先的止跌企稳方向：锂电隔膜/氟化工/VC/溶剂、光伏局部减亏公司、半导体材料、建材新材料、牧业。</li>
+<li>最需要回避或谨慎的方向：光伏主链、生猪养殖、军工多数公司、公用事业短期低增、白酒多数公司、电子中的 EDA/硅片弱项。</li>
+<li>关键方法：不要按一级板块简单判断，必须拆到子行业和个股。电子和电新的内部差异最大，也是最容易误判的两个板块。</li>
+</ol>
+</section>
+    <footer>本页面由 Markdown 报告自动生成；原始预测数据以 PDF 表内口径为准。</footer>
+  </main>
+</body>
+</html>
