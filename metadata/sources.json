@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29",
+  "updated_at": "2026-07-01",
   "documents": [
     {
       "id": "ai_trend_investment_framework",
@@ -90,6 +90,15 @@
       "confidence": "medium",
       "path": "data-source/03_观察清单/2026Q2_观察清单.md",
       "tags": ["AI", "观察清单", "2026Q2"]
+    },
+    {
+      "id": "watchlist_2026q3",
+      "title": "2026Q3观察清单",
+      "category": "观察清单",
+      "status": "tracking",
+      "confidence": "medium",
+      "path": "data-source/03_观察清单/2026Q3_观察清单.md",
+      "tags": ["AI", "观察清单", "2026Q3"]
     },
     {
       "id": "review_2026",

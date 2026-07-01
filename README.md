@@ -204,7 +204,7 @@ sources:
 
 当前建议采用自动判断、异常回退模式：
 
-- 自动化先读取 `metadata/update-state.json` 的 `period_policy.active_research_period`，当前活跃研究周期为 `2026Q2`；
+- 自动化先读取 `metadata/update-state.json` 的 `period_policy.active_research_period`，当前活跃研究周期为 `2026Q3`；
 - 自动化优先读取 `metadata/direction-registry.json`，不要在 prompt 中写死方向范围；
 - 自动化处理公司层信息时优先读取 `metadata/company-registry.json`，并把核心标的观察池视为方向研究的公司层派生对象；
 - 自动化优先读取 `metadata/source-registry.json`，未登记来源只能作为补充；

@@ -1,7 +1,7 @@
 {
   "updated_at": "2026-07-01",
   "period_policy": {
-    "active_research_period": "2026Q2",
+    "active_research_period": "2026Q3",
     "period_mode": "configured_active_period",
     "candidate_pool_rule": "优先写入 active_research_period 对应的信息候选池；未配置时再按当前日期选择季度文件。",
     "watchlist_rule": "优先更新 active_research_period 对应的观察清单；active_research_period 默认与当前自然季度一致。",
@@ -48,11 +48,16 @@
       "last_summary": "基于 2026Q2 候选池、方向状态、公司注册表和已更新正式文档完成首次月频观察清单更新：AI Agent 和 AI存储/HBM供给瓶颈观察优先级升为中高；补充模块化同址数据中心、HBM/GDDR 异构推理服务、韩国半导体中心投资和 DRAM 诉讼 review 等观察问题；同步公司层月频复盘焦点，但未调整方向状态或公司状态。"
     },
     "quarterly": {
-      "last_success_at": null,
-      "last_status": "not_run",
+      "last_success_at": "2026-07-01T23:00:00+08:00",
+      "last_status": "success",
       "last_error": "",
-      "last_updated_documents": [],
-      "last_summary": ""
+      "last_updated_documents": [
+        "data-source/03_观察清单/2026Q3_观察清单.md",
+        "metadata/sources.json",
+        "metadata/update-state.json",
+        "CHANGELOG.md"
+      ],
+      "last_summary": "确认 2026Q3 为 active_research_period，并初始化 2026Q3 观察清单；季度复盘结论继续以 2026 判断复盘为基准，后续在 Q3 内按周频、月频和 event 规则补充新证据。"
     },
     "event": {
       "last_success_at": "2026-06-27T16:03:02+08:00",
