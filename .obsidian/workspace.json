@@ -1,0 +1,198 @@
+{
+  "main": {
+    "id": "460585845fa6f7ba",
+    "type": "split",
+    "children": [
+      {
+        "id": "42e30128b7d188e3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b9bf873ecd1db241",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "data-source/05_信息候选池/2026Q3_信息候选池.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026Q3_信息候选池"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0ab37a38cad2918b",
+    "type": "split",
+    "children": [
+      {
+        "id": "de17c7a35d1be6c4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b5dbb96f31b902a7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "8f6b5fc7f849cf9f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "6670a87285865119",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "af871a73e4990347",
+    "type": "split",
+    "children": [
+      {
+        "id": "814ce9b6e9911cab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ac1e4090a165e33f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "data-source/05_信息候选池/2026Q3_信息候选池.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "2026Q3_信息候选池 的反向链接列表"
+            }
+          },
+          {
+            "id": "e73ed5fdb80fbace",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "data-source/05_信息候选池/2026Q3_信息候选池.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "2026Q3_信息候选池 的出链列表"
+            }
+          },
+          {
+            "id": "fe677da21a79c500",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "6cc86b755fe8687c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "6c6c751b03246db1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "data-source/05_信息候选池/2026Q3_信息候选池.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "2026Q3_信息候选池 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "b9bf873ecd1db241",
+  "lastOpenFiles": [
+    "data-source/05_信息候选池/2026Q2_信息候选池.md",
+    "data-source/05_信息候选池/2026Q3_信息候选池.md",
+    "data-source/04_复盘记录/2026_判断复盘.md",
+    "data-source/06_核心标的观察池/公司画像/埃斯顿.md",
+    "data-source/06_核心标的观察池/公司画像/工业富联.md",
+    "data-source/01_方向研究/机器人.md",
+    "data-source/00_投资总纲/AI趋势投资判断框架.md",
+    "README.md",
+    "CHANGELOG.md"
+  ]
+}

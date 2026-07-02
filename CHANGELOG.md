@@ -2,7 +2,10 @@
 
 ## 2026-07-01
 
-- 执行季度观察切换，确认 `2026Q3` 为当前活跃研究周期，并初始化 `2026Q3观察清单` 后纳入文档索引。
+- 执行季度判断复盘，完成 2026Q2 判断链条复核，并确认 `2026Q3` 为当前活跃研究周期。
+- 更新 `2026判断复盘`：AI推理基础设施、电力与散热、CPO与下一代光互连被 Q2 证据继续验证；AI存储/HBM供给瓶颈确认升级后的 `watching` 状态；AI Agent、机器人和公司层观察池仍需商业化、交付、收入利润和客户认证验证。
+- 新增 `2026Q3观察清单`，把本季度观察重点调整为基础设施 CapEx 连续性、HBM 正式方向链条、公司层收入传导、Agent/机器人商业化兑现和 review 项关闭。
+- 更新 `metadata/direction-registry.json`、`metadata/company-registry.json`、`metadata/sources.json`、`metadata/automation-plan.json`、`metadata/update-state.json` 和 README，记录季度复盘结果、Q3 活跃研究周期和公司层不调整状态的原因。
 - 执行月频观察清单更新，基于 2026Q2 候选池、方向注册表、正式方向研究和核心标的观察池调整观察优先级。
 - 更新 `2026Q2观察清单`：AI Agent 观察优先级升为中高；AI存储/HBM供给瓶颈因 IDC、TrendForce、Micron、韩国半导体中心投资和 HBM/GDDR 异构推理论文等多源证据增强，观察优先级升为中高但仍保持 `watching`。
 - 补充月频跟踪问题：模块化/新能源同址数据中心商业化、HBM/GDDR 分层推理服务、韩国半导体中心投资交叉验证，以及 DRAM 诉讼风险 review。

@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-06-27",
+  "updated_at": "2026-07-01",
   "status": "active",
   "principle": "先自动进入候选池，再由自动化按规则判断是否更新正式知识库；公司层标的池是方向研究的派生观察对象，不输出买卖建议；冲突或重大不确定事项标记 review",
   "period_policy": {
     "state_source": "metadata/update-state.json.period_policy",
-    "default_active_research_period": "2026Q2",
+    "default_active_research_period": "2026Q3",
     "candidate_pool_rule": "优先使用 active_research_period 对应的信息候选池；未配置时按当前日期选择季度文件。",
     "watchlist_rule": "优先使用 active_research_period 对应的观察清单；active_research_period 默认与当前自然季度一致。",
     "quarterly_review_rule": "1/4/7/10 月 1 日复盘上一自然季度；复盘完成后，将 active_research_period 切换或确认到运行日所在自然季度，并创建或更新该季度观察重点。"

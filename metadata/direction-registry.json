@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29",
+  "updated_at": "2026-07-01",
   "description": "AI 趋势投资知识库方向总表。自动化任务应优先读取本文件识别当前方向、新方向候选和方向状态。",
   "new_direction_policy": {
     "candidate_condition": "不属于现有方向，但满足入库标准或反复出现的 AI 产业趋势信息，先进入信息候选池并标记 new_direction_candidate。",
@@ -15,9 +15,12 @@
       "document": "data-source/01_方向研究/AI推理基础设施.md",
       "tags": ["AI", "推理", "数据中心", "资本开支"],
       "started_at": "2026-06-20",
-      "updated_at": "2026-06-29",
+      "updated_at": "2026-07-01",
       "thesis": "AI 从训练转向大规模使用后，推理需求可能成为持续基础设施资本开支的核心驱动。",
       "key_bottlenecks": ["推理成本", "推理芯片", "服务器", "调度系统", "电力与散热"],
+      "last_quarterly_review_at": "2026-07-01",
+      "last_quarterly_review_result": "validated",
+      "last_quarterly_review_note": "2026Q2 被 NVIDIA、Microsoft、Alphabet、AWS/Pinterest、OpenAI/Broadcom、Qualcomm 和 Firmus 等证据继续验证，方向状态维持 priority。",
       "automation_scope": "日频重点关注，周频复核候选信息并更新正式文档。"
     },
     {
@@ -27,9 +30,12 @@
       "document": "data-source/01_方向研究/AI Agent.md",
       "tags": ["AI", "Agent", "推理", "企业软件"],
       "started_at": "2026-06-20",
-      "updated_at": "2026-06-29",
+      "updated_at": "2026-07-01",
       "thesis": "Agent 可能放大推理调用和企业工作流集成需求，但应用层收入和留存仍需验证。",
       "key_bottlenecks": ["推理成本", "工具调用", "权限安全", "企业付费", "评估体系"],
+      "last_quarterly_review_at": "2026-07-01",
+      "last_quarterly_review_result": "partial_validation",
+      "last_quarterly_review_note": "2026Q2 生产化、数据治理和安全隔离证据增强，但企业付费、续费、ARPU 和利润兑现仍需 Q3 验证，方向状态维持 tracking。",
       "automation_scope": "日频进入候选池，周频判断是否增强或削弱正式判断。"
     },
     {
@@ -39,9 +45,12 @@
       "document": "data-source/01_方向研究/机器人.md",
       "tags": ["AI", "机器人", "制造", "自动化"],
       "started_at": "2026-06-20",
-      "updated_at": "2026-06-29",
+      "updated_at": "2026-07-01",
       "thesis": "机器人是 AI 进入物理世界的长期方向，但 2026 年更需要观察批量订单、成本下降和场景 ROI。",
       "key_bottlenecks": ["成本", "可靠性", "执行器", "供应链", "场景 ROI"],
+      "last_quarterly_review_at": "2026-07-01",
+      "last_quarterly_review_result": "partial_validation",
+      "last_quarterly_review_note": "2026Q2 出现 NVIDIA Halos 和 Agility 多年订单证据，但交付、毛利率、复购和主板供应链收入仍待验证，方向状态维持 watching。",
       "automation_scope": "周频检查，重大批量订单或核心零部件瓶颈进入正式更新。"
     },
     {
@@ -51,9 +60,12 @@
       "document": "data-source/01_方向研究/CPO与下一代光互连.md",
       "tags": ["AI", "CPO", "光模块", "数据中心", "网络"],
       "started_at": "2026-06-20",
-      "updated_at": "2026-06-29",
+      "updated_at": "2026-07-01",
       "thesis": "AI 集群扩大后，数据中心内部互连可能成为 GPU 之后的二级瓶颈。",
       "key_bottlenecks": ["带宽密度", "功耗", "良率", "封装散热", "客户认证"],
+      "last_quarterly_review_at": "2026-07-01",
+      "last_quarterly_review_result": "validated",
+      "last_quarterly_review_note": "2026Q2 被 TrendForce CPO/NPO、Micro LED CPO、NVIDIA 网络/DPU 和 Alphabet 网络设备 CapEx 证据增强，方向状态维持 priority。",
       "automation_scope": "日频重点关注 800G、1.6T、硅光、CPO 和大客户网络架构变化。"
     },
     {
@@ -63,9 +75,12 @@
       "document": "data-source/01_方向研究/电力与散热.md",
       "tags": ["AI", "电力", "散热", "数据中心", "资本开支"],
       "started_at": "2026-06-20",
-      "updated_at": "2026-06-29",
+      "updated_at": "2026-07-01",
       "thesis": "AI 数据中心扩张后，电力、并网、变压器、液冷和高密度机房可能成为硬约束。",
       "key_bottlenecks": ["电网接入", "变压器", "UPS", "液冷", "高功率机柜"],
+      "last_quarterly_review_at": "2026-07-01",
+      "last_quarterly_review_result": "validated",
+      "last_quarterly_review_note": "2026Q2 被 Project Kilby、NVIDIA 液冷、TrendForce 800V HVDC 和 Firmus 区域 AI 工厂证据增强，方向状态维持 priority。",
       "automation_scope": "日频重点关注云厂商资本开支、并网延迟、液冷渗透率和电力设备订单。"
     },
     {
@@ -74,9 +89,12 @@
       "status": "watching",
       "tags": ["AI", "HBM", "存储", "DRAM", "NAND", "供应链"],
       "started_at": "2026-06-22",
-      "updated_at": "2026-06-29",
+      "updated_at": "2026-07-01",
       "thesis": "AI 训练、推理和数据中心扩张正在把 HBM、服务器 DRAM 和企业级 SSD 从周期性存储品类推向基础设施供给约束。",
       "key_bottlenecks": ["HBM", "服务器 DRAM", "企业级 SSD", "先进制程产能", "交付周期"],
+      "last_quarterly_review_at": "2026-07-01",
+      "last_quarterly_review_result": "upgraded_to_watching_confirmed",
+      "last_quarterly_review_note": "2026Q2 已由 IDC、TrendForce、Micron、韩国半导体中心投资报道和 HBM/GDDR 异构推理论文增强，确认 watching 状态成立；正式方向文档仍等待受益环节和公司层承接闭环。",
       "automation_scope": "周频观察 HBM、服务器 DRAM、企业级 SSD 的订单、价格、产能和交期；形成完整资本开支、受益环节和验证信号链条后，再新建正式方向研究文档。",
       "reason_not_promoted_to_tracking": "已有 IDC、TrendForce 和 Micron 多源证据支持升级为 watching，但受益环节、资本开支传导和公司层收入兑现仍需补齐。"
     }
@@ -88,11 +106,14 @@
       "status": "candidate",
       "tags": ["AI", "AI-RAN", "边缘AI", "电信网络", "6G"],
       "first_seen_at": "2026-03-01",
-      "updated_at": "2026-06-22",
+      "updated_at": "2026-07-01",
       "source_tier": "tier_1",
       "evidence": "NVIDIA 联合 BT、Cisco、Ericsson、Nokia、SK Telecom、T-Mobile 等推进 AI-native 6G 平台，把 AI 嵌入 RAN、边缘和核心网络。",
       "watching_threshold": "出现运营商真实 CapEx、商用部署、边缘推理收入或设备订单后，升级为 watching。",
-      "reason_not_promoted": "当前已有技术联盟和平台叙事，但商业化节奏、付款方和收入流向尚未形成完整链条。"
+      "reason_not_promoted": "当前已有技术联盟和平台叙事，但商业化节奏、付款方和收入流向尚未形成完整链条。",
+      "last_quarterly_review_at": "2026-07-01",
+      "last_quarterly_review_result": "kept_candidate",
+      "last_quarterly_review_note": "2026Q2 未出现足够运营商 CapEx、商用部署、边缘推理收入或设备订单，继续保持候选方向。"
     }
   ]
 }

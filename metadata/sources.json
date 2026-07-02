@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-01",
+  "updated_at": "2026-07-02",
   "documents": [
     {
       "id": "ai_trend_investment_framework",
@@ -117,6 +117,15 @@
       "confidence": "medium",
       "path": "data-source/05_信息候选池/2026Q2_信息候选池.md",
       "tags": ["AI", "信息候选池", "2026Q2"]
+    },
+    {
+      "id": "candidate_pool_2026q3",
+      "title": "2026Q3信息候选池",
+      "category": "信息候选池",
+      "status": "watching",
+      "confidence": "medium",
+      "path": "data-source/05_信息候选池/2026Q3_信息候选池.md",
+      "tags": ["AI", "信息候选池", "2026Q3"]
     },
     {
       "id": "core_company_watchlist_2026q2_a_share_main_board",

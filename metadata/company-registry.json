@@ -54,6 +54,24 @@
       "activation_rule": "不得在缺少至少一个完整季度复盘样本时强行打分；评分只作为观察排序，不作为买卖建议。"
     }
   ],
+  "quarterly_review_notes": [
+    {
+      "period": "2026Q2",
+      "reviewed_at": "2026-07-01",
+      "status_result": "no_company_status_change",
+      "summary": "2026Q2 核心标的观察池刚完成初始化和月频观察重点同步，尚缺完整季度公告样本验证订单、收入、利润、产能和客户认证；本次季度复盘不调整公司状态。",
+      "validated_groups": [
+        "AI 服务器、光互连/PCB、电力散热设备方向与 Q2 基础设施判断匹配度较高，但仍需公司公告或财报验证收入利润传导。"
+      ],
+      "weakened_or_unverified_groups": [
+        "AI Agent 软件、机器人供应链和 AI存储/HBM 主板承接对象仍需补充付费、订单、交付、利润和公司映射证据。"
+      ],
+      "next_period_focus": [
+        "跟踪服务器系统、光互连/PCB、电力散热设备、Agent 软件和机器人供应链的公告、年报、订单、毛利率和客户认证。",
+        "判断 AI存储/HBM供给瓶颈若升级为 tracking 后，是否需要扩展 A 股主板公司注册表。"
+      ]
+    }
+  ],
   "monthly_review_focus": [
     {
       "id": "ai_server_systems",

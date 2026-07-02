@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-01",
+  "updated_at": "2026-07-02",
   "period_policy": {
     "active_research_period": "2026Q3",
     "period_mode": "configured_active_period",
@@ -9,11 +9,11 @@
   },
   "jobs": {
     "daily": {
-      "last_success_at": "2026-06-30T21:35:37+08:00",
+      "last_success_at": "2026-07-02T21:23:22+08:00",
       "last_status": "success",
       "last_error": "",
       "last_candidate_count": 3,
-      "last_summary": "追加 3 条候选信息到 2026Q2 候选池，覆盖 AI存储/HBM供给瓶颈和 AI推理基础设施，并补充韩国半导体中心投资、DRAM 诉讼风险和 HBM/GDDR 异构推理服务技术证据；其中 2 条标记 watch、1 条诉讼类信息标记 review，未直接修改正式方向研究、历史案例、观察清单、复盘记录、公司注册表或核心标的观察池。"
+      "last_summary": "按 active_research_period 新建并登记 2026Q3 信息候选池，追加 3 条候选信息，覆盖 AI Agent、AI推理基础设施、AI存储/HBM供给瓶颈，并识别 AI成熟制程/电源与模拟IC供给瓶颈新方向候选；其中 2 条标记 watch、1 条标记 new_direction_candidate，未直接修改正式方向研究、历史案例、观察清单、复盘记录、公司注册表或核心标的观察池。"
     },
     "weekly": {
       "last_success_at": "2026-06-29T23:08:07+08:00",
@@ -48,16 +48,21 @@
       "last_summary": "基于 2026Q2 候选池、方向状态、公司注册表和已更新正式文档完成首次月频观察清单更新：AI Agent 和 AI存储/HBM供给瓶颈观察优先级升为中高；补充模块化同址数据中心、HBM/GDDR 异构推理服务、韩国半导体中心投资和 DRAM 诉讼 review 等观察问题；同步公司层月频复盘焦点，但未调整方向状态或公司状态。"
     },
     "quarterly": {
-      "last_success_at": "2026-07-01T23:00:00+08:00",
+      "last_success_at": "2026-07-01T23:01:59+08:00",
       "last_status": "success",
       "last_error": "",
       "last_updated_documents": [
+        "data-source/04_复盘记录/2026_判断复盘.md",
         "data-source/03_观察清单/2026Q3_观察清单.md",
+        "metadata/direction-registry.json",
+        "metadata/company-registry.json",
         "metadata/sources.json",
         "metadata/update-state.json",
+        "metadata/automation-plan.json",
+        "README.md",
         "CHANGELOG.md"
       ],
-      "last_summary": "确认 2026Q3 为 active_research_period，并初始化 2026Q3 观察清单；季度复盘结论继续以 2026 判断复盘为基准，后续在 Q3 内按周频、月频和 event 规则补充新证据。"
+      "last_summary": "完成 2026Q2 季度判断复盘：AI推理基础设施、电力与散热、CPO与下一代光互连被 Q2 证据继续验证并维持 priority；AI存储/HBM供给瓶颈确认升级后的 watching 状态但暂不新建正式方向文档；AI Agent 和机器人部分验证但商业化、交付和利润仍待验证；公司层观察池不调整状态，等待 Q3 公告、订单、收入、利润、产能和客户认证样本；Amazon 印度投资和 DRAM 诉讼继续保留 review。active_research_period 已切换到 2026Q3，并创建 2026Q3 观察清单。"
     },
     "event": {
       "last_success_at": "2026-06-27T16:03:02+08:00",
