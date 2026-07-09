@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-05",
+  "updated_at": "2026-07-09",
   "period_policy": {
     "active_research_period": "2026Q3",
     "period_mode": "configured_active_period",
@@ -9,11 +9,11 @@
   },
   "jobs": {
     "daily": {
-      "last_success_at": "2026-07-05T20:03:42+08:00",
+      "last_success_at": "2026-07-09T20:26:46+08:00",
       "last_status": "success",
       "last_error": "",
-      "last_candidate_count": 3,
-      "last_summary": "本次日频窗口从 2026-07-04T20:02:24+08:00 至 2026-07-05T20:03:42+08:00；新增 3 条候选信息：SK Telecom 15GW AI 数据中心规划、Micron 日本 HBM 扩产媒体报道、Microsoft 欧洲可信 AI 基础设施与数据主权更新。3 条均标记为 watch，涉及 AI推理基础设施、电力与散热、AI-RAN/边缘AI基础设施、AI存储/HBM供给瓶颈和 AI Agent；未直接修改正式方向研究、历史案例、观察清单、复盘记录、公司注册表或核心标的观察池。"
+      "last_candidate_count": 6,
+      "last_summary": "本次日频窗口从 2026-07-05T20:03:42+08:00 至 2026-07-09T20:26:46+08:00；新增 6 条候选信息：TrendForce MLCC/被动元件供给瓶颈、TrendForce 服务器 DRAM 价格和 2027 供需缺口、Meta 加拿大 1GW AI 数据中心、NVIDIA Vera CPU、NVIDIA/LangChain Agent 栈成本优化、NVIDIA/Hugging Face LeRobot 工具链。5 条标记为 watch，1 条标记为 new_direction_candidate；涉及 AI推理基础设施、电力与散热、AI Agent、机器人、AI存储/HBM供给瓶颈和 AI成熟制程/电源与模拟IC供给瓶颈；未直接修改正式方向研究、历史案例、观察清单、复盘记录、公司注册表或核心标的观察池。"
     },
     "weekly": {
       "last_success_at": "2026-06-29T23:08:07+08:00",
