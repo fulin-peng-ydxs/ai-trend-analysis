@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-12",
+  "updated_at": "2026-07-16",
   "period_policy": {
     "active_research_period": "2026Q3",
     "period_mode": "configured_active_period",
@@ -9,11 +9,11 @@
   },
   "jobs": {
     "daily": {
-      "last_success_at": "2026-07-12T20:04:33+08:00",
+      "last_success_at": "2026-07-16T20:06:00+08:00",
       "last_status": "success",
       "last_error": "",
       "last_candidate_count": 6,
-      "last_summary": "本次日频窗口从 2026-07-11T20:03:23+08:00 至 2026-07-12T20:04:33+08:00；新增 6 条候选信息：Google Agentic AI 基础设施报告、Google Agentic Enterprise 治理指南、Microsoft Agentic CX、Commonwealth Bank AI 客服生产案例、Nokia/Google Cloud 网络运维 agents、Equinix/Cisco/NVIDIA AI factory。6 条均标记为 watch；涉及 AI推理基础设施、电力与散热、CPO与下一代光互连、AI Agent、企业软件和 AI-RAN/边缘AI基础设施；未直接修改正式方向研究、历史案例、观察清单、复盘记录、公司注册表或核心标的观察池。"
+      "last_summary": "本次日频按仓库状态从 2026-07-12T20:04:33+08:00 补齐至 2026-07-16T20:06:00+08:00；新增 6 条候选信息：Meta Louisiana 5GW 数据中心、Google Cloud Claude 企业生产化、AWS DevOps Agent、NVIDIA Japan/Noetra 国家 AI factory、NVIDIA Japan 行业 AI factory 生态、Fujitsu/日本机器人厂商 physical AI 合作。6 条均标记为 watch；涉及 AI推理基础设施、电力与散热、AI Agent、机器人、企业软件和 AI-RAN/边缘AI基础设施侧面线索；未直接修改正式方向研究、历史案例、观察清单、复盘记录、公司注册表或核心标的观察池。"
     },
     "weekly": {
       "last_success_at": "2026-06-29T23:08:07+08:00",
