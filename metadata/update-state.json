@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23",
+  "updated_at": "2026-07-25",
   "period_policy": {
     "active_research_period": "2026Q3",
     "period_mode": "configured_active_period",
@@ -9,11 +9,11 @@
   },
   "jobs": {
     "daily": {
-      "last_success_at": "2026-07-23T20:05:09+08:00",
+      "last_success_at": "2026-07-25T20:03:29+08:00",
       "last_status": "success",
       "last_error": "",
-      "last_candidate_count": 10,
-      "last_summary": "本次日频新增 10 条候选信息：BMS Vera Rubin AI factory、NVIDIA Vera Rubin 性能/功耗平台、Spectrum-6 gigascale AI factory 网络、Wistron 美国 AI 系统制造、Microsoft/Mistral 欧洲 AI 基础设施、TrendForce NAND 供需缺口、OpenAI Project Camellia 3.2GW、OpenAI Presence、monday.com production agents 和 NPS DGX GB300 supercomputer。10 条均标记为 watch；涉及 AI推理基础设施、电力与散热、CPO与下一代光互连、AI Agent、企业软件、AI存储/HBM供给瓶颈和供应链；未直接修改正式方向研究、历史案例、观察清单、复盘记录、公司注册表或核心标的观察池。"
+      "last_candidate_count": 7,
+      "last_summary": "本次日频新增 7 条候选信息：NAVER/Brookfield/NVIDIA 韩国 AI factory、SK/NVIDIA 2GW AI factory 与 HBM 合作、AMD Helios rack-scale AI、Microsoft/Databricks 企业 Agent 数据治理、Meta AI 行动型助手、Meta Seller app 和美国 AI data center 电费保护政策。7 条均标记为 watch；涉及 AI推理基础设施、电力与散热、AI Agent、企业软件、机器人和 AI存储/HBM供给瓶颈；未直接修改正式方向研究、历史案例、观察清单、复盘记录、公司注册表或核心标的观察池。"
     },
     "weekly": {
       "last_success_at": "2026-06-29T23:08:07+08:00",
