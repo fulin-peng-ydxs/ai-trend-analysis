@@ -3,7 +3,7 @@ schema_version: 1
 title: CPO与下一代光互连
 category: 方向研究
 status: tracking
-updated_at: 2026-06-29
+updated_at: 2026-07-27
 confidence: medium_high
 tags:
   - AI
@@ -28,6 +28,12 @@ sources:
     url: https://www.qualcomm.com/news/releases/2026/06/qualcomm-unveils-comprehensive-data-center-roadmap-for-the-agent
   - name: TrendForce Micro LED optical interconnect ecosystem
     url: https://www.trendforce.com/news/2026/06/29/news-mapping-the-micro-led-optical-interconnect-ecosystem/
+  - name: NVIDIA Spectrum-6
+    url: https://blogs.nvidia.com/blog/nvidia-spectrum-six-arrives-in-gigascale-ai-factories/
+  - name: NVIDIA Vera Rubin
+    url: https://blogs.nvidia.com/blog/vera-rubin/
+  - name: NeutraDC Ishikari partnership
+    url: https://www.neutradc.com/news/60268/strategic-partnership-memorandum-signed-between-neutradc-and-ishikari-renewable-energy-data-center-no1
 ---
 
 # CPO与下一代光互连
@@ -51,6 +57,9 @@ AI 集群继续扩大后，瓶颈会从单卡算力扩展到集群通信。GPU �
 | 定制推理芯片拉动网络和能效协同 | tier_1 | OpenAI/Broadcom Jalapeno 面向多代平台和 GW 级数据中心，Qualcomm Dragonfly 组合覆盖 CPU、加速器、高带宽计算、连接和定制硅 | 中 | 增强 |
 | AI 数据中心光模块市场继续上修 | tier_2 | TrendForce 预计 2026 年 AI 数据中心光收发模块市场达 260 亿美元，800G 及以上模块占比超过 60% | 高 | 增强 |
 | Micro LED CPO 进入中期路线观察 | tier_2 | TrendForce 预计 CPO 渗透率从 2026 年约 0.5% 升至 2030 年近 35%，Micro LED CPO 光收发模块 2028 年下半年开始放量 | 中 | 增强 |
+| 102.4T 交换系统进入 gigascale AI factory | tier_1 | NVIDIA Spectrum-6 支持可插拔和 co-packaged optics、液冷网络基础设施，CoreWeave、Microsoft、Nebius、SpaceXAI 和 Tesla 等为首批采用方 | 高 | 增强 |
+| CPO/光子和液冷网络进入平台化 | tier_1 | NVIDIA Vera Rubin 平台把 Spectrum-6、ConnectX-9、NVLink 6、BlueField-4、co-packaged optics 和液冷网络纳入全系统协同，用于提高网络效率和降低每 token 成本 | 高 | 增强 |
+| 区域低延迟光网络开始连接 AI 算力节点 | tier_1 | NeutraDC 与 Ishikari Renewable Energy Data Center No.1 计划借助 Hokkaido Ishikari 至 Tokyo Otemachi APN/IOWN 链路探索跨境 GPUaaS 与 AI compute operations | 中 | 观察 |
 
 ## 2. 核心瓶颈
 
@@ -118,6 +127,8 @@ AI 集群继续扩大后，瓶颈会从单卡算力扩展到集群通信。GPU �
 | 800G 需求延续 | 已出现 | 大客户订单和出货继续增长 | weekly/event | 增强 |
 | 1.6T 开始规模放量 | 观察中 | 批量订单、产能扩张和收入贡献明确 | weekly/event | 增强 |
 | CPO 从样品验证进入批量采购 | 待验证 | 大客户正式采购或系统级部署 | event | 增强 |
+| Spectrum-6 和液冷网络基础设施部署 | 已出现 | CoreWeave、Microsoft、Nebius、SpaceXAI、Tesla 等客户采用 102.4T Spectrum-6，且平台支持 co-packaged optics 和液冷网络 | event | 增强 |
+| 跨站点低延迟光网络支撑区域 AI factory | 观察中 | APN/IOWN、Spectrum-XGS 或同类低延迟网络把跨区域 GPUaaS、主权 AI 和边缘 AI 连接为统一服务 | monthly/event | 增强/观察 |
 | CPO/NPO 市场从小规模验证进入高速增长 | 观察中 | 2028-2029 年放量、系统级验证、测试能力和良率同步改善 | quarterly/event | 增强 |
 | AI 数据中心光模块市场规模和高端占比 | 已出现 | 800G 及以上模块占比提升，2026 年市场规模继续上修 | monthly/quarterly | 增强 |
 | Micro LED CPO 放量路线 | 观察中 | 2028 年后 Micro LED CPO 有客户验证、良率、封装和收入贡献证据 | quarterly/event | 增强 |
@@ -165,3 +176,4 @@ AI 集群继续扩大后，瓶颈会从单卡算力扩展到集群通信。GPU �
 | 2026-06-21 | 模板迁移 | 按新版方向研究模板补充趋势、瓶颈、资本开支、受益环节、稀缺性、定价和验证信号表格 | 模板规范同步 |
 | 2026-06-22 | 周频更新 | 补充 TrendForce CPO/NPO 市场规模预测和 Alphabet 网络设备 CapEx 结构，强化下一代光互连作为 AI 工厂二级瓶颈的观察链条 | 周频候选复核 |
 | 2026-06-29 | 周频更新 | 补充 Vera Rubin 网络/DPU 平台、OpenAI/Broadcom 和 Qualcomm 定制推理平台，以及 TrendForce 对 2026 年高端光模块占比、CPO 渗透率和 Micro LED CPO 放量节奏的判断，强化互连路线从 800G/1.6T 延伸到 CPO 和新型光源生态的中期验证链条 | 周频候选复核 |
+| 2026-07-27 | 周频更新 | 补充 NVIDIA Spectrum-6 102.4T 交换系统首批客户、Vera Rubin 平台化 co-packaged optics/液冷网络，以及 NeutraDC/Ishikari APN/IOWN 跨境 GPUaaS 线索，强化 gigascale AI factory 对网络效率、光互连和跨站点低延迟连接的需求 | 周频候选复核 |

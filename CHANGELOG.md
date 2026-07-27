@@ -1,5 +1,16 @@
 # 更新记录
 
+## 2026-07-27
+
+- 执行周频候选复核，处理 2026-07-21 至 2026-07-26 本窗口 20 条候选信息。
+- 更新 `2026Q3信息候选池`：15 条候选已写入正式方向研究或 2026Q3 观察清单并标记 `update`，4 条继续 `watch`，1 条继续 `review`；当前累计统计为 `update` 15 条、`watch` 38 条、`new_direction_candidate` 2 条、`review` 4 条。
+- 更新 `AI推理基础设施`，补充 Vera Rubin tokens/MW、Spectrum-6 gigascale 网络、Wistron 美国制造、Microsoft/Mistral 欧洲 AI 基础设施、OpenAI Project Camellia 3.2GW、NAVER/Brookfield/NVIDIA 韩国 AI factory、SK/NVIDIA 2GW AI factory 与 HBM 合作，以及 AMD Helios rack-scale 供给。
+- 更新 `电力与散热`，补充 Vera Rubin 高温液冷与每兆瓦 token 产出、OpenAI 3.2GW 长期电力、韩国主权 AI factory 和 2GW DSX AI factory 线索，强化电力、冷却、园区融资和主权 AI 基础设施约束。
+- 更新 `CPO与下一代光互连`，补充 Spectrum-6 102.4T 交换系统、co-packaged optics、液冷网络和 NeutraDC/Ishikari APN/IOWN 跨境 GPUaaS 线索。
+- 更新 `AI Agent`，补充 OpenAI Presence 客服自动解决率、AWS/monday.com 生产工程 Agent、Microsoft/Databricks 企业数据治理、Microsoft/Mistral 主权和开放模型基础设施，以及 Microsoft Open Weights 成本控制信号。
+- 更新 `2026Q3观察清单` 和 `metadata/direction-registry.json`：AI存储/HBM供给瓶颈维持 `watching` 且不新建正式方向文档；AI-RAN/边缘AI基础设施维持 `candidate`；Hugging Face/OpenAI rogue agent 媒体争议信息继续保留 `review`。
+- 本次未调整 `metadata/company-registry.json`、核心标的观察池或公司画像。
+
 ## 2026-07-01
 
 - 执行季度判断复盘，完成 2026Q2 判断链条复核，并确认 `2026Q3` 为当前活跃研究周期。

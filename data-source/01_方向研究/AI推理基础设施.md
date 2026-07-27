@@ -3,7 +3,7 @@ schema_version: 1
 title: AI推理基础设施
 category: 方向研究
 status: tracking
-updated_at: 2026-06-29
+updated_at: 2026-07-27
 confidence: high
 tags:
   - AI
@@ -37,6 +37,22 @@ sources:
     url: https://www.qualcomm.com/news/releases/2026/06/qualcomm-unveils-comprehensive-data-center-roadmap-for-the-agent
   - name: Firmus NVIDIA DSX AI Factory campus
     url: https://firmus.co/newsroom/firmus-to-build-170-000-gpu-ai-factor-y-campus-with-nvidia-for-global-ai-natives
+  - name: NVIDIA Vera Rubin
+    url: https://blogs.nvidia.com/blog/vera-rubin/
+  - name: NVIDIA Spectrum-6
+    url: https://blogs.nvidia.com/blog/nvidia-spectrum-six-arrives-in-gigascale-ai-factories/
+  - name: NVIDIA Wistron Texas manufacturing
+    url: https://blogs.nvidia.com/blog/wistron-manufacturing-texas/
+  - name: Microsoft and Mistral strategic partnership
+    url: https://news.microsoft.com/source/2026/07/21/microsoft-and-mistral-expand-strategic-partnership-to-give-enterprises-and-regulated-industries-frontier-ai-they-can-control/
+  - name: OpenAI Project Camellia
+    url: https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community/
+  - name: NAVER NVIDIA Brookfield Korea AI Factory
+    url: https://nvidianews.nvidia.com/news/naver-nvidia-and-brookfield-to-expand-koreas-national-ai-factory-infrastructure-buildout
+  - name: SK Group and NVIDIA AI factories and memory
+    url: https://nvidianews.nvidia.com/news/sk-group-and-nvidia-expand-strategic-partnership-across-ai-factories-and-next-generation-memory
+  - name: AMD Advancing AI 2026
+    url: https://ir.amd.com/news-events/press-releases/detail/1294/aai-2026-amd-delivers-full-stack-compute-for-the-agentic-ai-era
 ---
 
 # AI推理基础设施
@@ -61,6 +77,11 @@ sources:
 | 应用公司以多年云承诺锁定 AI 基础设施 | tier_1 | Pinterest 与 AWS 达成至 2031 年的 40 亿美元云服务承诺，用于 AI 训练、推理、视觉搜索、推荐和 Pinterest Assistant | 高 | 增强 |
 | 模型厂商和芯片厂商推进定制推理平台 | tier_1 | OpenAI/Broadcom Jalapeno 推理芯片、Qualcomm Dragonfly 数据中心路线和 Modular 收购共同指向 ASIC、CPU、加速器、连接和软件栈一体化 | 中高 | 增强 |
 | 区域 AI 工厂进入承购和园区建设阶段 | tier_1 | Firmus 与 NVIDIA 合作规划印尼 Batam 360MW DSX AI Factory，覆盖 17 万颗 AI 加速器和多年客户承购协议 | 中高 | 增强 |
+| AI 工厂进入 tokens/MW 和全系统协同竞争 | tier_1 | NVIDIA Vera Rubin 平台披露 CoreWeave DeepSeek-R1 基准相对 Grace Blackwell NVL72 达到约 10 倍 tokens/s/MW，并把 CPU、网络、液冷和整机架供应链纳入平台协同 | 高 | 增强 |
+| 下一代网络成为 gigascale AI factory 的基础瓶颈 | tier_1 | NVIDIA Spectrum-6 102.4Tb/s Ethernet switch system 进入 CoreWeave、Microsoft、Nebius、SpaceXAI 和 Tesla 等首批 AI factory，支持可插拔和 co-packaged optics 以及液冷网络基础设施 | 高 | 增强 |
+| 主权和受监管 AI 基础设施扩张 | tier_1 | Microsoft/Mistral 欧洲 multibillion-dollar AI 基础设施合作、NAVER/NVIDIA/Brookfield 韩国 AI factory 扩容和 SK/NVIDIA 2GW DSX AI Factory 共同指向区域化、合规化和主权 AI 供给 | 高 | 增强 |
+| 模型公司和芯片替代路线继续锁定 rack-scale 供给 | tier_1 | OpenAI Project Camellia 签约 3.2GW 长期电力；AMD Helios 已进入生产并获得 OpenAI、Anthropic、Meta、Microsoft、Oracle 等部署计划，显示 NVIDIA 之外的 rack-scale 平台正在补充供给 | 高 | 增强 |
+| AI 系统制造和本地化交付成为扩容条件 | tier_1 | Wistron Texas 324,000 平方英尺工厂已生产 NVIDIA GB300，并将生产 Vera Rubin Superchip，计划把月产扩展到数万块 boards | 中高 | 增强 |
 | 推理从单次训练变成持续使用需求 | tier_1/tier_3 | 搜索、办公、客服、代码、多模态和 Agent 都会持续消耗推理算力 | 高 | 增强 |
 
 ## 2. 核心瓶颈
@@ -75,6 +96,7 @@ sources:
 | HBM 和数据中心存储 | 中高 | 推理和训练集群扩大，HBM、服务器 DRAM 和企业级 SSD 被高优先级 AI 需求吸收 | 内存 / SSD / AI 服务器 | HBM 出货、服务器 DRAM 价格、企业级 SSD 容量和交期 |
 | 电力与散热 | 高 | 高密度推理集群提高机柜功率和散热压力 | 电力设备 / 液冷 / 数据中心 | 并网延迟、液冷渗透率、变压器和 UPS 订单 |
 | 异构推理软件栈 | 中高 | CPU、GPU、NPU、ASIC 和云端/边缘部署并存，性能可移植性和调度效率成为瓶颈 | 编译器 / 运行时 / 云平台 | Modular 类软件栈、向量检索加速、跨硬件部署效率 |
+| 系统级制造和整机架交付 | 中高 | AI factory 从单卡采购升级为 CPU/GPU/网络/液冷/电力协同交付 | 服务器制造 / 测试 / 供应链 | 本地制造产能、整机架量产、供应链覆盖国家和交付节奏 |
 | 调度系统 | 中 | 多模型、多租户和低延迟推理需求提升 | 云平台 / 推理服务 | 推理服务效率、延迟和利用率改善 |
 
 ## 3. 是否会形成资本开支
@@ -87,6 +109,8 @@ sources:
 | AI 数据中心业主 | 园区/电力/数据中心运营 | IREN 这类算力基础设施运营商与芯片厂商绑定 DSX AI 工厂架构和电力管线 | 短期/中期 | 中高 |
 | 应用公司 | 云服务/自研芯片/托管基础设施 | Pinterest 多年云承诺、模型公司自研推理芯片和 Agent 产品对低延迟推理的持续需求 | 短期/中期 | 中高 |
 | 区域 AI 工厂运营商 | 园区/电力/液冷/GPU 云 | Firmus 类区域 AI 工厂以承购协议和收入分成模式绑定算力供给 | 中期 | 中 |
+| 主权 AI 和受监管行业平台 | GPU/数据中心/区域云/断连环境 | Microsoft/Mistral、NAVER/NVIDIA/Brookfield 和 SK/NVIDIA 显示政府、金融、制造和区域云客户需要本地化、可控和多租户 AI capacity | 中期 | 中高 |
+| 模型公司和 AI labs | 数据中心/长期电力/rack-scale 平台 | OpenAI 3.2GW Project Camellia、AMD Helios 客户部署计划显示模型公司直接锁定电力和 rack-scale 供给 | 中期 | 高 |
 | 模型厂商 | 硬件/云服务 | 推理请求量增长、长上下文和多模态需求扩大 | 中期 | 中高 |
 | 企业客户 | 云服务/推理平台 | 企业 Agent、AI 搜索、AI 编程助手和办公 AI 付费渗透 | 中期 | 中 |
 
@@ -138,6 +162,9 @@ sources:
 | 应用公司多年云基础设施承诺 | 已出现 | 应用公司围绕推荐、视觉搜索、Assistant 和个性化推理签署多年云承诺 | event | 增强 |
 | HBM、服务器 DRAM 和企业级 SSD 紧张 | 观察中 | 存储厂商财报和行业研究显示 AI 数据中心需求吸收高端存储供给 | monthly/event | 增强/约束交付 |
 | 隔离环境和主权 AI 推理部署 | 观察中 | 政府、关键基础设施或区域 AI 工厂要求私有、隔离或本地化推理部署 | monthly/event | 增强 |
+| tokens/MW 和每 token 成本成为采购指标 | 已出现 | Vera Rubin、Spectrum-6 和 Helios 等平台围绕每兆瓦 token 产出、每 token 成本和网络效率竞争 | event | 增强/改变瓶颈排序 |
+| 主权 AI factory 和长期电力项目连续出现 | 已出现 | 韩国、欧洲和美国数据中心项目把 GPU、HBM、电力、地产、融资和区域合规绑定为一体化供给 | event | 增强 |
+| rack-scale 平台和系统制造产能扩张 | 已出现 | Wistron 本地制造、AMD Helios 生产部署和 NVIDIA 350+ factory sites 供应链显示交付能力成为供给侧验证信号 | event | 增强/缓解单一供给约束 |
 | 单 token 成本下降带来更大使用量 | 待验证 | 成本下降后，使用量弹性超过价格下降影响 | monthly | 增强 |
 | Agent、AI 搜索和 AI 编程助手付费渗透率提升 | 观察中 | 企业或消费者付费、使用时长和留存提升 | weekly/monthly | 增强 |
 
@@ -185,3 +212,4 @@ sources:
 | 2026-06-21 | 模板迁移 | 按新版方向研究模板补充趋势、瓶颈、资本开支、受益环节、稀缺性、定价和验证信号表格 | 模板规范同步 |
 | 2026-06-22 | 周频更新 | 补充 IREN 5GW AI 工厂、Alphabet 技术基础设施 CapEx 结构、Microsoft Foundry token 信号和 NVIDIA 高温液冷参考设计，强化推理基础设施向园区、网络、Agent 使用量和散热架构外溢的判断 | 周频候选复核 |
 | 2026-06-29 | 周频更新 | 补充 Vera Rubin 整机架系统、AWS/Pinterest 多年云承诺、OpenAI/Broadcom 推理 ASIC、Qualcomm 异构推理平台、Firmus 区域 AI 工厂和 HBM/存储供给线索，强化推理基础设施向定制芯片、软件栈、存储、电力园区和应用客户承诺外溢的判断 | 周频候选复核 |
+| 2026-07-27 | 周频更新 | 补充 Vera Rubin tokens/MW、Spectrum-6 gigascale 网络、Wistron 美国制造、Microsoft/Mistral 欧洲 AI 基础设施、OpenAI Project Camellia 3.2GW、NAVER/Brookfield/NVIDIA 韩国 AI factory、SK/NVIDIA 2GW AI factory 与 HBM 合作，以及 AMD Helios rack-scale 供给，强化推理基础设施从 GPU 采购转向整机架、网络、电力、主权 AI 和系统制造协同的判断 | 周频候选复核 |

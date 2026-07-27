@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25",
+  "updated_at": "2026-07-27",
   "period_policy": {
     "active_research_period": "2026Q3",
     "period_mode": "configured_active_period",
@@ -9,30 +9,30 @@
   },
   "jobs": {
     "daily": {
-      "last_success_at": "2026-07-25T20:03:29+08:00",
+      "last_success_at": "2026-07-26T20:11:07+08:00",
       "last_status": "success",
       "last_error": "",
-      "last_candidate_count": 7,
-      "last_summary": "本次日频新增 7 条候选信息：NAVER/Brookfield/NVIDIA 韩国 AI factory、SK/NVIDIA 2GW AI factory 与 HBM 合作、AMD Helios rack-scale AI、Microsoft/Databricks 企业 Agent 数据治理、Meta AI 行动型助手、Meta Seller app 和美国 AI data center 电费保护政策。7 条均标记为 watch；涉及 AI推理基础设施、电力与散热、AI Agent、企业软件、机器人和 AI存储/HBM供给瓶颈；未直接修改正式方向研究、历史案例、观察清单、复盘记录、公司注册表或核心标的观察池。"
+      "last_candidate_count": 4,
+      "last_summary": "本次日频新增 4 条候选信息：NeutraDC/Ishikari 跨境 GPUaaS 与 APN/IOWN、AP 中国开放模型采用率、Microsoft 开放权重政策信号、Hugging Face/OpenAI rogue agent 后续索赔与 traces 诉求。其中 3 条 watch、1 条 review；涉及 AI推理基础设施、电力与散热、CPO与下一代光互连、AI-RAN/边缘AI基础设施、AI Agent、企业软件、AI安全治理和开源模型推理经济性；未直接修改正式方向研究、历史案例、观察清单、复盘记录、公司注册表或核心标的观察池。"
     },
     "weekly": {
-      "last_success_at": "2026-06-29T23:08:07+08:00",
+      "last_success_at": "2026-07-27T21:13:41+08:00",
       "last_status": "success",
       "last_error": "",
-      "last_candidate_count": 24,
+      "last_candidate_count": 20,
       "last_updated_documents": [
-        "data-source/05_信息候选池/2026Q2_信息候选池.md",
+        "data-source/05_信息候选池/2026Q3_信息候选池.md",
         "data-source/01_方向研究/AI推理基础设施.md",
         "data-source/01_方向研究/电力与散热.md",
         "data-source/01_方向研究/CPO与下一代光互连.md",
         "data-source/01_方向研究/AI Agent.md",
-        "data-source/01_方向研究/机器人.md",
-        "data-source/03_观察清单/2026Q2_观察清单.md",
+        "data-source/03_观察清单/2026Q3_观察清单.md",
         "metadata/direction-registry.json",
         "metadata/sources.json",
+        "metadata/update-state.json",
         "CHANGELOG.md"
       ],
-      "last_summary": "复核本窗口 24 条候选并关闭前序 Chevron/Microsoft review：23 条写入正式方向研究或观察清单，AI存储/HBM供给瓶颈升级为 watching 但未新建正式方向文档，AI-RAN 继续保持 new_direction_candidate，Gulf News/Amazon 印度投资记录因缺少官方披露标记 review。"
+      "last_summary": "复核 2026-07-21 至 2026-07-26 本窗口 20 条候选：15 条已写入正式方向研究或 2026Q3 观察清单并标记 update，4 条继续 watch，1 条继续 review；AI推理基础设施、电力与散热、CPO与下一代光互连和 AI Agent 正式文档更新；AI存储/HBM供给瓶颈维持 watching 不新建方向文档，AI-RAN/边缘AI基础设施维持 candidate；未调整公司注册表或核心标的观察池。"
     },
     "monthly": {
       "last_success_at": "2026-07-01T22:01:49+08:00",
