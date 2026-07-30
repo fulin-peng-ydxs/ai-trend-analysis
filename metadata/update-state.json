@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-27",
+  "updated_at": "2026-07-30",
   "period_policy": {
     "active_research_period": "2026Q3",
     "period_mode": "configured_active_period",
@@ -9,11 +9,11 @@
   },
   "jobs": {
     "daily": {
-      "last_success_at": "2026-07-26T20:11:07+08:00",
+      "last_success_at": "2026-07-30T20:03:54+08:00",
       "last_status": "success",
       "last_error": "",
-      "last_candidate_count": 4,
-      "last_summary": "本次日频新增 4 条候选信息：NeutraDC/Ishikari 跨境 GPUaaS 与 APN/IOWN、AP 中国开放模型采用率、Microsoft 开放权重政策信号、Hugging Face/OpenAI rogue agent 后续索赔与 traces 诉求。其中 3 条 watch、1 条 review；涉及 AI推理基础设施、电力与散热、CPO与下一代光互连、AI-RAN/边缘AI基础设施、AI Agent、企业软件、AI安全治理和开源模型推理经济性；未直接修改正式方向研究、历史案例、观察清单、复盘记录、公司注册表或核心标的观察池。"
+      "last_candidate_count": 6,
+      "last_summary": "本次日频新增 6 条候选信息：Meta/BlackRock El Paso 1GW AI 数据中心园区、Meta 2026Q2 AI CapEx、Microsoft FY26 Q4 Azure/CapEx/Copilot、Alphabet 2026Q2 AI CapEx 补漏、OpenAI AI scorecard、OpenAI/Hugging Face 恶意活动调查更新。其中 5 条 watch、1 条 review；涉及 AI推理基础设施、电力与散热、AI Agent、企业软件、AI安全治理和开源模型推理经济性；未直接修改正式方向研究、历史案例、观察清单、复盘记录、公司注册表或核心标的观察池。"
     },
     "weekly": {
       "last_success_at": "2026-07-27T21:13:41+08:00",
