@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-30",
+  "updated_at": "2026-08-01",
   "period_policy": {
     "active_research_period": "2026Q3",
     "period_mode": "configured_active_period",
@@ -35,17 +35,18 @@
       "last_summary": "复核 2026-07-21 至 2026-07-26 本窗口 20 条候选：15 条已写入正式方向研究或 2026Q3 观察清单并标记 update，4 条继续 watch，1 条继续 review；AI推理基础设施、电力与散热、CPO与下一代光互连和 AI Agent 正式文档更新；AI存储/HBM供给瓶颈维持 watching 不新建方向文档，AI-RAN/边缘AI基础设施维持 candidate；未调整公司注册表或核心标的观察池。"
     },
     "monthly": {
-      "last_success_at": "2026-07-01T22:01:49+08:00",
+      "last_success_at": "2026-08-01T22:02:19+08:00",
       "last_status": "success",
       "last_error": "",
       "last_updated_documents": [
-        "data-source/03_观察清单/2026Q2_观察清单.md",
+        "data-source/03_观察清单/2026Q3_观察清单.md",
         "data-source/06_核心标的观察池/2026Q2_A股主板核心标的观察池.md",
         "metadata/company-registry.json",
+        "metadata/sources.json",
         "metadata/update-state.json",
         "CHANGELOG.md"
       ],
-      "last_summary": "基于 2026Q2 候选池、方向状态、公司注册表和已更新正式文档完成首次月频观察清单更新：AI Agent 和 AI存储/HBM供给瓶颈观察优先级升为中高；补充模块化同址数据中心、HBM/GDDR 异构推理服务、韩国半导体中心投资和 DRAM 诉讼 review 等观察问题；同步公司层月频复盘焦点，但未调整方向状态或公司状态。"
+      "last_summary": "基于 2026Q3 候选池、方向状态、公司注册表和已更新正式文档完成月频观察清单更新：基础设施、电力散热和 CPO 继续高优先主动跟踪；AI Agent 维持中高优先并新增 Copilot/Agent 席位、单位任务经济性和安全治理验证问题；AI存储/HBM供给瓶颈因 DRAM/HBM/NAND、长期供应和价格/交付周期证据增强，公司层复核优先级上调为中高但仍等待正式方向链条和 A 股主板承接对象；同步服务器系统、电力散热设备、Agent 软件和存储/HBM 缺口的公司层验证信号，未调整方向状态或公司状态；Meta 算力转售、Microsoft 澳大利亚能源基金、Amazon Moonraker 和 OpenAI/Hugging Face 安全责任等事项仍为 review。"
     },
     "quarterly": {
       "last_success_at": "2026-07-01T23:01:59+08:00",

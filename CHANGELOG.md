@@ -1,5 +1,12 @@
 # 更新记录
 
+## 2026-08-01
+
+- 执行月频观察清单更新，处理窗口从 `2026-07-01T22:01:49+08:00` 到 `2026-08-01T22:02:19+08:00`，基于 2026Q3 候选池、方向状态、公司注册表和已更新正式方向文档复核本月观察重点。
+- 更新 `2026Q3观察清单`：基础设施、电力散热和 CPO 继续高优先主动跟踪；新增云厂商 AI CapEx 与云收入、AI 产品收入、可用容量缺口、折旧和电力成本之间的闭环验证问题；把 Meta/BlackRock El Paso 1GW 园区、Meta 2026Q2 CapEx、Microsoft FY26 Q4 CapEx/Azure/Copilot、Alphabet 2026Q2 CapEx、OpenAI AI scorecard 和 OpenAI/Hugging Face 安全调查纳入月频观察重点。
+- 更新 `2026Q2 A股主板核心标的观察池` 和 `metadata/company-registry.json`：强化服务器系统、电力散热设备和 Agent 软件的公司层验证信号；AI存储/HBM 缺口因 DRAM/HBM/NAND、长期供应和价格/交付周期证据增强，月频优先级上调为中高，但仍等待正式方向链条和 A 股主板承接对象。
+- 本次未调整方向状态、公司状态或候选池处理结果；Meta 多余算力转售、Microsoft 澳大利亚能源基金、Amazon Moonraker/Alexa+ Agent 成本、OpenAI/Hugging Face 安全责任边界等事项继续保留 `review`。
+
 ## 2026-07-27
 
 - 执行周频候选复核，处理 2026-07-21 至 2026-07-26 本窗口 20 条候选信息。
