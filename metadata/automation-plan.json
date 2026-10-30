@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-01",
+  "updated_at": "2026-10-30",
   "status": "active",
   "principle": "先自动进入候选池，再由自动化按规则判断是否更新正式知识库；公司层标的池是方向研究的派生观察对象，不输出买卖建议；冲突或重大不确定事项标记 review",
   "period_policy": {
@@ -264,5 +264,5 @@
     "forbidden": "网络受限时不得编造来源、不得生成无法追溯的新事实、不得把网络失败当作产业判断变化。"
   },
   "validation_command": "node scripts/validate-knowledge-base.js",
-  "skill": "/Users/pengshuaifeng/.codex/skills/ai-trend-knowledge-maintainer"
+  "skill": "/Users/pengshuaifeng/.codex/skills/investment-ai-trend-knowledge-maintenance"
 }
